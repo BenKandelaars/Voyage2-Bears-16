@@ -30,7 +30,7 @@ Find your setup by clicking: `http://localhost:3000/`
 Their righteous attempt is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 All credit goes to:
-* Yuka Masuda
-* Paulina Chalubinska
+* [Yuka Masuda](https://github.com/ykmsd)
+* [Paulina Chalubinska](https://github.com/pchalubinska)
 * [Ben Kandelaars](https://github.com/BenKandelaars)
 * [Lukasz Andruchow](https://github.com/osirisseye), caretaker of this repo
