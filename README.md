@@ -24,6 +24,9 @@ Find your setup by clicking: `http://localhost:3000/`
 
 
 
+
+
+### Acknowledgments
 Their righteous attempt is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 All credit goes to:
