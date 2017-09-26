@@ -1,8 +1,7 @@
 import React from 'react';
-import { Sitemap } from '../components/sitemap/Sitemap';
+import Sitemap from '../components/sitemap/Sitemap';
 
 class Home extends React.Component {
-  
   render() {
     return (
       <div>
@@ -15,6 +14,3 @@ class Home extends React.Component {
 };
 
 export { Home };
-
-
-

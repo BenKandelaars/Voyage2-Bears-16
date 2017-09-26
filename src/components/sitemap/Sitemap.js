@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Sitemap() {
+export default function Sitemap() {
   return (
     <div className="sitemap_container">
       <div className="sitemap">
@@ -47,5 +47,3 @@ function Sitemap() {
     </div>
   );
 }
-
-export default Sitemap;
