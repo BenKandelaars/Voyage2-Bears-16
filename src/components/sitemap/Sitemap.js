@@ -1,18 +1,18 @@
 import React from 'react';
 
-export function Sitemap() {
+function Sitemap() {
   return (
     <div className="sitemap_container">
       <div className="sitemap">
-        <article className='sitemap_regional'>
+        <article className="sitemap_regional">
           <select>
-            <option value='english'>English</option>
+            <option value="english">English</option>
           </select>
           <select>
-            <option value='GBP'>GBP</option>
+            <option value="GBP">GBP</option>
           </select>
         </article>
-        <article className='sitemap_lists'>
+        <article className="sitemap_lists">
           <h4><b>Airbnb</b></h4>
           <ul>
             <li>About us</li>
@@ -23,7 +23,7 @@ export function Sitemap() {
             <li>Diversity &amp; Belonging</li>
           </ul>
         </article>
-        <article className='sitemap_lists'>
+        <article className="sitemap_lists">
           <h4><b>Discover</b></h4>
           <ul>
             <li>Trust and Safety</li>
@@ -34,8 +34,8 @@ export function Sitemap() {
             <li>Airbnb Mag</li>
           </ul>
         </article>
-        <article className='sitemap_lists'>
-        <h4><b>Hosting</b></h4>
+        <article className="sitemap_lists">
+          <h4><b>Hosting</b></h4>
           <ul>
             <li>Why Host</li>
             <li>Hospitality</li>
@@ -45,6 +45,7 @@ export function Sitemap() {
         </article>
       </div>
     </div>
-  )
-};
+  );
+}
 
+export default Sitemap;
