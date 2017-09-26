@@ -3,7 +3,7 @@ import img from "./images/demo_img.jpg";
 
 const ImageListItem = () => {
   return (
-    <img src={img} alt="image" />
+      <img src={img} alt="image" />    
   );
 };
 

@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import ImageList from "./ImageList"
+import ImageList from './ImageList';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
 import 'font-awesome/css/font-awesome.css';
+import { Container } from './style.js';
+
 
 class Carousel extends Component {
 
   render(){
     return (
-      <div className="carousel">
+      <Container>
         <RightArrow />
           <ImageList />
         <LeftArrow />
-      </div>
+      </Container>
     );
   }
 };

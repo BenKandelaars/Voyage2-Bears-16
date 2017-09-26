@@ -1,15 +1,18 @@
 import React from 'react';
 import ImageListItem from './ImageListItem';
+import { Slider, SliderItem } from './style.js';
 
 const ImageList = () => {
   return (
-    <div>
-      <ImageListItem />
-      <ImageListItem />
-      <ImageListItem />
-      <ImageListItem />
-      <ImageListItem />
-    </div>
+    <Slider>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+      <SliderItem><ImageListItem /></SliderItem>
+    </Slider>
 
   );
 };
