@@ -4,7 +4,7 @@ import CarouselListView from './CarouselList';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
 import 'font-awesome/css/font-awesome.css';
-import { Container, CaroucelContainer } from './style.js';
+import { Container, CarouselContainer } from './style.js';
 
 
 class Carousel extends Component {
@@ -16,11 +16,11 @@ class Carousel extends Component {
             <Slider />
 
         <h1>Carousel</h1>
-        <CaroucelContainer> 
-          <RightArrow />  
+        <CarouselContainer> 
+          <LeftArrow /> 
             <CarouselListView />  
-          <LeftArrow />
-        </CaroucelContainer>
+          <RightArrow /> 
+        </CarouselContainer>
       </Container>
     );
   }

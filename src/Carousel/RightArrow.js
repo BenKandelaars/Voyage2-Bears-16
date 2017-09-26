@@ -1,11 +1,15 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import { RightArrowStyle } from './style.js';
 
 const RightArrow = () => {
   return (
-    <div className="rightArrow">
-    <FontAwesome name="angle-right" /> 
-    </div>
+    <RightArrowStyle>
+    <FontAwesome
+     name="angle-right"
+     size="3x"
+     /> 
+    </RightArrowStyle>
   );
 };
 

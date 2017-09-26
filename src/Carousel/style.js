@@ -7,18 +7,31 @@ export const Container = styled.div`
 
 // Caroucel 
 
-export const CaroucelContainer = styled.div`
-  overdlow: hidden;
+export const CarouselContainer = styled.div`
+  overflow: hidden;
+  position: relative;
 `;
 
+export const LeftArrowStyle = styled.div`
+  position: absolute;
+  top: 40%;
+`;
+
+export const RightArrowStyle = styled.div`
+  position: absolute;
+  top: 40%;
+  right: 0;
+  `;
+
 export const CarouselList = styled.div`
-  display: flexbox;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  
 `;
 
 export const CarouselItem = styled.div`
-  flex: 1 0 100%;
+  flex: 1 0 auto;
+  margin: 1.2rem;
 `;
 
 // Slider 
