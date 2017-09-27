@@ -17,7 +17,7 @@ export const HeaderContainer = styled.div`
 export const Header = styled.div`
     box-sizing: border-box;
     display: block;
-    padding: 1.2em;
+    padding: 0.8em;
     
 
     h1 {
