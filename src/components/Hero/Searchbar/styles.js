@@ -18,6 +18,9 @@ export const Button = styled.div`
     font-size: 1.4em;
     margin-left: 1em;
 
+    @media(max-width:1000px){
+        display: none;
+    }
 `;
 
 export const InputGroup = styled.div`
@@ -26,6 +29,19 @@ export const InputGroup = styled.div`
     width: 30%;
 
 `;
+
+export const I = styled.a`
+    color: grey;
+    display:block;
+    @media(min-width:1000px){
+        display: none;
+    }
+`;
+
+export const Icon = styled.div`
+
+`;
+
 
 export const InputPlusLabel = styled.div`
     display: flex;
@@ -60,9 +76,11 @@ export const InputPlusLabel = styled.div`
         display: none;
         font-size: 1em;
         @media(min-width:800px) {
-            display: inline;
             padding: 0.2em 0em;
             margin: 0.2em 0em;
+        }
+        @media(min-width:1100px) {
+            display: inline;
         }
     }
 `;

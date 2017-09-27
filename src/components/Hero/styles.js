@@ -28,6 +28,7 @@ export const Header = styled.div`
             font-size: 3.3em;
         }
     }
+    
     p {
         font-size: 1.2em;
         margin: 0;

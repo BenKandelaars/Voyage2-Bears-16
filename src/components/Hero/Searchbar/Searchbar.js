@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { SearchContainer, Button, InputPlusLabel, InputGroup } from './styles';
+import { SearchContainer, Button, InputPlusLabel, InputGroup, I, Icon } from './styles';
 
 export class Searchbar extends Component {
   render() {
     return (
       <SearchContainer className="Search-Container">
         <InputGroup className="Input-Group">
+          <Icon>
+            <I className="fa fa-search" aria-hidden="true" />
+          </Icon>
           <InputPlusLabel>
             <p>Where?</p>
             <input type="text" placeholder="Anywhere" name="Where"/>
@@ -22,12 +25,7 @@ export class Searchbar extends Component {
         <InputGroup className="Input-Group">
           <InputPlusLabel>
             <p>Guests</p>
-            <select>
-              <option value="1" name="guests">1</option>
-              <option value="2" name="guests">2</option>
-              <option value="3" name="guests">3</option>
-              <option value="4" name="guests">4</option>
-            </select>
+            <input placeholder="1 Guest" type="text" name="Guests" />
           </InputPlusLabel>
           
         </ InputGroup>
