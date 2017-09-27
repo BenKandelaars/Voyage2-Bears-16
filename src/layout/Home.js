@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Hero } from '../components/Hero/Hero';
 
-class Home extends React.Component {
+class Home extends Component {
   
   render() {
     return (

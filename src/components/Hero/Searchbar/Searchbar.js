@@ -7,7 +7,7 @@ export class Searchbar extends Component {
       <SearchContainer>
         <InputPlusLabel>
           <p>Where</p>
-          <input type="text" name="Where"/>
+          <input type="text" placeholder="Anywhere" name="Where"/>
         </InputPlusLabel>
             
         <InputPlusLabel>
@@ -16,15 +16,16 @@ export class Searchbar extends Component {
         </InputPlusLabel>
 
         <InputPlusLabel>
-            <p>Guests</p>
+            <label>Guests</label>
             <select>
               <option value="1" name="guests">1</option>
-              <option value="1" name="guests">2</option>
-              <option value="1" name="guests">3</option>
-              <option value="1" name="guests">4</option>
+              <option value="2" name="guests">2</option>
+              <option value="3" name="guests">3</option>
+              <option value="4" name="guests">4</option>
             </select>
+            <Button>Search</ Button>
         </InputPlusLabel>
-        <Button>Search</ Button>
+        
       </ SearchContainer>
     );
   }
