@@ -14,24 +14,23 @@ export const CarouselContainer = styled.div`
 
 export const LeftArrowStyle = styled.div`
   position: absolute;
-  top: 40%;
+  top: 50%;
 `;
 
 export const RightArrowStyle = styled.div`
   position: absolute;
-  top: 40%;
+  top: 50%;
   right: 0;
   `;
 
 export const CarouselList = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  
 `;
 
 export const CarouselItem = styled.div`
   flex: 1 0 auto;
-  margin: 1.2rem;
+  margin-right: 1.2rem;
 `;
 
 // Slider 
