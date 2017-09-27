@@ -12,12 +12,17 @@ export class Searchbar extends Component {
             
         <InputPlusLabel>
             <p>When</p>
-            <input type="text" name="When" />
+            <input type="date" name="When" />
         </InputPlusLabel>
 
         <InputPlusLabel>
             <p>Guests</p>
-            <input type="text" name="When" />
+            <select>
+              <option value="1" name="guests">1</option>
+              <option value="1" name="guests">2</option>
+              <option value="1" name="guests">3</option>
+              <option value="1" name="guests">4</option>
+            </select>
         </InputPlusLabel>
         <Button>Search</ Button>
       </ SearchContainer>
