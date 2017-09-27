@@ -25,14 +25,19 @@ export const RightArrowStyle = styled.div`
   right: 0;
   `;
 
+export const CarouselListWrapper = styled.div`
+  overflow: hidden;
+`;
+
 export const CarouselList = styled.div`
   margin: 0 30px;
   display: flex;
   width: 100%;
   height: 100%;
-  transform: translateX(${props => {props.visible}});
+  // transform: translateX(${props => {props.visible}});
   position: relative;
   z-index: -1;
+ 
 `;
 
 export const CarouselItem = styled.div`
