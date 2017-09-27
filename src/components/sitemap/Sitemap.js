@@ -40,7 +40,7 @@ export default function Sitemap() {
             <li>Why Host</li>
             <li>Hospitality</li>
             <li>Responsible Hosting</li>
-            <li>Community Center</li>
+            <li>Community Center </li>
           </ul>
         </article>
       </div>
