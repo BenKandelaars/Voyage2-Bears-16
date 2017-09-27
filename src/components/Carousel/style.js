@@ -6,9 +6,12 @@ export const Container = styled.div`
 
 // Caroucel 
 
-export const CarouselContainer = styled.div`
-  overflow: hidden;
+export const CarouselWrapper = styled.div`
   position: relative;
+  // background-color: grey;
+  width: 65%;
+  margin: 0 auto;
+  padding: 10px 0;
 `;
 
 export const LeftArrowStyle = styled.div`
@@ -23,19 +26,27 @@ export const RightArrowStyle = styled.div`
   `;
 
 export const CarouselList = styled.div`
+  margin: 0 30px;
   display: flex;
-  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  transform: translateX(${props => {props.visible}});
+  position: relative;
+  z-index: -1;
 `;
 
 export const CarouselItem = styled.div`
-  flex: 1 0 auto;
+  flex-grow: 1;
+  flex-shrink: 0;
   margin-right: 1.2rem;
+  width: 200px;
+  height: 300px;
+  background-color: #eff0f1;
 `;
 
 // Slider 
 
 export const Wrapper = styled.div`
-  
 `;
 
 export const Slider = styled.div`

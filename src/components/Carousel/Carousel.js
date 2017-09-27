@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import CarouselListView from './CarouselList';
-import RightArrow from './RightArrow';
-import LeftArrow from './LeftArrow';
 import 'font-awesome/css/font-awesome.css';
-import { Container, CarouselContainer } from './style.js';
+import { Container } from './style.js';
 
 
 class Carousel extends Component {
@@ -16,11 +14,7 @@ class Carousel extends Component {
             <Slider />
 
         <h1>Carousel</h1>
-        <CarouselContainer> 
-          <LeftArrow /> 
             <CarouselListView />  
-          <RightArrow /> 
-        </CarouselContainer>
       </Container>
     );
   }

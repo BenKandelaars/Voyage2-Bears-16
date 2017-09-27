@@ -6,8 +6,7 @@ class RightArrow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: null,
-      activeIndex: 0
+      visible: 0
     }
   }
   
@@ -17,7 +16,8 @@ class RightArrow extends Component {
   }
   
   handleClick = () => {
-    console.log("clicked");
+    this.setState ({visible: this.state.visible - 25});
+    console.log(this.state.visible);
   };
 
   render() {
