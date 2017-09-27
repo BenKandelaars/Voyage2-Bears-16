@@ -18,15 +18,14 @@ export const Header = styled.div`
     box-sizing: border-box;
     display: block;
     padding: 0.8em;
-    
 
     h1 {
         color: #FF5A60;
-        font0size: 0.7em;
+        font-size: 1.7em;
         margin: 0;
 
         @media(min-width: 800px){
-            font-size: 1.2em;
+            font-size: 3.3em;
         }
     }
     p {
@@ -34,7 +33,11 @@ export const Header = styled.div`
         margin: 0;
 
         @media(min-width: 800px){
-            font-size: 1.8em;
+            font-size: 3.2em;
+            
+        }
+        @media(min-width: 1100px){
+            max-width: 550px;
         }
     }
 `;
