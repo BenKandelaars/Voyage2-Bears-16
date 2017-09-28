@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SearchContainer = styled.div`
     display: flex;
     flex-flow: row nowrap;
-    border: 1px solid grey;
+    border: 1px solid #DBDBDB;
     border-radius: 3px;
     margin: 0.8em;
     padding: 0;
@@ -40,7 +40,7 @@ export const InputGroup = styled.div`
         width: 30%;
 
         :nth-last-child(-n+2){
-            border-left: 1px solid grey;
+            border-left: 1px solid #DBDBDB;
         }
     
     }
@@ -62,7 +62,6 @@ export const Icon1 = Icon.extend`
 `;
 export const Dot = styled.div`
     display: flex;
-    color: grey;
     font-size: 0.1em;
     display:none;
     padding: 0.4em;
@@ -77,7 +76,7 @@ export const Dot = styled.div`
 
 `;
 export const Logo = styled.div`
-    color: grey;
+    color: #767676;
     display:block;
 
 `;
@@ -113,7 +112,11 @@ export const InputPlusLabel = styled.div`
     }
 
     input::-webkit-input-placeholder {
-        font-size: 1.35em;
+        font-size: 1.25em;
+        
+        @media(max-width:750px){
+            color: black;
+        }
     }
 
     p {

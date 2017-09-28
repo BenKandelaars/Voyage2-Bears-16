@@ -24,7 +24,7 @@ export const Header = styled.div`
         font-size: 1.7em;
         margin: 0;
 
-        @media(min-width: 800px){
+        @media(min-width: 750px){
             font-size: 3.3em;
         }
     }
@@ -33,7 +33,7 @@ export const Header = styled.div`
         font-size: 1.2em;
         margin: 0;
 
-        @media(min-width: 800px){
+        @media(min-width: 750px){
             font-size: 3.2em;
             
         }
