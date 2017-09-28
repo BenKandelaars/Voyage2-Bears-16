@@ -12,8 +12,10 @@ import {
   ExperienceWrapper,
   Star,
   Reviews,
+  HomesContainer,
+  HomesWrapper,
 } from './styles';
-import homeImg from '../../assets/pictures/explore/home_small.jpg';
+import homeImg from '../../assets/pictures/explore/home_medium.jpg';
 import resturantImg from '../../assets/pictures/explore/resturant_medium.jpg';
 import experienceImg from '../../assets/pictures/explore/abseiling_medium.jpg';
 import londonImg from '../../assets/pictures/destinations/london_medium.jpg';
@@ -26,7 +28,7 @@ const ExploreCard = props => (
   <ExploreCardWrapper>
     <img src={props.img} alt={props.title} />
     <div>
-      <h3>£{props.title}</h3>
+      <h3>{props.title}</h3>
     </div>
   </ExploreCardWrapper>
 );
@@ -81,11 +83,35 @@ ExperienceCard.propTypes = {
   description: PropTypes.string.isRequired,
 };
 
+const HomesCard = props => (
+  <HomesWrapper>
+    <img src={props.img} alt={props.title} />
+    <div>
+      <p><b>£{props.price}
+        &nbsp;&nbsp;
+        {props.description}</b>
+      </p>
+      <p>{props.spaceType} &nbsp;&middot;&nbsp;
+        {props.beds}
+      </p>
+    </div>
+  </HomesWrapper>
+);
+
+HomesCard.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  spaceType: PropTypes.string.isRequired,
+  beds: PropTypes.string.isRequired,
+};
+
 const Cards = () => (
   <SectionStyles>
     <ExploreContainer>
       <ExploreCard img={homeImg} title={'Home'} />
-      <ExploreCard img={resturantImg} title={'Resturant'} />
+      <ExploreCard img={resturantImg} title={'Resturants'} />
       <ExploreCard img={experienceImg} title={'Experiences'} />
     </ExploreContainer>
     <DestinationsContainer>
@@ -97,15 +123,50 @@ const Cards = () => (
     </DestinationsContainer>
     <ExperiencesContainer>
       <ExperienceCard
-        img={experienceImg} 
+        img={experienceImg}
         title={'Experiences'}
         price={'52'}
-        description={'A fantastic day out on Stanage Edge in the beautiful Peak district'} 
+        description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
       />
-      <ExperienceCard img={experienceImg} title={'Experiences'} />
-      <ExperienceCard img={experienceImg} title={'Experiences'} />
-      <ExperienceCard img={experienceImg} title={'Experiences'} />
+      <ExperienceCard
+        img={resturantImg}
+        title={'Experiences'}
+        price={'25'}
+        description={'A delicious meal to 2 with friends'}
+      />
+      <ExperienceCard
+        img={experienceImg}
+        title={'Experiences'}
+        price={'52'}
+        description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
+      />
     </ExperiencesContainer>
+    <HomesContainer>
+      <HomesCard
+        img={homeImg}
+        title={'Villa'}
+        price={'52'}
+        description={'Light and spacious, weekend away'}
+        spaceType={'Entire Villa'}
+        beds={'5 bed'}
+      />
+      <HomesCard
+        img={homeImg}
+        title={'Villa'}
+        price={'52'}
+        description={'Light and spacious, weekend away'}
+        spaceType={'Entire Villa'}
+        beds={'5 bed'}
+      />
+      <HomesCard
+        img={homeImg}
+        title={'Villa'}
+        price={'52'}
+        description={'Light and spacious, weekend away'}
+        spaceType={'Entire Villa'}
+        beds={'5 bed'}
+      />
+    </HomesContainer>
   </SectionStyles>
 );
 

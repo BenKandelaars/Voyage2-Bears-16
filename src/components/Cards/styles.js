@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../stylesConfig';
 
-const containerStyles = {
-  destinations: {
-    cardDivisionMargin: 15,
-  }
-}
-
 export const SectionStyles = styled.div`
   width: 100%;
   padding: 20px;
@@ -42,6 +36,7 @@ export const ExploreCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  cursor: pointer;
   
   img {
     height: auto;
@@ -90,6 +85,7 @@ export const DestinationsContainer = styled.div`
 
 export const DestinationWrapper = styled.div` 
     display: inline-block; 
+    cursor: pointer;
 `;
 
 
@@ -138,6 +134,7 @@ export const DestinationItem = styled.div`
 export const ExperiencesContainer = styled.div`
   width: 100%;  
   display: flex;
+  margin: 20px 0px;
   
   div {
     margin-right: 15px;
@@ -152,7 +149,8 @@ export const ExperienceWrapper = styled.div`
   width: 42vw;
   display: flex;
   flex-direction: column;
-
+  cursor: pointer;
+  
   img {
     height: 68vw;
     width: 42vw;    
@@ -201,3 +199,59 @@ export const Reviews = styled.span`
     color: ${theme.BLACK};
 `;
 
+export const HomesContainer = styled.div`
+width: 100%;  
+display: flex;
+margin: 20px 0px;
+
+div {
+  margin-right: 15px;
+}
+
+div:last-child {
+  margin-right: 0px;
+}
+`;
+
+export const HomesWrapper = styled.div`
+width: 59vw;
+display: flex;
+flex-direction: column;
+cursor: pointer;
+
+img {
+  height: 38vw;
+  width: 59vw;    
+  object-fit: cover;
+  object-position: 40% 0%;
+}
+
+div {    
+    p {
+      margin: 5px 0px;
+      display: block;
+      color: ${theme.GREY_MEDIUM};    
+  
+      b {
+        color: ${theme.BLACK};
+      }
+    }
+}
+
+@media (min-width: 750px) {
+ width: 46vw;
+
+ img {
+   height: 30vw;
+   width: 46vw;     
+  }
+}
+
+@media (min-width: 1130px) {
+ width: 335px;
+ 
+ img {
+   height: 235px;
+   width: 335px;     
+  }
+`;
