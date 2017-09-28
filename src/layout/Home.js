@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Carousel from '../components/Carousel/Carousel';
+import Sitemap from '../components/sitemap/Sitemap';
 import { Hero } from '../components/Hero/Hero';
 
 class Home extends Component {
@@ -7,6 +9,8 @@ class Home extends Component {
     return (
       <div>
         <Hero />
+        <Carousel />
+        <Sitemap />
       </div>
     )
   }
