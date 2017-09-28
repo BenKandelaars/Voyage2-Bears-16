@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import theme from '../../stylesConfig';
 
+const containerStyles = {
+  destinations: {
+    cardDivisionMargin: 15,
+  }
+}
+
 export const SectionStyles = styled.div`
   width: 100%;
   padding: 20px;
-  // background-color: #bad1b6;
 `;
 
-export const ExploreCardContainer = styled.div`
+export const ExploreContainer = styled.div`
   display: flex;
-
+  margin: 20px 0px;
+  
   div {
     margin-right: 10px;
   }
@@ -69,11 +75,10 @@ export const ExploreCardWrapper = styled.div`
   }
 `;
 
-export const FeaturedDestinationContainer = styled.div`
-  min-height: 200px;
+export const DestinationsContainer = styled.div`
   width: 100%;
-  display: flex;
-
+  margin: 20px 0px;
+  
   div {
     margin-right: 15px;
   }
@@ -83,36 +88,42 @@ export const FeaturedDestinationContainer = styled.div`
   }
 `;
 
-export const DestinationWrapper = styled.div`
-  display: inline-block;
+export const DestinationWrapper = styled.div` 
+    display: inline-block; 
+`;
+
+
+export const DestinationItem = styled.div`
   width: 28vw;
   display: flex;
   flex-direction: column;
-
+  
   img {
       height: 40vw;
+      width: 28vw;
+      
       object-fit: cover;
+      object-position: 0 100%;      
     }
 
   div {
     display: flex;
     
-
     h4 {
+      margin: 5px 0px;      
       display: block;
       min-height: 30%;
-      margin: 10px 0px;
       color: ${theme.GREY_MEDIUM}    
     }
   }
  
-
    @media (min-width: 750px) {
      width: 22vw;
 
      img {
        height: 32vw;
-     }
+       width: 22vw;       
+      }
    }
 
    @media (min-width: 1130px) {
@@ -120,7 +131,73 @@ export const DestinationWrapper = styled.div`
      
      img {
        height: 235px;
-       object-position: 0 80%;
+       width: 160px;       
   }
+`;
+
+export const ExperiencesContainer = styled.div`
+  width: 100%;  
+  display: flex;
+  
+  div {
+    margin-right: 15px;
+  }
+
+  div:last-child {
+    margin-right: 0px;
+  }
+`;
+
+export const ExperienceWrapper = styled.div`
+  width: 42vw;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 68vw;
+    width: 42vw;    
+    object-fit: cover;
+    object-position: 40% 0%;
+  }
+
+  div {    
+      p {
+    margin: 5px 0px;
+    display: block;
+    color: ${theme.GREY_MEDIUM};    
+    
+      b {
+        color: ${theme.BLACK};
+      }
+    }
+  }
+
+ @media (min-width: 750px) {
+   width: 22vw;
+
+   img {
+     height: 32vw;
+     width: 22vw;     
+    }
+ }
+
+ @media (min-width: 1130px) {
+   width: 250px;
+   
+   img {
+     height: 375px;
+     width: 250px;     
+    }
+`;
+
+export const Star = styled.span`
+    color: #466728;
+    margin: 2px 2px 2px 0px;
+`;
+
+export const Reviews = styled.span`
+    padding-left: 5px;
+    font-size: 0.8rem;
+    color: ${theme.BLACK};
 `;
 
