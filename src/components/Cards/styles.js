@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import theme from '../../stylesConfig';
 
 export const SectionStyles = styled.div`
-  height: 200px;
   width: 100%;
   padding: 20px;
   // background-color: #bad1b6;
@@ -27,6 +26,7 @@ export const ExploreCardContainer = styled.div`
 export const ExploreCardWrapper = styled.div`
   height: 25vw;
   width: 38vw;
+  margin: 20px 0px;
   background-color: white;
   border: 1px solid ${theme.GREY_LIGHT};
   border-radius: 5px;
@@ -68,3 +68,59 @@ export const ExploreCardWrapper = styled.div`
     }
   }
 `;
+
+export const FeaturedDestinationContainer = styled.div`
+  min-height: 200px;
+  width: 100%;
+  display: flex;
+
+  div {
+    margin-right: 15px;
+  }
+
+  div:last-child {
+    margin-right: 0px;
+  }
+`;
+
+export const DestinationWrapper = styled.div`
+  display: inline-block;
+  width: 28vw;
+  display: flex;
+  flex-direction: column;
+
+  img {
+      height: 40vw;
+      object-fit: cover;
+    }
+
+  div {
+    display: flex;
+    
+
+    h4 {
+      display: block;
+      min-height: 30%;
+      margin: 10px 0px;
+      color: ${theme.GREY_MEDIUM}    
+    }
+  }
+ 
+
+   @media (min-width: 750px) {
+     width: 22vw;
+
+     img {
+       height: 32vw;
+     }
+   }
+
+   @media (min-width: 1130px) {
+     width: 160px;
+     
+     img {
+       height: 235px;
+       object-position: 0 80%;
+  }
+`;
+
