@@ -1,32 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import img from "./koala-headphone-logo.jpg"
-//import './styles.css/';
 
 class NavComponent extends React.Component {
 	render() {
 		return (
 			<nav>
-				<div class="Banner">		
+				<div className="Banner">
 					<div className="Logo">
-						<a href="#"><img src={img} alt="home" /></a>
+						<a href="#"><img src={img} width="100px" height="64px" alt="home" /></a>
 					</div>
 					<div className="Blank">
 					</div>
 					<div className="Buttons">
-						<button className="Buttons--actions"  title="Become a Host">
+						<button className="Buttons--action"  title="Become a Host">
 							<span>Become a Host</span>
 						</button>
-						<button className="Buttons--actions" title="Help">
+						<button className="Buttons--action" title="Help">
 							<span>Help</span>
 						</button>
-						<button className="Buttons--actions" title="Sign up">
+						<button className="Buttons--action" title="Sign up">
 							<span>Sign up</span>
 						</button>
-						<button className="Buttons--actions" title="Log in">
+						<button className="Buttons--action" title="Log in">
 							<span>Log in</span>
 						</button>		
-					</div>
+					</div>								
 				</div>
 			</nav>
 		);
