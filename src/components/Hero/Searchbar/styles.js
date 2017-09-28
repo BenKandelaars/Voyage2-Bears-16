@@ -6,8 +6,13 @@ export const SearchContainer = styled.div`
     border: 1px solid grey;
     border-radius: 3px;
     margin: 0.8em;
-    padding: 0.7em;
+    padding: 0;
     align-items: center;
+
+
+`;
+export const ButtonWrapper = styled.div`
+    padding: 0.7em;
 `;
 
 export const Button = styled.div`
@@ -16,7 +21,7 @@ export const Button = styled.div`
     border-radius: 5px;
     padding:0.45em 0.45em;
     font-size: 1.4em;
-    margin-left: 1em;
+   
 
     @media(max-width:1080px){
         display: none;
@@ -26,13 +31,21 @@ export const Button = styled.div`
 export const InputGroup = styled.div`
     display: flex;
     flex-flow: row no-wrap;
+    padding: 0.7em;
     
     @media(min-width: 800px){
         width: 30%;
     }
 
+    :nth-last-child(-n+3){
+        border-left: 1px solid grey;
+    }
+
 `;
 export const Icon = styled.div`
+    padding: 0em 0.3em;
+    font-size: 1em ;
+
     @media(min-width:1080px){
         display: none;
     }

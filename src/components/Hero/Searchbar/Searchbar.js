@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SearchContainer, Button, InputPlusLabel, InputGroup, LOGO, Icon } from './styles';
+import { SearchContainer, ButtonWrapper, Button, InputPlusLabel, InputGroup, LOGO, Icon } from './styles';
 
 export class Searchbar extends Component {
   render() {
@@ -36,7 +36,11 @@ export class Searchbar extends Component {
           </InputPlusLabel>
           
         </ InputGroup>
-        <Button className="Button">Search</Button>
+        <ButtonWrapper className="Button-Wrapper">
+          <Button className="Button">
+            Search
+          </Button>
+        </ButtonWrapper>
       </ SearchContainer>
     );
   }
