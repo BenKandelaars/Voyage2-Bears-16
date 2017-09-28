@@ -18,30 +18,31 @@ export const Button = styled.div`
     font-size: 1.4em;
     margin-left: 1em;
 
-    @media(max-width:1000px){
+    @media(max-width:1080px){
         display: none;
     }
 `;
 
 export const InputGroup = styled.div`
     display: flex;
-    flex-flow: row wrap;
-    width: 30%;
+    flex-flow: row no-wrap;
+    
+    @media(min-width: 800px){
+        width: 30%;
+    }
 
 `;
-
-export const I = styled.a`
-    color: grey;
-    display:block;
-    @media(min-width:1000px){
+export const Icon = styled.div`
+    @media(min-width:1080px){
         display: none;
     }
 `;
+export const LOGO = styled.div`
+    color: grey;
+    display:block;
 
-export const Icon = styled.div`
-
+    
 `;
-
 
 export const InputPlusLabel = styled.div`
     display: flex;
@@ -54,24 +55,27 @@ export const InputPlusLabel = styled.div`
             outline: none;
             placeholder: none;
         }
-        @media(max-width:800px){
+        @media(max-width:1080px){
             height:100%;
         }
         
     }
+
     input::-webkit-input-placeholder {
         font-size: 1.35em;
     }
+
     select {
         border: none;
         :focus{
             outline: none;
 
         }
-        @media(max-width:800px){
+        @media(max-width:1080px){
             height:100%;
         }
     }
+
     p {
         display: none;
         font-size: 1em;
@@ -79,7 +83,7 @@ export const InputPlusLabel = styled.div`
             padding: 0.2em 0em;
             margin: 0.2em 0em;
         }
-        @media(min-width:1100px) {
+        @media(min-width:1080px) {
             display: inline;
         }
     }
