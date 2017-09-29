@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import Carousel from '../presentational/Carousel/Carousel';
 import Sitemap from '../sitemap/Sitemap';
 import Hero from '../presentational/Hero/Hero';
 
