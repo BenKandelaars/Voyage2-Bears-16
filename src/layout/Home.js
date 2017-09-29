@@ -1,5 +1,5 @@
 import React from 'react';
-import Sitemap from '../components/Sitemap/Sitemap';
+import Sitemap from '../components/presentational/Sitemap/Sitemap';
 
 class Home extends React.Component {
   render() {
