@@ -24,6 +24,11 @@ import parisImg from '../../assets/pictures/destinations/paris_medium.jpg';
 import krakowImg from '../../assets/pictures/destinations/krakow_medium.jpg';
 import tokyoImg from '../../assets/pictures/destinations/tokyo_medium.jpg';
 
+
+export const FullStar = () => <Star><FontAwesome name="star" /></Star>;
+export const HalfStar = () => <Star><FontAwesome name="star-half-o" /></Star>;
+export const EmptyStar = () => <Star><FontAwesome name="star-o" /></Star>;
+
 export const ExploreCard = props => (
   <ExploreCardWrapper>
     <img src={props.img} alt={props.title} />
@@ -38,7 +43,7 @@ ExploreCard.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-const DestinationCard = props => (
+export const DestinationCard = props => (
   <DestinationWrapper>
     <DestinationItem>
       <img src={props.img} alt={props.title} />
@@ -54,11 +59,7 @@ DestinationCard.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-const FullStar = () => <Star><FontAwesome name="star" /></Star>;
-const HalfStar = () => <Star><FontAwesome name="star-half-o" /></Star>;
-const EmptyStar = () => <Star><FontAwesome name="star-o" /></Star>;
-
-const ExperienceCard = props => (
+export const ExperienceCard = props => (
   <ExperienceWrapper>
     <img src={props.img} alt={props.title} />
     <div>
@@ -83,7 +84,7 @@ ExperienceCard.propTypes = {
   description: PropTypes.string.isRequired,
 };
 
-const HomesCard = props => (
+export const HomesCard = props => (
   <HomesWrapper>
     <img src={props.img} alt={props.title} />
     <div>
