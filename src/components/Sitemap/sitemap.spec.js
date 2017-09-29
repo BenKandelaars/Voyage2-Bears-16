@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Enzyme, shallow } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-15';
+import { shallow } from 'enzyme';
+import toJSON from 'enzyme-to-json';
 import Sitemap from './Sitemap';
-
-// Enzyme.configure({ adapter: new Adapter() });
 
 describe('Sitemap component tests', () => {
 
@@ -13,8 +11,8 @@ describe('Sitemap component tests', () => {
     ReactDom.render(<Sitemap />, div);
   });
 
-  // it('Snapshot as intented', () => {
-  //   const component = shallow(<Sitemap />);
-  //   expect(component).toMatchSnapshot();
-  // });
+  it('Snapshot as intented', () => {
+    const component = shallow(<Sitemap />);
+    expect(toJSON(component)).toMatchSnapshot();
+  });
 });
