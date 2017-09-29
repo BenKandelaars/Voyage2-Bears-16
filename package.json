@@ -21,8 +21,10 @@
   },
   "devDependencies": {
     "enzyme": "^3.0.0",
+    "enzyme-adapter-react-15": "^1.0.0",
     "enzyme-to-json": "^3.0.0",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.1.0"
+    "eslint-config-airbnb": "^15.1.0",
+    "react-test-renderer": "^15.6.2"
   }
 }
