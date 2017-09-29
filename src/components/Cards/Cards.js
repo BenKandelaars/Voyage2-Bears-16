@@ -24,7 +24,7 @@ import parisImg from '../../assets/pictures/destinations/paris_medium.jpg';
 import krakowImg from '../../assets/pictures/destinations/krakow_medium.jpg';
 import tokyoImg from '../../assets/pictures/destinations/tokyo_medium.jpg';
 
-const ExploreCard = props => (
+export const ExploreCard = props => (
   <ExploreCardWrapper>
     <img src={props.img} alt={props.title} />
     <div>
@@ -125,19 +125,19 @@ const Cards = () => (
       <ExperienceCard
         img={experienceImg}
         title={'Experiences'}
-        price={'52'}
+        price={52}
         description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
       />
       <ExperienceCard
         img={resturantImg}
         title={'Experiences'}
-        price={'25'}
+        price={25}
         description={'A delicious meal to 2 with friends'}
       />
       <ExperienceCard
         img={experienceImg}
         title={'Experiences'}
-        price={'52'}
+        price={52}
         description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
       />
     </ExperiencesContainer>
@@ -145,7 +145,7 @@ const Cards = () => (
       <HomesCard
         img={homeImg}
         title={'Villa'}
-        price={'52'}
+        price={52}
         description={'Light and spacious, weekend away'}
         spaceType={'Entire Villa'}
         beds={'5 bed'}
@@ -153,7 +153,7 @@ const Cards = () => (
       <HomesCard
         img={homeImg}
         title={'Villa'}
-        price={'52'}
+        price={52}
         description={'Light and spacious, weekend away'}
         spaceType={'Entire Villa'}
         beds={'5 bed'}
@@ -161,7 +161,7 @@ const Cards = () => (
       <HomesCard
         img={homeImg}
         title={'Villa'}
-        price={'52'}
+        price={52}
         description={'Light and spacious, weekend away'}
         spaceType={'Entire Villa'}
         beds={'5 bed'}
