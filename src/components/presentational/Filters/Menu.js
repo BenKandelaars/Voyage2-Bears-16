@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import InstanBook from './InstantBook';
-import MoreFilters from './MoreFilters';
-import PriceRange from './PriceRange';
-import RoomType from './RoomType';
-import RoomTypeOption from './RoomTypeOption';
+import InstantBookMenu from './InstantBookMenu';
+import MoreFiltersMenu from './MoreFiltersMenu';
+import PriceRangeMenu from './PriceRangeMenu';
+import RoomTypeMenu from './RoomTypeMenu';
 import { MenuContainer } from './styles';
 
 class Menu extends Component {
@@ -11,12 +10,20 @@ class Menu extends Component {
     super(props);
 
     this.state = {
+      currentlyOpen: null,
       isRoomTypeOpen: false,
+      isPriceRangeOpen: true,
     };
   }
 
   changeState = (option) => {
+    if (this.state.currentlyOpen !== null) {
+      this.setState({
+        [this.state.currentlyOpen] : false,
+      });
+    }
     this.setState({
+      currentlyOpen: option,
       [option] : !this.state[option],
     });
   }
@@ -24,14 +31,16 @@ class Menu extends Component {
   render(){
     return (
       <MenuContainer>
-        <RoomType
-          isRoomTypeOpen={this.state.isRoomTypeOpen}
+        <RoomTypeMenu
           changeState={this.changeState}
+          isRoomTypeOpen={this.state.isRoomTypeOpen}
         />
-        {(this.state.isRoomTypeOpen) && <RoomTypeOption />}
-        <PriceRange />
-        <InstanBook />
-        <MoreFilters />
+        <PriceRangeMenu
+          changeState={this.changeState}
+          isPriceRangeOpen={this.state.isPriceRangeOpen}
+        />
+        <InstantBookMenu />
+        <MoreFiltersMenu />
       </MenuContainer>
     );
   }

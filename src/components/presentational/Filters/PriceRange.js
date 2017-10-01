@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 class PriceRange extends Component {
   render(){
     return (
-      <EachFilterContainer>
+      <EachFilterContainer onClick={() => this.props.changeState("isPriceRangeOpen")}>
         <FilterOption>
         Price range
         <FontAwesome

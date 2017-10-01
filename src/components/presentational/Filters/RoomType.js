@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-import { EachFilterContainer, FilterOption } from './styles';
+import { EachFilterContainer, FilterOption, ArrowIcon } from './styles';
 import FontAwesome from 'react-fontawesome';
 
 class RoomType extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      isOptionOpen: false,
-    };
-  }
   render(){
     return (
       <EachFilterContainer
@@ -17,6 +10,7 @@ class RoomType extends Component {
       >
         <FilterOption>
         Room type
+        <ArrowIcon>
         <FontAwesome
           name="angle-down"
           style={{
@@ -24,6 +18,7 @@ class RoomType extends Component {
             paddingLeft: '10px',
           }}
         />
+        </ArrowIcon>
         </FilterOption>
         
       </EachFilterContainer>

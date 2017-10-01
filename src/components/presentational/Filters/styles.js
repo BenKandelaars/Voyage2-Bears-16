@@ -8,10 +8,14 @@ export const MenuContainer = styled.div`
   // border-bottom: 1px solid #767676;
 `;
 
-export const EachFilterContainer = styled.div`
+export const EachMenuContainer = styled.div`
   display: inline-block;
+  position: relative;
   margin: 14px 0 0 14px;
   cursor: pointer;
+`;
+
+export const EachFilterContainer = styled.div`  
 `;
 
 export const FilterOption = styled.div`
@@ -19,12 +23,17 @@ export const FilterOption = styled.div`
   background-color: pink;
   border-radius: 3px;
   position: relative;
+  &:hover {
+    background-color: #F2F2F2;
+  }
+`;
+
+export const ArrowIcon = styled.span`
 `;
 
 export const SectionContainer = styled.div`
   position: absolute;
   top: 58px;
-  left: 14px;
   border: 1px solid grey;
   border-radius: 3px;
   width: 420px;
@@ -84,8 +93,8 @@ export const CheckBoxFakeLabel = styled.span`
     transform: rotate(-45deg);
     position: absolute;
     top: 6px;
-    left: 3px;  
-  }
+    left: 3px; 
+  } 
 `;
 
 export const SelectionChoice = styled.div`
@@ -110,9 +119,19 @@ export const SelectionChoiceSubHeading = styled.div`
   padding-top: 5px;
 `;
 
-export const SectionButtons = styled.div`
+export const SliderContainer = styled.div `
+  width: 100%
+`;
+
+export const Slider = styled.input.attrs({
+  type: 'range',
+})`
+  
+`;
+
+export const SectionButtonsContainer = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
   button {
     border: none;
     background-color: #fff;

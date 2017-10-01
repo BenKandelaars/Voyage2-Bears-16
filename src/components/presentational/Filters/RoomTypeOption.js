@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import SectionButtons from './SectionButtons';
 import { SectionContainer, Checkbox, CheckboxStyle, CheckBoxFakeLabel,
-   SectionOption, SelectionChoice, SectionIcon, SelectionChoiceHeading, SelectionChoiceSubHeading,
-   SectionButtons, CancelButton, ApplyButton,
+   SectionOption, SelectionChoice, SectionIcon, SelectionChoiceHeading, SelectionChoiceSubHeading
   } from './styles';
 
 class RoomTypeOption extends Component {
@@ -56,11 +56,8 @@ class RoomTypeOption extends Component {
                 size="3x"
               />
             </SectionIcon>
+            <SectionButtons />
         </SectionOption>
-          <SectionButtons>
-            <CancelButton>Cancel</CancelButton>
-            <ApplyButton>Apply</ApplyButton>
-          </SectionButtons>
         </SectionContainer>
       );
     }
