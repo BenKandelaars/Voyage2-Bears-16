@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 class InstantBook extends Component {
   render(){
     return (
-      <EachFilterContainer>
+      <EachFilterContainer onClick={() => this.props.changeState("isInstantBookOpen")}>
         <FilterOption>
         Instant Book
         <FontAwesome

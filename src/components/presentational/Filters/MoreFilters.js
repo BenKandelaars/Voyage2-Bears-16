@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 class MoreFilters extends Component {
   render() {
     return (
-      <EachFilterContainer>
+      <EachFilterContainer onClick={() => this.props.changeState("isMoreFiltersOpen")}>
         <FilterOption>
         More filters
         <FontAwesome

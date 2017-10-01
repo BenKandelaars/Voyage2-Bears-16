@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionButtons from './SectionButtons';
 import { SectionContainer, SelectionChoiceHeading, SelectionChoiceSubHeading,
   SliderContainer, Slider } from './styles';
 
@@ -14,6 +15,7 @@ const PriceRangeOption = () => {
       <SliderContainer>
         <Slider />
       </SliderContainer>
+      <SectionButtons />
     </SectionContainer>
   )
 };

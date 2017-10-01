@@ -5,17 +5,18 @@ export const MenuContainer = styled.div`
   height: 58px;
   font-size: 14px;
   color: #767676;
+  position: relative;
   // border-bottom: 1px solid #767676;
 `;
 
 export const EachMenuContainer = styled.div`
   display: inline-block;
   position: relative;
-  margin: 14px 0 0 14px;
+  margin: 18px 0 0 18px;
   cursor: pointer;
 `;
 
-export const EachFilterContainer = styled.div`  
+export const EachFilterContainer = styled.div` 
 `;
 
 export const FilterOption = styled.div`
@@ -129,6 +130,38 @@ export const Slider = styled.input.attrs({
   
 `;
 
+// Instant Book Menu Styling
+export const InstantBookMenuContainer = styled.div`
+  position: absolute;
+  top: 58px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 420px;
+  height: 280px;
+  padding: 18px;
+`;
+
+// More filters Styling
+
+export const MoreFiltersContainer = styled.div`
+  width: 70%;
+  position: absolute;
+  top: 48px; 
+  left: 18px;
+  padding: 30px 0;
+  `;
+
+export const EachOptionContainer = styled.div`
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+`;
+
+export const MoreFiltersHeading = styled.h2`
+
+`;
+
+
+// Cancel and Apply buttons
 export const SectionButtonsContainer = styled.div`
   position: relative;
   margin-top: 30px;

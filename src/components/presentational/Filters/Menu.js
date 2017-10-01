@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InstantBookMenu from './InstantBookMenu';
 import MoreFiltersMenu from './MoreFiltersMenu';
+import MoreFiltersOption from './MoreFiltersOption';
 import PriceRangeMenu from './PriceRangeMenu';
 import RoomTypeMenu from './RoomTypeMenu';
 import { MenuContainer } from './styles';
@@ -12,7 +13,9 @@ class Menu extends Component {
     this.state = {
       currentlyOpen: null,
       isRoomTypeOpen: false,
-      isPriceRangeOpen: true,
+      isPriceRangeOpen: false,
+      isInstantBookOpen: false,
+      isMoreFiltersOpen: true,
     };
   }
 
@@ -39,8 +42,15 @@ class Menu extends Component {
           changeState={this.changeState}
           isPriceRangeOpen={this.state.isPriceRangeOpen}
         />
-        <InstantBookMenu />
-        <MoreFiltersMenu />
+        <InstantBookMenu 
+          changeState={this.changeState}
+          isInstantBookOpen={this.state.isInstantBookOpen}
+        />
+        <MoreFiltersMenu
+          changeState={this.changeState}
+          isMoreFiltersOpen={this.state.isMoreFiltersOpen}
+        />
+        {(this.state.isMoreFiltersOpen && <MoreFiltersOption />)}
       </MenuContainer>
     );
   }
