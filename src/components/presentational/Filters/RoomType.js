@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RoomTypeOption from './RoomTypeOption';
 import { EachFilterContainer, FilterOption } from './styles';
 import FontAwesome from 'react-fontawesome';
 
@@ -13,7 +12,9 @@ class RoomType extends Component {
   }
   render(){
     return (
-      <EachFilterContainer>
+      <EachFilterContainer
+        onClick={() => this.props.changeState("isRoomTypeOpen")}
+      >
         <FilterOption>
         Room type
         <FontAwesome
@@ -23,7 +24,6 @@ class RoomType extends Component {
             paddingLeft: '10px',
           }}
         />
-        <RoomTypeOption />
         </FilterOption>
         
       </EachFilterContainer>

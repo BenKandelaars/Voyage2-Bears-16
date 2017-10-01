@@ -10,7 +10,8 @@ export const MenuContainer = styled.div`
 
 export const EachFilterContainer = styled.div`
   display: inline-block;
-  padding: 14px 0 0 14px;
+  margin: 14px 0 0 14px;
+  cursor: pointer;
 `;
 
 export const FilterOption = styled.div`
@@ -22,8 +23,8 @@ export const FilterOption = styled.div`
 
 export const SectionContainer = styled.div`
   position: absolute;
-  top: 46px;
-  left: 0;
+  top: 58px;
+  left: 14px;
   border: 1px solid grey;
   border-radius: 3px;
   width: 420px;
