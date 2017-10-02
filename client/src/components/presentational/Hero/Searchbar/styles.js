@@ -130,3 +130,35 @@ export const InputPlusLabel = styled.div`
         }
     }
 `;
+
+
+//----------- Guest Dropdown Part ------------------
+
+export const GuestWrapper = styled.div`
+    position: relative !important;
+    top: 0px;
+
+
+    div {
+        display: block;
+    }
+
+`;
+
+export const GuestMenu = styled.div`
+    background-color: #ffffff;
+    position: absolute !important;
+    z-index: 10;
+    left: 0px;
+    top: 73px;
+    width: 300px;
+    padding: 1.5em 0em;
+    font-size: 1.25em;
+    border: 1px solid #DBDBDB;
+    
+    div {
+        display: block;
+        padding: 0.8em 0.7em;
+    }
+
+`;
