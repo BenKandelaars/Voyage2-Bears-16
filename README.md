@@ -16,6 +16,10 @@ git clone https://github.com/chingu-coders/Voyage2-Bears-16.git
 ```
 npm install
 ```
+* Move to the client folder
+```
+cd client
+```
 * Run development server
 ```
 npm start
