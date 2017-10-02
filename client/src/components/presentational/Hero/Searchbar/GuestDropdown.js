@@ -13,7 +13,11 @@ export default class GuestDropdown extends Component {
     };
 
     this.AddAdult = this.AddAdult.bind(this);
+    this.AddChild = this.AddChild.bind(this);
+    this.AddInfant = this.AddInfant.bind(this);
     this.MinusAdult = this.MinusAdult.bind(this);
+    this.MinusChild = this.MinusChild.bind(this);
+    this.MinusInfant = this.MinusInfant.bind(this);
   }
 
   AddAdult() {
@@ -56,10 +60,14 @@ export default class GuestDropdown extends Component {
             <GuestCounter
               agegroup={'Children'}
               number={this.state.Children}
+              add={this.AddChild}
+              minus={this.MinusChild}
             />
             <GuestCounter
               agegroup={'Infants'}
               number={this.state.Infants}
+              add={this.AddInfant}
+              minus={this.MinusInfant}
             />
           </GuestMenu>
         </div>
