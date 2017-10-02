@@ -1,15 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sitemap component tests Snapshot as intented 1`] = `
-<div
-  className="sitemap_container"
->
-  <div
-    className="sitemap"
-  >
-    <article
-      className="sitemap_regional"
-    >
+<styled.div>
+  <styled.div>
+    <styled.article>
       <select>
         <option
           value="english"
@@ -24,10 +18,8 @@ exports[`Sitemap component tests Snapshot as intented 1`] = `
           GBP
         </option>
       </select>
-    </article>
-    <article
-      className="sitemap_lists"
-    >
+    </styled.article>
+    <styled.article>
       <h4>
         <b>
           Airbnb
@@ -53,10 +45,8 @@ exports[`Sitemap component tests Snapshot as intented 1`] = `
           Diversity & Belonging
         </li>
       </ul>
-    </article>
-    <article
-      className="sitemap_lists"
-    >
+    </styled.article>
+    <styled.article>
       <h4>
         <b>
           Discover
@@ -82,10 +72,8 @@ exports[`Sitemap component tests Snapshot as intented 1`] = `
           Airbnb Mag
         </li>
       </ul>
-    </article>
-    <article
-      className="sitemap_lists"
-    >
+    </styled.article>
+    <styled.article>
       <h4>
         <b>
           Hosting
@@ -105,7 +93,7 @@ exports[`Sitemap component tests Snapshot as intented 1`] = `
           Community Center 
         </li>
       </ul>
-    </article>
-  </div>
-</div>
+    </styled.article>
+  </styled.div>
+</styled.div>
 `;
