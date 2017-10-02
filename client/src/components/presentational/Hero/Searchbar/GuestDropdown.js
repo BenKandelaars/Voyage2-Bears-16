@@ -30,6 +30,26 @@ export default class GuestDropdown extends Component {
       Adults: this.state.Adults - 1,
     });
   }
+  AddChild() {
+    this.setState({
+      Adults: this.state.Adults + 1,
+    });
+  }
+  MinusChild() {
+    this.setState({
+      Adults: this.state.Adults - 1,
+    });
+  }
+  Addinfant() {
+    this.setState({
+      Adults: this.state.Adults + 1,
+    });
+  }
+  MinusInfant() {
+    this.setState({
+      Adults: this.state.Adults - 1,
+    });
+  }
 
   render() {
     const GuestCounter = props => (
