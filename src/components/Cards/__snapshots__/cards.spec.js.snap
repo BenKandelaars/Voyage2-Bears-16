@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component tests Font Awesome Stars render Renders a Half Star 1`] = `
+<Component>
+  <styled.span>
+    <span
+      className="sc-htoDjs fxrJxZ"
+    >
+      <FontAwesome
+        name="star-half-o"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-star-half-o"
+        />
+      </FontAwesome>
+    </span>
+  </styled.span>
+</Component>
+`;
+
+exports[`Card component tests Font Awesome Stars render Renders a Star 1`] = `
+<Component>
+  <styled.span>
+    <span
+      className="sc-htoDjs fxrJxZ"
+    >
+      <FontAwesome
+        name="star"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-star"
+        />
+      </FontAwesome>
+    </span>
+  </styled.span>
+</Component>
+`;
+
+exports[`Card component tests Font Awesome Stars render Renders an Empty Star 1`] = `
+<Component>
+  <styled.span>
+    <span
+      className="sc-htoDjs fxrJxZ"
+    >
+      <FontAwesome
+        name="star-o"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-star-o"
+        />
+      </FontAwesome>
+    </span>
+  </styled.span>
+</Component>
+`;
