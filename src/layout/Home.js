@@ -1,18 +1,10 @@
 import React from 'react';
-import NavComponent from '../Navbar/navbar'
+import NavComponent from '../Navbar/navbar';
 
-class Home extends React.Component {
-  
-  render() {
-    return (
+const Home = () =>
+    (
       <div>
-        <NavComponent/>
+        <NavComponent />
       </div>
-    )
-  }
-};
-
+    );
 export { Home };
-
-
-
