@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../../assets/font-awesome-4.7.0/css/font-awesome.css';
-import { GuestMenu, GuestWrapper } from './styles';
+import { GuestMenu, GuestWrapper, CounterWrapper } from './styles';
 
 export default class GuestDropdown extends Component {
   constructor(props) {
@@ -14,28 +14,34 @@ export default class GuestDropdown extends Component {
   }
 
   render() {
+
+    const GuestCounter = props => (
+      <CounterWrapper>
+        <div>
+          {props.agegroup}
+          <span className="fa fa-minus-circle" aria-hidden="true" />
+          {props.number}
+          <span className="fa fa-plus-circle" aria-hidden="true" />
+        </div>
+      </CounterWrapper>
+    );
+
     return (
       <GuestWrapper>
         <div>
           <GuestMenu>
-            <div>
-              Adults
-              <span className="fa fa-minus-circle" aria-hidden="true" />
-              {this.state.Adults}
-              <span className="fa fa-plus-circle" aria-hidden="true" />
-            </div>
-            <div>
-              Children
-              <span className="fa fa-minus-circle" aria-hidden="true" />
-              {this.state.Children}
-              <span className="fa fa-plus-circle" aria-hidden="true" />
-            </div>
-            <div>
-              Infants
-              <span className="fa fa-minus-circle" aria-hidden="true" />
-              {this.state.Infants}
-              <span className="fa fa-plus-circle" aria-hidden="true" />
-            </div>
+            <GuestCounter
+              agegroup={'Adults'}
+              number={this.state.Adults}
+            />
+            <GuestCounter
+              agegroup={'Children'}
+              number={this.state.Children}
+            />
+            <GuestCounter
+              agegroup={'Infants'}
+              number={this.state.Infants}
+            />
           </GuestMenu>
         </div>
       </GuestWrapper>

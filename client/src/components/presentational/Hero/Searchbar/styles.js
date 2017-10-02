@@ -160,5 +160,8 @@ export const GuestMenu = styled.div`
         display: block;
         padding: 0.8em 0.7em;
     }
+`;
+
+export const CounterWrapper = styled.div`
 
 `;

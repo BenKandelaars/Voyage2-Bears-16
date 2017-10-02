@@ -56,7 +56,10 @@ export default class Searchbar extends Component {
             </Icon1>
             <InputPlusLabel>
               <p>Guests</p>
-              <span name="Guests"> {this.state.people} Guest</span>
+              <span name="Guests">
+                {this.state.people}
+                  Guests
+              </span>
             </InputPlusLabel>
           </InputGroup>
 
