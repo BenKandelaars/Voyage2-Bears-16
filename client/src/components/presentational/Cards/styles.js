@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../stylesConfig';
+import theme from '../../../stylesConfig';
 
 export const SectionStyles = styled.div`
   width: 100%;
