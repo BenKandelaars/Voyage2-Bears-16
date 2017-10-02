@@ -32,22 +32,22 @@ export default class GuestDropdown extends Component {
   }
   AddChild() {
     this.setState({
-      Adults: this.state.Adults + 1,
+      Children: this.state.Children + 1,
     });
   }
   MinusChild() {
     this.setState({
-      Adults: this.state.Adults - 1,
+      Children: this.state.Children - 1,
     });
   }
-  Addinfant() {
+  AddInfant() {
     this.setState({
-      Adults: this.state.Adults + 1,
+      Infants: this.state.Infants + 1,
     });
   }
   MinusInfant() {
     this.setState({
-      Adults: this.state.Adults - 1,
+      Infants: this.state.Infants - 1,
     });
   }
 
