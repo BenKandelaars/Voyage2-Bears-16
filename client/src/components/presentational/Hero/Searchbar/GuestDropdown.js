@@ -11,17 +11,34 @@ export default class GuestDropdown extends Component {
       Children: 0,
       Infants: 0,
     };
+
+    this.AddAdult = this.AddAdult.bind(this);
+    this.MinusAdult = this.MinusAdult.bind(this);
+  }
+
+  AddAdult() {
+    this.setState({
+      Adults: this.state.Adults + 1,
+    });
+  }
+  MinusAdult() {
+    this.setState({
+      Adults: this.state.Adults - 1,
+    });
   }
 
   render() {
-
     const GuestCounter = props => (
       <CounterWrapper>
         <div>
           {props.agegroup}
-          <span className="fa fa-minus-circle" aria-hidden="true" />
+          <button onClick={props.minus}>
+            <span className="fa fa-minus-circle" aria-hidden="true" />
+          </button>
           {props.number}
-          <span className="fa fa-plus-circle" aria-hidden="true" />
+          <button onClick={props.add}>
+            <span className="fa fa-plus-circle" aria-hidden="true" />
+          </button>
         </div>
       </CounterWrapper>
     );
@@ -33,6 +50,8 @@ export default class GuestDropdown extends Component {
             <GuestCounter
               agegroup={'Adults'}
               number={this.state.Adults}
+              add={this.AddAdult}
+              minus={this.MinusAdult}
             />
             <GuestCounter
               agegroup={'Children'}
