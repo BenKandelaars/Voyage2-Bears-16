@@ -7,14 +7,22 @@ export default class Searchbar extends Component {
     super(props);
     this.state = {
       show: false,
-      people: 2,
+      people: 1,
     };
     this.showMenu = this.showMenu.bind(this);
+    this.numberOfGuests = this.numberOfGuests.bind(this);
   }
 
   showMenu() {
     this.setState({
       show: !this.state.show,
+    });
+  }
+
+  numberOfGuests(x) {
+    const number = x;
+    this.setState({
+      people: number,
     });
   }
 
@@ -45,7 +53,7 @@ export default class Searchbar extends Component {
             </InputPlusLabel>
           </InputGroup>
 
-          <GuestDropdown style={{ display: this.state.show ? 'none' : 'block' }} />
+          <GuestDropdown showing={this.state.show} addGuests={this.numberOfGuests} />
 
           <InputGroup className="Input-Group" onClick={this.showMenu}>
             <Dot className="Dot">

@@ -23,32 +23,36 @@ export default class GuestDropdown extends Component {
   AddAdult() {
     this.setState({
       Adults: this.state.Adults + 1,
-    });
+    }, this.AddAllGuests);
   }
   MinusAdult() {
     this.setState({
       Adults: this.state.Adults - 1,
-    });
+    }, this.AddAllGuests);
   }
   AddChild() {
     this.setState({
       Children: this.state.Children + 1,
-    });
+    }, this.AddAllGuests);
   }
   MinusChild() {
     this.setState({
       Children: this.state.Children - 1,
-    });
+    }, this.AddAllGuests);
   }
   AddInfant() {
     this.setState({
       Infants: this.state.Infants + 1,
-    });
+    }, this.AddAllGuests);
   }
   MinusInfant() {
     this.setState({
       Infants: this.state.Infants - 1,
-    });
+    }, this.AddAllGuests);
+  }
+
+  AddAllGuests() {
+    this.props.addGuests(this.state.Adults + this.state.Children + this.state.Infants);
   }
 
   render() {
@@ -70,7 +74,8 @@ export default class GuestDropdown extends Component {
     return (
       <GuestWrapper className="Guest-Wrapper">
         <div>
-          <GuestMenu className="GuestMenu">
+          {this.AddAllGuests}
+          <GuestMenu className="GuestMenu" style={{ display: this.props.showing ? 'none' : 'block' }} >
             <GuestCounter
               className="Guest-Counter"
               agegroup={'Adults'}
@@ -98,3 +103,8 @@ export default class GuestDropdown extends Component {
     );
   }
 }
+
+GuestDropdown.propTypes = {
+  showing: React.PropTypes.bool.isRequired,
+  addGuests: React.PropTypes.func.isRequired,
+};
