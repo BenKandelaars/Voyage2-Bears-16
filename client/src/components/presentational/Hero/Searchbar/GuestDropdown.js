@@ -53,7 +53,7 @@ export default class GuestDropdown extends Component {
 
   render() {
     const GuestCounter = props => (
-      <CounterWrapper>
+      <CounterWrapper className="Counter-Wrapper">
         <div>
           {props.agegroup}
           <button onClick={props.minus}>
@@ -68,22 +68,25 @@ export default class GuestDropdown extends Component {
     );
 
     return (
-      <GuestWrapper>
+      <GuestWrapper className="Guest-Wrapper">
         <div>
-          <GuestMenu>
+          <GuestMenu className="GuestMenu">
             <GuestCounter
+              className="Guest-Counter"
               agegroup={'Adults'}
               number={this.state.Adults}
               add={this.AddAdult}
               minus={this.MinusAdult}
             />
             <GuestCounter
+              className="Guest-Counter"
               agegroup={'Children'}
               number={this.state.Children}
               add={this.AddChild}
               minus={this.MinusChild}
             />
             <GuestCounter
+              className="Guest-Counter"
               agegroup={'Infants'}
               number={this.state.Infants}
               add={this.AddInfant}

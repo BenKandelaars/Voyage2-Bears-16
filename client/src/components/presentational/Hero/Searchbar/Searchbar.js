@@ -5,17 +5,17 @@ import { SearchContainer, ButtonWrapper, Button, InputWrapper, InputPlusLabel, I
 export default class Searchbar extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       show: false,
       people: 2,
     };
+    this.showMenu = this.showMenu.bind(this);
+  }
 
-    const onAddGuests = () => {
-      this.setState({
-        show: !this.state.show,
-      });
-    };
+  showMenu() {
+    this.setState({
+      show: !this.state.show,
+    });
   }
 
   render() {
@@ -45,9 +45,9 @@ export default class Searchbar extends Component {
             </InputPlusLabel>
           </InputGroup>
 
-          <GuestDropdown />
+          <GuestDropdown style={{ display: this.state.show ? 'none' : 'block' }} />
 
-          <InputGroup className="Input-Group">
+          <InputGroup className="Input-Group" onClick={this.showMenu}>
             <Dot className="Dot">
               <div className="fa fa-circle" aria-hidden="true" />
             </Dot>
