@@ -169,9 +169,7 @@ export const CounterWrapper = styled.div`
     flex-direction: row;
     margin: 0;
     padding:0;
-    h4 {
-        margin:0;
-    }
+
     div {
         min-width:70px;
         margin:0;
@@ -182,5 +180,6 @@ export const CounterWrapper = styled.div`
     button {
         background: #ffffff;
         border:none;
+        font-size: 1em;
     }
 `;

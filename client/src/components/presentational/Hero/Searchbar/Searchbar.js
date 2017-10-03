@@ -69,15 +69,13 @@ export default class Searchbar extends Component {
                   Guests
               </span>
             </InputPlusLabel>
-            
           </InputGroup2>
           <ButtonWrapper className="Button-Wrapper">
             <Button className="Button">
               Search
             </Button>
           </ButtonWrapper>
-        </InputWrapper>
-        
+        </InputWrapper>        
       </SearchContainer>
     );
   }

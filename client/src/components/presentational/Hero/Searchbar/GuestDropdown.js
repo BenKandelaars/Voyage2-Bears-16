@@ -79,7 +79,7 @@ export default class GuestDropdown extends Component {
       <GuestWrapper className="Guest-Wrapper">
         <div>
           {this.AddAllGuests}
-          <GuestMenu className="GuestMenu" style={{ display: this.props.showing ? 'none' : 'block' }} >
+          <GuestMenu className="GuestMenu" style={{ display: this.props.showing ? 'block' : 'none' }} >
             <GuestCounter
               className="Guest-Counter"
               agegroup={'Adults'}
