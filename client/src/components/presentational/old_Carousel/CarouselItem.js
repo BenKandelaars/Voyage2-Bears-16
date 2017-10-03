@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CarouselImg, CarouselText, CarouselItemWrapper, CarouselItemOuter } from './styles';
+import { CarouselImg, CarouselText, CarouselItemWrapper, CarouselItemOuter } from './style';
 
 
 class CarouselItem extends Component {
@@ -8,7 +8,7 @@ class CarouselItem extends Component {
       <CarouselItemOuter innerRef={this.props.innerRef}>
         <CarouselItemWrapper >
           <CarouselImg></CarouselImg>
-          <CarouselText>★★★</CarouselText>
+          <CarouselText>★★★★★</CarouselText>
         </CarouselItemWrapper>
       </CarouselItemOuter>
     );

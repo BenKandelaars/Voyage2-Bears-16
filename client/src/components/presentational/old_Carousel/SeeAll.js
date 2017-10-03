@@ -1,6 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import { SeeAllStyle } from './styles';
+import { SeeAllStyle } from './style';
 
 const SeeAll = () => {
   return (

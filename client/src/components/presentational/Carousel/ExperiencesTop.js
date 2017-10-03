@@ -2,13 +2,13 @@ import React from 'react';
 import SeeAll from './SeeAll';
 import { CarouselTitle, CarouselTopStyle } from './styles';
 
-const CarouselTop = () => {
+const ExperiencesTop = () => {
   return (
     <CarouselTopStyle>
-      <CarouselTitle>Carousel</CarouselTitle>
+      <CarouselTitle>Experiences</CarouselTitle>
       <SeeAll />
     </CarouselTopStyle>
   );
 };
 
-export default CarouselTop;
+export default ExperiencesTop;

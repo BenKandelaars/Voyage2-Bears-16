@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import CarouselItem from './CarouselItem';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
 import { CarouselWrapper, CarouselList, CarouselListWrapper } from './styles';
+import Experiences from './Experiences';
 
-class CarouselView extends Component {
+class ExperiencesCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +14,7 @@ class CarouselView extends Component {
     };
   }
   componentDidMount() {
+    console.log(this.state.width);
     this.setState({
       width: this.width.getBoundingClientRect().width,
     });
@@ -27,6 +28,7 @@ class CarouselView extends Component {
     this.setState(prevState => ({ activeIndex: prevState.activeIndex + 1 }));
   }
   render () {
+    console.log(this.state.width);
     return (
       <CarouselWrapper>
         <LeftArrow
@@ -37,16 +39,11 @@ class CarouselView extends Component {
           <CarouselList
             visible={this.state.visible}
           >
-            <CarouselItem handleWidthSet={this.handleWidthSet}
+            <Experiences 
+              handleWidthSet={this.handleWidthSet}
               width={this.state.width}
               innerRef={width => { this.width = width; }}
             />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
           </CarouselList>
         </CarouselListWrapper>
         <RightArrow
@@ -58,4 +55,4 @@ class CarouselView extends Component {
   }
 }
 
-export default CarouselView;
+export default ExperiencesCarousel;

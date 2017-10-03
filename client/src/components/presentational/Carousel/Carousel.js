@@ -1,15 +1,15 @@
 import React from 'react';
-import CarouselTop from './CarouselTop';
-import CarouselView from './CarouselView';
+import ExperiencesTop from './ExperiencesTop';
+import ExperiencesCarousel from './ExperiencesCarousel';
 import 'font-awesome/css/font-awesome.css';
-import { Container } from './style';
+import { Container } from './styles';
 
 
 const Carousel = () => {
   return (
     <Container>
-      <CarouselTop />
-      <CarouselView />
+      <ExperiencesTop />
+      <ExperiencesCarousel />
     </Container>
   );
 };

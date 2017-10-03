@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import CarouselItem from './CarouselItem';
 import RightArrow from './RightArrow';
 import LeftArrow from './LeftArrow';
-import { CarouselWrapper, CarouselList, CarouselListWrapper } from './styles';
+import { CarouselWrapper, CarouselList, CarouselListWrapper } from './style';
+
 
 class CarouselView extends Component {
   constructor(props) {
