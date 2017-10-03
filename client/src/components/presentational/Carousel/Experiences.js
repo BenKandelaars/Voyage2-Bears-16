@@ -103,16 +103,6 @@ const Experiences = (props) => (
           />
         </ExperienceCardContainer>
       </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
-        <ExperienceCardContainer>
-          <ExperienceCard
-            img={experienceImg}
-            title={'Experiences'}
-            price={52}
-            description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
-          />
-        </ExperienceCardContainer>
-      </ExperienceCardWrapper>
     </ExperiencesContainer>
 );
 

@@ -304,13 +304,13 @@ width: 100%;
 display: flex;
 margin: 20px 0px;
 
-div {
-  margin-right: 15px;
-}
+`;
 
-div:last-child {
-  margin-right: 0px;
-}
+export const HomesCardWrapper = styled.div`
+`;
+
+export const HomesCardContainer = styled.div`
+margin: 0 10px;
 `;
 
 export const HomesWrapper = styled.div`
@@ -355,3 +355,5 @@ div {
    width: 335px;     
   }
 `;
+
+

@@ -4,7 +4,7 @@ import { RightArrowStyle } from './styles';
 
 class RightArrow extends Component {
   render() {
-    if (this.props.activeIndex >= 3) {
+    if (this.props.activeIndex >= 2) {
       return (
         <div></div>
       );
