@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { LeftArrowStyle } from './style.js';
+import { LeftArrowStyle } from './style';
 
 class LeftArrow extends Component {
-  handleClick = () => {
-    console.log("clicked");
-  };
-
   render() {
-    return (
-      <LeftArrowStyle onClick={this.handleClick}>
-        <FontAwesome
-         name="angle-left"
-         size="3x"
-         /> 
-      </LeftArrowStyle>
-    );
+    if (this.props.activeIndex <= 0) {
+      return (
+        <div></div>
+      );
+    } else {
+      return (        
+        <LeftArrowStyle onClick={this.props.handleOnClickLeft}>
+          <FontAwesome
+            name="angle-left"
+            size="3x"
+            style={{ color: '#666666' }}
+          />
+        </LeftArrowStyle>
+      );
+    }
   }
-};
+}
 
 export default LeftArrow;

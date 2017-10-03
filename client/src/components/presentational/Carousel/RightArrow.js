@@ -1,36 +1,24 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { RightArrowStyle } from './style.js';
+import { RightArrowStyle } from './style';
 
 class RightArrow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: 0
-    }
-  }
-  
-  componentDidMount() {
-    // const width = document.querySelector('img').clientWidth;
-    // this.setState({ width });
-  }
-  
-  handleClick = () => {
-    this.setState ({visible: this.state.visible - 25});
-    console.log(this.state.visible);
-  };
-
   render() {
+    if (this.props.activeIndex >= 3) {
+      return (
+        <div></div>
+      );
+    } 
     return (
-      <RightArrowStyle onClick={this.handleClick}>
-      <FontAwesome
-       name="angle-right"
-       size="3x"
-       /> 
+      <RightArrowStyle onClick={this.props.handleOnClickRight}>
+        <FontAwesome
+          name="angle-right"
+          size="3x"
+          style={{ color: '#666666' }}
+        />
       </RightArrowStyle>
     );
   }
-  
-};
+}
 
 export default RightArrow;
