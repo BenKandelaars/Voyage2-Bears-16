@@ -21,7 +21,6 @@ export const EachFilterContainer = styled.div`
 
 export const FilterOption = styled.div`
   padding: 8px;
-  background-color: pink;
   border-radius: 3px;
   position: relative;
   &:hover {
@@ -100,7 +99,6 @@ export const CheckBoxFakeLabel = styled.span`
 
 export const SelectionChoice = styled.div`
   display: inline-block;
-  width: 300px;
   margin-left: 10px;
 `;
 
@@ -162,7 +160,7 @@ export const MoreFiltersHeading = styled.h2`
 export const MoreFiltersOptionContainer = styled.div`
   display: flex;  
   justify-content: space-between;
-  width: 48%;
+  width: 45%;
   margin-bottom: 20px;
   p {
     margin: 0;
