@@ -160,6 +160,51 @@ export const MoreFiltersHeading = styled.h2`
 
 `;
 
+export const MoreFiltersOptionContainer = styled.div`
+`;
+
+export const MoreFiltersOptionStyle = styled.span`
+`;
+
+
+export const MinusButton = styled.div`
+  border: 1px solid;
+  border-radius: 50%;
+  color: #008489;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  :after {
+    font-size: 16px;
+    content: "_";
+    position: absolute;
+    top: -1px;
+    left: 10px;
+  }
+`;
+
+export const PlusButton = styled.div`
+  border: 1px solid;
+  border-radius: 50%;
+  color: #008489;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  :after {
+    font-size: 16px;
+    content: "+";
+    position: absolute;
+    top: 3px;
+    left: 9px;
+  }
+`;
+
+export const Counter = styled.span`
+  font-size: 20px;
+  margin: 0 10px;
+`;
 
 // Cancel and Apply buttons
 export const SectionButtonsContainer = styled.div`

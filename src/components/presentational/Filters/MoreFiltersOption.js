@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { MoreFiltersContainer, EachOptionContainer,
-  MoreFiltersHeading } from './styles';
+  MoreFiltersHeading, MoreFiltersOptionStyle,
+  MoreFiltersOptionContainer,
+  MinusButton, PlusButton, Counter } from './styles';
 
 class MoreFiltersOption extends Component {
   render() {
@@ -8,16 +10,20 @@ class MoreFiltersOption extends Component {
       <MoreFiltersContainer>
       <EachOptionContainer>
         <MoreFiltersHeading>Rooms and beds</MoreFiltersHeading>
+        <MoreFiltersOptionContainer>
+          <MoreFiltersOptionStyle>Bedrooms</MoreFiltersOptionStyle>
+          <div>
+            <MinusButton />
+              <Counter>0+</Counter>
+            <PlusButton />
+          </div>
+        </MoreFiltersOptionContainer>
         <div>
-          <div>Bedrooms</div>
+          <MoreFiltersOptionStyle>Beds</MoreFiltersOptionStyle>
           <div>0+</div>
         </div>
         <div>
-          <div>Beds</div>
-          <div>0+</div>
-        </div>
-        <div>
-          <div>Bathrooms</div>
+          <MoreFiltersOptionStyle>Bathrooms</MoreFiltersOptionStyle>
           <div>0+</div>
         </div>
       </EachOptionContainer>
