@@ -6,7 +6,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-    max-width: 1080px;
+    max-width: 1000px;
     margin-top: 2em;
     margin-bottom: 2em;
     margin-left: auto;

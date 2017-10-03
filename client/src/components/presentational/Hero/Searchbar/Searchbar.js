@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GuestDropdown from './GuestDropdown';
-import { SearchContainer, ButtonWrapper, Button, InputWrapper, InputPlusLabel, InputGroup, Logo, Icon, Icon1, Dot } from './styles';
+import { SearchContainer, ButtonWrapper, Button, InputWrapper, InputPlusLabel, InputGroup, InputGroup2, Logo, Icon, Icon1, Dot } from './styles';
 
 export default class Searchbar extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class Searchbar extends Component {
 
           <GuestDropdown showing={this.state.show} addGuests={this.numberOfGuests} />
 
-          <InputGroup className="Input-Group" onClick={this.showMenu}>
+          <InputGroup2 className="Input-Group2" onClick={this.showMenu}>
             <Dot className="Dot">
               <div className="fa fa-circle" aria-hidden="true" />
             </Dot>
@@ -69,14 +69,15 @@ export default class Searchbar extends Component {
                   Guests
               </span>
             </InputPlusLabel>
-          </InputGroup>
-
+            
+          </InputGroup2>
+          <ButtonWrapper className="Button-Wrapper">
+            <Button className="Button">
+              Search
+            </Button>
+          </ButtonWrapper>
         </InputWrapper>
-        <ButtonWrapper className="Button-Wrapper">
-          <Button className="Button">
-            Search
-          </Button>
-        </ButtonWrapper>
+        
       </SearchContainer>
     );
   }

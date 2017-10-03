@@ -58,15 +58,19 @@ export default class GuestDropdown extends Component {
   render() {
     const GuestCounter = props => (
       <CounterWrapper className="Counter-Wrapper">
-        <div>
-          {props.agegroup}
-          <button onClick={props.minus}>
-            <span className="fa fa-minus-circle" aria-hidden="true" />
-          </button>
-          {props.number}
-          <button onClick={props.add}>
-            <span className="fa fa-plus-circle" aria-hidden="true" />
-          </button>
+        <div className="age-group-row">
+          <div>
+            {props.agegroup}
+          </div>
+          <div>
+            <button onClick={props.minus} className="button-">
+              <span className="fa fa-minus-circle" aria-hidden="true" />
+            </button>
+            {props.number}
+            <button onClick={props.add} className="button+">
+              <span className="fa fa-plus-circle" aria-hidden="true" />
+            </button>
+          </div>
         </div>
       </CounterWrapper>
     );

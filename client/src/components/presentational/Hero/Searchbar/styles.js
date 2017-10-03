@@ -9,25 +9,16 @@ export const SearchContainer = styled.div`
     padding: 0;
     align-items: center;
 
-
-`;
-export const ButtonWrapper = styled.div`
-    padding: 0.7em;
 `;
 
-export const Button = styled.div`
-    background-color: #FF5A60;
-    color: white;
-    border-radius: 5px;
-    padding:0.45em 0.45em;
-    font-size: 1.4em;
-   
+export const InputWrapper = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
 
-    @media(max-width:1080px){
-        display: none;
+    @media(min-width:750px){
+        width:100%;
     }
 `;
-
 export const InputGroup = styled.div`
     display: flex;
     flex-flow: row nowrap;
@@ -37,14 +28,18 @@ export const InputGroup = styled.div`
 
     @media(min-width:750px){
         padding: 0.7em;
-        width: 30%;
+        width: 34%;
 
-        :nth-last-child(-n+2){
+        :nth-last-child(-n+4){
             border-left: 1px solid #DBDBDB;
         }
     
     }
     
+`;
+
+export const InputGroup2 = styled(InputGroup)`
+    max-width:215px;
 `;
 export const Icon = styled.div`
     padding: 0em 0.3em;
@@ -73,21 +68,12 @@ export const Dot = styled.div`
     @media(max-width:750px){
         display:block;
     }
-
 `;
+
 export const Logo = styled.div`
     color: #767676;
     display:block;
 
-`;
-
-export const InputWrapper = styled.div`
-    display: flex;
-    flex-flow: row nowrap;
-   
-    @media(min-width:750px){
-        width:100%;
-    }
 `;
 
 export const InputPlusLabel = styled.div`
@@ -131,6 +117,22 @@ export const InputPlusLabel = styled.div`
     }
 `;
 
+export const ButtonWrapper = styled.div`
+
+    padding: 0.7em;
+`;
+
+export const Button = styled.div`
+    background-color: #FF5A60;
+    color: white;
+    border-radius: 5px;
+    padding:0.45em 0.45em;
+    font-size: 1.4em;
+
+    @media(max-width:1080px){
+        display: none;
+    }
+`;
 
 // ----------- Guest Dropdown Part ------------------
 
@@ -151,7 +153,7 @@ export const GuestMenu = styled.div`
     z-index: 10;
     left: 0px;
     top: 73px;
-    width: 300px;
+    width: 250px;
     padding: 1.5em 0em;
     font-size: 1.25em;
     border: 1px solid #DBDBDB;
@@ -163,5 +165,22 @@ export const GuestMenu = styled.div`
 `;
 
 export const CounterWrapper = styled.div`
-
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding:0;
+    h4 {
+        margin:0;
+    }
+    div {
+        min-width:70px;
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content: space-between;
+    }
+    button {
+        background: #ffffff;
+        border:none;
+    }
 `;
