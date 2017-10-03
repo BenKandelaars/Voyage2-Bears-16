@@ -1,0 +1,23 @@
+{
+  "name": "voyage2-bears-16",
+  "version": "1.0.0",
+  "description": "Backend package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-coders/Voyage2-Bears-16.git"
+  },
+  "author": "Voyage-Bears-16",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-coders/Voyage2-Bears-16/issues"
+  },
+  "homepage": "https://github.com/chingu-coders/Voyage2-Bears-16#readme",
+  "dependencies": {
+    "concurrently": "^3.5.0",
+    "express": "^4.16.1"
+  }
+}
