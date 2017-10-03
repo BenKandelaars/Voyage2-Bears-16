@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
-import Slider from './Slider';
-import CarouselListView from './CarouselList';
-import { Container } from './style.js';
+import React from 'react';
+import CarouselTop from './CarouselTop';
+import CarouselView from './CarouselView';
+import 'font-awesome/css/font-awesome.css';
+import { Container } from './style';
 
 
-class Carousel extends Component {
-
-  render() {
-    return (
-      <Container>
-        <h1>Slider</h1>
-        <Slider />
-
-        <h1>Carousel</h1>
-        <CarouselListView />
-      </Container>
-    );
-  }
+const Carousel = () => {
+  return (
+    <Container>
+      <CarouselTop />
+      <CarouselView />
+    </Container>
+  );
 };
 
 export default Carousel;
