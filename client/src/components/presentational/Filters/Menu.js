@@ -15,7 +15,7 @@ class Menu extends Component {
       isRoomTypeOpen: false,
       isPriceRangeOpen: false,
       isInstantBookOpen: false,
-      isMoreFiltersOpen: true,
+      isMoreFiltersOpen: false,
     };
   }
 

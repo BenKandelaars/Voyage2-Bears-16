@@ -28,7 +28,11 @@ export const FilterOption = styled.div`
   }
 `;
 
-export const ArrowIcon = styled.span`
+export const ArrowIcon = styled.div`
+  display: inline-block;
+  margin-left: 10px;
+  transform: rotate(${props => props.isOpen ? '180deg' : '0deg'});
+  transition: transform .3s;
 `;
 
 export const SectionContainer = styled.div`

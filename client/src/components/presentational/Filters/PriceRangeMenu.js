@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import PriceRange from './PriceRange';
 import PriceRangeOption from './PriceRangeOption';
-import { EachMenuContainer } from './styles';
+import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
+import FontAwesome from 'react-fontawesome';
 
+const PriceRange = props => (
+      <EachFilterContainer onClick={() => props.changeState("isPriceRangeOpen")}>
+        <FilterOption>
+        Price range
+        <ArrowIcon isOpen={props.isPriceRangeOpen}>
+          <FontAwesome
+            name="angle-down"
+            style={{
+              color: '#008489',
+            }}
+          />
+        </ArrowIcon>
+        </FilterOption>
+      </EachFilterContainer>
+    );
 
 class PriceRangeMenu extends Component {
   render() {
+    console.log(this.props);
     return (
       <EachMenuContainer>
-        <PriceRange changeState={this.props.changeState} />
+        <PriceRange
+          changeState={this.props.changeState}
+          isPriceRangeOpen={this.props.isPriceRangeOpen}
+        />
         {(this.props.isPriceRangeOpen && <PriceRangeOption />)}
       </EachMenuContainer>
     );
