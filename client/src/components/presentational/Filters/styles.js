@@ -78,7 +78,7 @@ export const CheckBoxFakeLabel = styled.span`
     display: inline-block;
     height: 16px;
     width: 16px;
-    border: 1px solid #008489;
+    border: 1px solid #DBDBDB;
     border-radius: 2px;
     position: absolute;
     top: 3px;
@@ -136,8 +136,8 @@ export const InstantBookMenuContainer = styled.div`
   top: 58px;
   border: 1px solid grey;
   border-radius: 3px;
-  width: 420px;
-  height: 280px;
+  width: 320px;
+  height: 140px;
   padding: 18px;
 `;
 
@@ -157,24 +157,41 @@ export const EachOptionContainer = styled.div`
 `;
 
 export const MoreFiltersHeading = styled.h2`
-
 `;
 
 export const MoreFiltersOptionContainer = styled.div`
+  display: flex;  
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 20px;
+  p {
+    margin: 0;
+  }
 `;
 
-export const MoreFiltersOptionStyle = styled.span`
+export const MoreFiltersOptionStyle = styled.div`
+  font-size: 18px;
 `;
 
+// More options 
+
+
+// Counter 
+
+export const CounterContainer = styled.div`
+  display: table;
+  width: 110px;
+`;
 
 export const MinusButton = styled.div`
   border: 1px solid;
   border-radius: 50%;
   color: #008489;
-  display: inline-block;
+  display: table-cell;
   width: 30px;
   height: 30px;
   position: relative;
+  text-align: left;
   :after {
     font-size: 16px;
     content: "_";
@@ -188,10 +205,11 @@ export const PlusButton = styled.div`
   border: 1px solid;
   border-radius: 50%;
   color: #008489;
-  display: inline-block;
+  display: table-cell;
   width: 30px;
   height: 30px;
   position: relative;
+  text-align: right;
   :after {
     font-size: 16px;
     content: "+";
@@ -201,15 +219,17 @@ export const PlusButton = styled.div`
   }
 `;
 
-export const Counter = styled.span`
+export const Counter = styled.div`
+  display: table-cell;
+  text-align: center;
   font-size: 20px;
-  margin: 0 10px;
+  vertical-align: middle !important;
 `;
 
 // Cancel and Apply buttons
 export const SectionButtonsContainer = styled.div`
   position: relative;
-  margin-top: 30px;
+  margin-top: 20px;
   button {
     border: none;
     background-color: #fff;
@@ -221,10 +241,12 @@ export const CancelButton = styled.button`
   position: absolute;
   left: 0;
   color: #767676;
+  padding: 0;
 `;
 
 export const ApplyButton = styled.button`
   position: absolute;
   right: 0;
   color: #008489;
+  padding: 0;
 `;

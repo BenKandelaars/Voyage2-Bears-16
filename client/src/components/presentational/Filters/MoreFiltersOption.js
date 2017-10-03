@@ -2,33 +2,55 @@ import React, { Component } from 'react';
 import { MoreFiltersContainer, EachOptionContainer,
   MoreFiltersHeading, MoreFiltersOptionStyle,
   MoreFiltersOptionContainer,
-  MinusButton, PlusButton, Counter } from './styles';
+  CounterContainer, MinusButton, PlusButton, Counter } from './styles';
+
+export const RoomsAndBeds = () => (
+  <EachOptionContainer>
+    <MoreFiltersHeading>Rooms and beds</MoreFiltersHeading>
+    <MoreFiltersOptionContainer>
+      <MoreFiltersOptionStyle>Bedrooms</MoreFiltersOptionStyle>
+      <CounterContainer>
+        <MinusButton />
+        <Counter>0+</Counter>
+        <PlusButton />
+      </CounterContainer>
+    </MoreFiltersOptionContainer>
+    <MoreFiltersOptionContainer>
+      <MoreFiltersOptionStyle>Beds</MoreFiltersOptionStyle>
+      <CounterContainer>
+        <MinusButton />
+        <Counter>0+</Counter>
+        <PlusButton />
+      </CounterContainer>
+    </MoreFiltersOptionContainer>
+    <MoreFiltersOptionContainer>
+      <MoreFiltersOptionStyle>Bathrooms</MoreFiltersOptionStyle>
+      <CounterContainer>
+        <MinusButton />
+        <Counter>0+</Counter>
+        <PlusButton />
+      </CounterContainer>
+    </MoreFiltersOptionContainer>
+  </EachOptionContainer>
+);
+
 
 class MoreFiltersOption extends Component {
   render() {
     return (
       <MoreFiltersContainer>
-      <EachOptionContainer>
-        <MoreFiltersHeading>Rooms and beds</MoreFiltersHeading>
-        <MoreFiltersOptionContainer>
-          <MoreFiltersOptionStyle>Bedrooms</MoreFiltersOptionStyle>
-          <div>
-            <MinusButton />
-              <Counter>0+</Counter>
-            <PlusButton />
-          </div>
-        </MoreFiltersOptionContainer>
-        <div>
-          <MoreFiltersOptionStyle>Beds</MoreFiltersOptionStyle>
-          <div>0+</div>
-        </div>
-        <div>
-          <MoreFiltersOptionStyle>Bathrooms</MoreFiltersOptionStyle>
-          <div>0+</div>
-        </div>
-      </EachOptionContainer>
+        <RoomsAndBeds />
       <EachOptionContainer>
         <MoreFiltersHeading>More options</MoreFiltersHeading>
+        <MoreFiltersOptionContainer>
+          <div>
+            <MoreFiltersOptionStyle>Superhost</MoreFiltersOptionStyle>
+            <p>Stay with recognised hosts.</p>
+            <p>Learn more</p>
+          </div>
+          <div>X</div>
+        </MoreFiltersOptionContainer>
+
       </EachOptionContainer>
       <EachOptionContainer>
         Amenities
