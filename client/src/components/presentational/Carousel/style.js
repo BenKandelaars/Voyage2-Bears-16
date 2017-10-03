@@ -76,12 +76,6 @@ export const CarouselImg = styled.div`
   height: 300px;
 `;
 
-export const CarouselImg2 = styled.div`
-  background-color: #c94c4c;
-  width: 250px;
-  height: 300px;
-`;
-
 export const CarouselText = styled.div`
   background-color: grey;
   width: 250px;
