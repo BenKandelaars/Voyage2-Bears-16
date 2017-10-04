@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import '../../../assets/font-awesome-4.7.0/css/font-awesome.css';
-import { GuestMenu, GuestWrapper, CounterWrapper } from './styles';
+import { GuestMenu, GuestWrapper, CounterWrapper, Overlay, OverlayContent, CloseBTN } from './styles';
 
 export default class GuestDropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false,
+      showOverlay: false,
       Adults: 1,
       Children: 0,
       Infants: 0,
@@ -18,6 +18,7 @@ export default class GuestDropdown extends Component {
     this.MinusAdult = this.MinusAdult.bind(this);
     this.MinusChild = this.MinusChild.bind(this);
     this.MinusInfant = this.MinusInfant.bind(this);
+    this.CloseOverlay = this.CloseOverlay.bind(this);
   }
 
   AddAdult() {
@@ -53,6 +54,10 @@ export default class GuestDropdown extends Component {
 
   AddAllGuests() {
     this.props.addGuests(this.state.Adults + this.state.Children + this.state.Infants);
+  }
+
+  CloseOverlay() {
+    this.props.showing(this.setState({ show: true }));
   }
 
   render() {
@@ -103,6 +108,35 @@ export default class GuestDropdown extends Component {
             />
           </GuestMenu>
         </div>
+        <Overlay className="overlay" style={{ width: this.props.showing ? '100%' : '0%' }} >
+
+          <CloseBTN className="closebtn" onClick={this.props.click2show}>&times;</CloseBTN>
+
+          <OverlayContent class="overlay-content">
+            <GuestCounter
+              className="Guest-Counter"
+              agegroup={'Adults'}
+              number={this.state.Adults}
+              add={this.AddAdult}
+              minus={this.MinusAdult}
+            />
+            <GuestCounter
+              className="Guest-Counter"
+              agegroup={'Children'}
+              number={this.state.Children}
+              add={this.AddChild}
+              minus={this.MinusChild}
+            />
+            <GuestCounter
+              className="Guest-Counter"
+              agegroup={'Infants'}
+              number={this.state.Infants}
+              add={this.AddInfant}
+              minus={this.MinusInfant}
+            />
+          </OverlayContent>
+
+        </Overlay>
       </GuestWrapper>
     );
   }
@@ -111,4 +145,5 @@ export default class GuestDropdown extends Component {
 GuestDropdown.propTypes = {
   showing: React.PropTypes.bool.isRequired,
   addGuests: React.PropTypes.func.isRequired,
+  click2show: React.PropTypes.func.isRequired,
 };

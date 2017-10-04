@@ -53,7 +53,7 @@ export default class Searchbar extends Component {
             </InputPlusLabel>
           </InputGroup>
 
-          <GuestDropdown showing={this.state.show} addGuests={this.numberOfGuests} />
+          <GuestDropdown showing={this.state.show} addGuests={this.numberOfGuests} click2show={this.showMenu} />
 
           <InputGroup2 className="Input-Group2" onClick={this.showMenu}>
             <Dot className="Dot">
@@ -75,7 +75,7 @@ export default class Searchbar extends Component {
               Search
             </Button>
           </ButtonWrapper>
-        </InputWrapper>        
+        </InputWrapper>
       </SearchContainer>
     );
   }

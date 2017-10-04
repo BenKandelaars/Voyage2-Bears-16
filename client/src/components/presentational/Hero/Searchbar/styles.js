@@ -140,11 +140,14 @@ export const GuestWrapper = styled.div`
     position: relative !important;
     top: 0px;
 
-
     div {
+
         display: block;
     }
 
+    @media(max-width:1079px){
+        display:none;
+    }
 `;
 
 export const GuestMenu = styled.div`
@@ -182,4 +185,35 @@ export const CounterWrapper = styled.div`
         border:none;
         font-size: 1em;
     }
+`;
+
+// ------------ Overlay ------------------
+export const Overlay = styled.div`  
+height: 100%;
+width: 0;
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+background-color: rgb(252, 250, 250);
+overflow-x: hidden; 
+transition: 0.5s; 
+`;
+
+/* Position the content inside the overlay */
+export const OverlayContent = styled.div`
+position: relative;
+top: 25%; 
+width: 100%;
+text-align: center;
+margin-top: 30px;
+`;
+
+
+/* Position the close button (top right corner) */
+export const CloseBTN = styled.button`
+position: absolute;
+top: 20px;
+right: 45px;
+font-size: 60px;
 `;
