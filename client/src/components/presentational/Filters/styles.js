@@ -141,6 +141,68 @@ export const InstantBookMenuContainer = styled.div`
   width: 320px;
   height: 140px;
   padding: 18px;
+
+  div:first-child {
+    display: inline-block;
+    width: 200px;
+    margin-right: 30px;
+  }
+`;
+
+// Toggle Button
+export const ToggleButtonLabel = styled.label`
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 48px;
+  height: 32px;
+`;
+
+export const ToggleButtonInput = styled.input.attrs({
+  type: 'checkbox',
+})`
+  display: none;
+
+  &:checked + span {
+    background-color: #008489;
+    border: solid 1px #008489;
+    box-shadow: 0px 0px 10px #008489;
+  }
+
+  &:focus + span{
+    box-shadow: 0px 0px 10px #008489;
+  }
+
+  &:checked + span:before {
+    transform: translateX(18px);
+    border: 1px solid #008489;
+  }
+`;
+
+export const ToggleButtonSlider = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #DBDBDB;
+  border-radius: 34px;
+  border: solid 1px #F2F2F2;
+  transition: .4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    border: 1px solid #F2F2F2;
+    border-radius: 50%;
+    transition: .4s;
+  }
 `;
 
 // More filters Styling

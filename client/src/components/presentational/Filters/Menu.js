@@ -14,7 +14,7 @@ class Menu extends Component {
       currentlyOpen: null,
       isRoomTypeOpen: false,
       isPriceRangeOpen: false,
-      isInstantBookOpen: false,
+      isInstantBookOpen: true,
       isMoreFiltersOpen: false,
     };
   }

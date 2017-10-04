@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SectionButtons from './SectionButtons';
 import { SectionContainer, SelectionChoiceHeading, SelectionChoiceSubHeading,
-  SliderContainer, Slider } from './styles';
+  SliderContainer } from './styles';
+
+export class Slider extends Component {
+  render() {
+    return (
+      <div></div>
+    );
+  }
+}
 
 const PriceRangeOption = () => {
   return (
