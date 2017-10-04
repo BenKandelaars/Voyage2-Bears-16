@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import RoomTypeOption from './RoomTypeOption';
+import Arrow from './Arrow';
 import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
-import FontAwesome from 'react-fontawesome';
+
 
 const RoomType = props => (
       <EachFilterContainer
@@ -9,14 +10,10 @@ const RoomType = props => (
       >
         <FilterOption isOpen={props.isRoomTypeOpen}>
         Room type
-        <ArrowIcon isOpen={props.isRoomTypeOpen}>
-        <FontAwesome
-          name="angle-down"
-          style={{
-            color: '#008489',
-          }}
+        <Arrow
+          isOpen={props.isRoomTypeOpen}
+          color="#008489"
         />
-        </ArrowIcon>
         </FilterOption>
       </EachFilterContainer>  
     );

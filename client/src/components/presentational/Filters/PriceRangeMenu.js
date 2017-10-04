@@ -21,7 +21,6 @@ const PriceRange = props => (
 
 class PriceRangeMenu extends Component {
   render() {
-    console.log(this.props);
     return (
       <EachMenuContainer>
         <PriceRange

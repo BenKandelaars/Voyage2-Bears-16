@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import CheckboxComponent from './CheckboxComponent';
+import Counter from './Counter';
 import { MoreFiltersContainer, EachOptionContainer,
   MoreFiltersHeading, MoreFiltersOptionStyle,
   MoreFiltersOptionContainer,
-  CounterContainer, MinusButton, PlusButton, Counter,
-  Checkbox, CheckboxStyle, CheckBoxFakeLabel,
-  SectionOption, SelectionChoice, SelectionChoiceHeading } from './styles';
+  CounterContainer, MinusButton, PlusButton, CounterNumber } from './styles';
 
-export const RoomsAndBeds = () => (
+export const RoomsAndBeds = props => (
   <EachOptionContainer>
     <MoreFiltersHeading>Rooms and beds</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
       <MoreFiltersOptionStyle>Bedrooms</MoreFiltersOptionStyle>
-      <CounterContainer>
-        <MinusButton />
-        <Counter>0+</Counter>
-        <PlusButton />
-      </CounterContainer>
+      <Counter 
+        handlePlusButtonClick={props.handlePlusButtonClick}
+        handleMinusButtonClick={props.handleMinusButtonClick}
+        count={props.numberOfBedrooms}
+        plusSign={true}
+        clickedCounter="numberOfBedrooms"
+      />
     </MoreFiltersOptionContainer>
     <MoreFiltersOptionContainer>
       <MoreFiltersOptionStyle>Beds</MoreFiltersOptionStyle>
       <CounterContainer>
         <MinusButton />
-        <Counter>0+</Counter>
+        <CounterNumber>0+</CounterNumber>
         <PlusButton />
       </CounterContainer>
     </MoreFiltersOptionContainer>
@@ -30,7 +31,7 @@ export const RoomsAndBeds = () => (
       <MoreFiltersOptionStyle>Bathrooms</MoreFiltersOptionStyle>
       <CounterContainer>
         <MinusButton />
-        <Counter>0+</Counter>
+        <CounterNumber>0+</CounterNumber>
         <PlusButton />
       </CounterContainer>
     </MoreFiltersOptionContainer>
@@ -118,10 +119,41 @@ export const HostLanguage = () => (
 
 
 class MoreFiltersOption extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      numberOfBedrooms: 0,
+      numberOfBeds: 0,
+      numberOfBathrooms: 0,
+    }
+  }
+  // handleButtonClick = (clickedCounter, isPlus) => {
+  //   this.setState(prevState => ({
+  //     [clickedCounter]: (isPlus ? (prevState[clickedCounter] + 1) : (prevState[clickedCounter] - 1)),
+  //   }));
+  // }
+  handlePlusButtonClick = (clickedCounter) => {
+    this.setState(prevState => ({
+      [clickedCounter]: prevState[clickedCounter] + 1,
+    }));
+  }
+  handleMinusButtonClick = (clickedCounter) => {
+    if (this.state[clickedCounter] > 0) {
+      this.setState(prevState => ({
+        [clickedCounter]: prevState[clickedCounter] - 1,
+      }));
+    }
+  }
+
   render() {
     return (
       <MoreFiltersContainer>
-        <RoomsAndBeds />
+        <RoomsAndBeds
+          handlePlusButtonClick={this.handlePlusButtonClick}
+          handleMinusButtonClick={this.handleMinusButtonClick}
+          handleButtonClick={this.handleButtonClick}
+          numberOfBedrooms={this.state.numberOfBedrooms}
+          />
         <MoreOptions />
         <Amenities />
         <Facilities />

@@ -284,7 +284,7 @@ export const PlusButton = styled.div`
   }
 `;
 
-export const Counter = styled.div`
+export const CounterNumber = styled.div`
   display: table-cell;
   text-align: center;
   font-size: 20px;
