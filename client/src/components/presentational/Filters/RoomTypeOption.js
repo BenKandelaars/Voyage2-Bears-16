@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import SectionButtons from './SectionButtons';
+import CheckboxComponent from './CheckboxComponent';
 import { SectionContainer, Checkbox, CheckboxStyle, CheckBoxFakeLabel,
    SectionOption, SelectionChoice, SectionIcon, SelectionChoiceHeading, SelectionChoiceSubHeading
   } from './styles';
+
+
 
 class RoomTypeOption extends Component {
   render() {
