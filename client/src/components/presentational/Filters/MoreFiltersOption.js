@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CheckboxComponent from './CheckboxComponent';
 import Counter from './Counter';
+import ToggleButton from './ToggleButton';
 import { MoreFiltersContainer, EachOptionContainer,
   MoreFiltersHeading, MoreFiltersOptionStyle,
   MoreFiltersOptionContainer,
@@ -21,19 +22,24 @@ export const RoomsAndBeds = props => (
     </MoreFiltersOptionContainer>
     <MoreFiltersOptionContainer>
       <MoreFiltersOptionStyle>Beds</MoreFiltersOptionStyle>
-      <CounterContainer>
-        <MinusButton />
-        <CounterNumber>0+</CounterNumber>
-        <PlusButton />
-      </CounterContainer>
+      <Counter 
+        handlePlusButtonClick={props.handlePlusButtonClick}
+        handleMinusButtonClick={props.handleMinusButtonClick}
+        count={props.numberOfBeds}
+        plusSign={true}
+        clickedCounter="numberOfBeds"
+      />
     </MoreFiltersOptionContainer>
     <MoreFiltersOptionContainer>
       <MoreFiltersOptionStyle>Bathrooms</MoreFiltersOptionStyle>
-      <CounterContainer>
-        <MinusButton />
-        <CounterNumber>0+</CounterNumber>
-        <PlusButton />
-      </CounterContainer>
+      <Counter 
+        handlePlusButtonClick={props.handlePlusButtonClick}
+        handleMinusButtonClick={props.handleMinusButtonClick}
+        count={props.numberOfBathrooms}
+        plusSign={true}
+        isHalfSize={true}
+        clickedCounter="numberOfBathrooms"
+      />
     </MoreFiltersOptionContainer>
   </EachOptionContainer>
 );
@@ -47,7 +53,9 @@ export const MoreOptions = () => (
         <p>Stay with recognised hosts.</p>
         <p>Learn more</p>
       </div>
-      <div>X</div>
+      <div>
+        <ToggleButton />
+      </div>
     </MoreFiltersOptionContainer>
   </EachOptionContainer>
 );
@@ -132,15 +140,18 @@ class MoreFiltersOption extends Component {
   //     [clickedCounter]: (isPlus ? (prevState[clickedCounter] + 1) : (prevState[clickedCounter] - 1)),
   //   }));
   // }
-  handlePlusButtonClick = (clickedCounter) => {
+
+  handlePlusButtonClick = (clickedCounter, isHalfSize) => {
+    const halfsize = (isHalfSize ? 0.5 : 1);
     this.setState(prevState => ({
-      [clickedCounter]: prevState[clickedCounter] + 1,
+      [clickedCounter]: prevState[clickedCounter] + halfsize,
     }));
   }
-  handleMinusButtonClick = (clickedCounter) => {
+  handleMinusButtonClick = (clickedCounter, isHalfSize) => {
+    const halfsize = (isHalfSize ? 0.5 : 1);
     if (this.state[clickedCounter] > 0) {
       this.setState(prevState => ({
-        [clickedCounter]: prevState[clickedCounter] - 1,
+        [clickedCounter]: prevState[clickedCounter] - halfsize,
       }));
     }
   }
@@ -153,6 +164,8 @@ class MoreFiltersOption extends Component {
           handleMinusButtonClick={this.handleMinusButtonClick}
           handleButtonClick={this.handleButtonClick}
           numberOfBedrooms={this.state.numberOfBedrooms}
+          numberOfBeds={this.state.numberOfBeds}
+          numberOfBathrooms={this.state.numberOfBathrooms}
           />
         <MoreOptions />
         <Amenities />

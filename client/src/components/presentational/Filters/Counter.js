@@ -63,14 +63,14 @@ const Counter = props => (
   <CounterContainer>
     <MinusButtonContainer>
       <MinusButton
-        onClick={() => props.handleMinusButtonClick(props.clickedCounter)}
+        onClick={() => props.handleMinusButtonClick(props.clickedCounter, props.isHalfSize)}
         isActive={props.count > 0}
         disabled={props.count === 0}
       />
     </MinusButtonContainer>
   <CounterNumber>{props.count}{props.plusSign && "+"}</CounterNumber>
     <PlusButtonContainer>
-      <PlusButton onClick={() => props.handlePlusButtonClick(props.clickedCounter)}/>
+      <PlusButton onClick={() => props.handlePlusButtonClick(props.clickedCounter, props.isHalfSize)}/>
 
     </PlusButtonContainer>
   </CounterContainer>

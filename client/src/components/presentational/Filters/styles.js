@@ -178,6 +178,13 @@ export const ToggleButtonInput = styled.input.attrs({
     transform: translateX(18px);
     border: 1px solid #008489;
   }
+
+  &:checked + span:after {
+    content: "✔︎";
+    transform: translateX(18px);
+    transition: .4s;
+    color: #008489; 
+  }
 `;
 
 export const ToggleButtonSlider = styled.span`
@@ -202,6 +209,15 @@ export const ToggleButtonSlider = styled.span`
     background-color: white;
     border: 1px solid #F2F2F2;
     border-radius: 50%;
+    transition: .4s;
+  }
+
+  &:after {
+    content: "×";
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    transform: scale(1.2);
     transition: .4s;
   }
 `;
