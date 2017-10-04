@@ -7,7 +7,7 @@ const RoomType = props => (
       <EachFilterContainer
         onClick={() => props.changeState('isRoomTypeOpen')}
       >
-        <FilterOption>
+        <FilterOption isOpen={props.isRoomTypeOpen}>
         Room type
         <ArrowIcon isOpen={props.isRoomTypeOpen}>
         <FontAwesome

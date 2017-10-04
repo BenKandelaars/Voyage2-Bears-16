@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome';
 
 const MoreFilters = props => (
       <EachFilterContainer onClick={() => props.changeState("isMoreFiltersOpen")}>
-        <FilterOption>
+        <FilterOption isOpen={props.isMoreFiltersOpen}>
         More filters
         <ArrowIcon isOpen={props.isMoreFiltersOpen}>
           <FontAwesome

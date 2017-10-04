@@ -5,16 +5,16 @@ import FontAwesome from 'react-fontawesome';
 
 const PriceRange = props => (
       <EachFilterContainer onClick={() => props.changeState("isPriceRangeOpen")}>
-        <FilterOption>
-        Price range
-        <ArrowIcon isOpen={props.isPriceRangeOpen}>
-          <FontAwesome
-            name="angle-down"
-            style={{
-              color: '#008489',
-            }}
-          />
-        </ArrowIcon>
+        <FilterOption isOpen={props.isPriceRangeOpen}>
+          Price range
+          <ArrowIcon isOpen={props.isPriceRangeOpen}>
+            <FontAwesome
+              name="angle-down"
+              style={{
+                color: '#008489',
+              }}
+            />
+          </ArrowIcon>
         </FilterOption>
       </EachFilterContainer>
     );

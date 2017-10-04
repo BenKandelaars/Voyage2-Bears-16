@@ -26,6 +26,7 @@ export const FilterOption = styled.div`
   &:hover {
     background-color: #F2F2F2;
   }
+  background-color: ${props => props.isOpen ? '#F2F2F2' : '#FFF'};
 `;
 
 export const ArrowIcon = styled.div`

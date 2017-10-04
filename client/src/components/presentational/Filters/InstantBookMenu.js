@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 
 const InstantBook = props => (
       <EachFilterContainer onClick={() => props.changeState("isInstantBookOpen")}>
-        <FilterOption>
+        <FilterOption isOpen={props.isInstantBookOpen}>
         Instant Book
         <ArrowIcon isOpen={props.isInstantBookOpen}>
           <FontAwesome
