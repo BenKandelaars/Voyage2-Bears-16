@@ -84,7 +84,7 @@ export default class GuestDropdown extends Component {
       <GuestWrapper className="Guest-Wrapper">
         <div>
           {this.AddAllGuests}
-          <GuestMenu className="GuestMenu" style={{ display: this.props.showing ? 'block' : 'none' }} >
+          <GuestMenu className="Guest-Menu" style={{ display: this.props.showing ? 'block' : 'none' }} >
             <GuestCounter
               className="Guest-Counter"
               agegroup={'Adults'}
@@ -108,11 +108,11 @@ export default class GuestDropdown extends Component {
             />
           </GuestMenu>
         </div>
-        <Overlay className="overlay" style={{ width: this.props.showing ? '100%' : '0%' }} >
+        <Overlay className="Overlay" style={{ width: this.props.showing ? '100%' : '0%' }} >
 
-          <CloseBTN className="closebtn" onClick={this.props.click2show}>&times;</CloseBTN>
+          <CloseBTN className="Close-btn" onClick={this.props.click2show}>&times;</CloseBTN>
 
-          <OverlayContent class="overlay-content">
+          <OverlayContent className="Overlay-content">
             <GuestCounter
               className="Guest-Counter"
               agegroup={'Adults'}

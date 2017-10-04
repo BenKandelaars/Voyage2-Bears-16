@@ -49,11 +49,19 @@ export default class Searchbar extends Component {
             </Icon1>
             <InputPlusLabel>
               <p>When?</p>
-              <input placeholder="From - To" type="text" name="When" />
+              <input
+                placeholder="From - To"
+                type="text"
+                name="When"
+              />
             </InputPlusLabel>
           </InputGroup>
 
-          <GuestDropdown showing={this.state.show} addGuests={this.numberOfGuests} click2show={this.showMenu} />
+          <GuestDropdown
+            showing={this.state.show}
+            addGuests={this.numberOfGuests}
+            click2show={this.showMenu}
+          />
 
           <InputGroup2 className="Input-Group2" onClick={this.showMenu}>
             <Dot className="Dot">
