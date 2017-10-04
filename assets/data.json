@@ -1,22 +1,13 @@
 {
-  "destinations": {
-    "paris": {
-      "title": "Paris",      
-      "img": "/assets/pictures/destinations/paris_medium.jpg"
-    }
-  },
-
-  "explore": {
-    "home": {
-      "title": "Home",
-      "img": "/assets/pictures/explore/home_medium.jpg"
-    }
-  },
   "homes": [
     {
       "imgs": ["homeImg"],
       "title": "Villa",
-      "price": "52",
+      "price": {
+        "basic": "55",
+        "extraPerson": "20",
+        "weekend": "65"
+      },
       "summary": "Light and spacious, weekend away",
       "spaceType": "Entire Villa",
       "bedrooms": "3",
@@ -35,9 +26,38 @@
         "wirelessInternet": true,
         "bathtub": true
       },
-      "prices": 
+      "sleepingArrangments": {
+        "bedrooms": ["1 queen bed"],
+        "commonSpaces": "1 sofa bed"
+      },
+      "houseRules": {
+        "smoking": false,
+        "pets": true,
+        "parties": false,
+        "checkin": "3pm",
+        "checkout": "10am",
+        "custom": ""
+      },
+      "cancelationPolicy": "moderate",
+      "availability": {
+        "minimumStay": "1",
+        "custom": ""
+      }, 
+      "reviewCount": "1",
+      "averageScore": "4.5",
+      "reviews": [
+        {
+          "user": "Olivia",
+          "userID": "user_id",
+          "date": "4 October 2017",
+          "review": "It was amazing",
+          "score": "4.5"
+        }
+      ],
+      "host": "host_id"
     }
   ],
+
   "Experiences": [
     {
       "img": "experienceImg",
@@ -47,11 +67,7 @@
       "price": "52",
       "currency": "GBP",
       "description": "A fantastic day out on Stanage Edge in the beautiful Peak district",
-      "reviewCount": "70",
-      "averageScore": "4.5",
-      "host": "John Quick",
-      "hostPic": "picUrl",
-      "hostAbout": "Lorem Ipsum",
+      "host": "host_id",
       "duration": "8 hours",
       "foodAndDrinkIncluded": {
         "equipment": true, 
@@ -76,12 +92,14 @@
         "cost": ""
         }
       ],
+      "reviewCount": "1",
+      "averageScore": "4.5",
       "reviews": [
         {
           "name": "Olivia",
           "date": "4 October 2017",
           "review": "It was amazing",
-          "score": "5"
+          "score": "4.5"
         }
       ],
       "groupPhotos": [""],
@@ -92,7 +110,31 @@
         "fromHost": "Bring a sense of adventure"
       }
     }
-  ]
+  ],
+
+  "hosts": {
+    "host": "John Quick",
+    "picture": "url",
+    "about": "Lorem Ipsum",
+    "languages": ["English"],
+    "city": "Viennaa",
+    "country": "Austria",
+    "dateJoined": 2015,
+    "reviews": {
+      "total": 280,
+      "items": [
+        {
+        "user": "Andrew",
+        "userID": "user_id",
+        "date": "August 2017",
+        "review": "Lorem Ipsum"
+        }
+      ]
+    },
+    "badges": [],    
+    "experiences": ["experience_id"],
+    "homes": ["home_id"]
+  }
 }
 
 /*
@@ -122,6 +164,13 @@
 
 Store data as one large object.
 Then do mapreduce to cache a selection of 
-
+ or Collection:
+ - hosts
+ - users
+ - homes
+ - experiences
 */
+
+
+
 

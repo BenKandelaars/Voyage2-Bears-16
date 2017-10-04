@@ -1,0 +1,14 @@
+{
+  "paris": {
+    "title": "Paris",      
+    "img": "/assets/destinations/paris_medium.jpg"
+  },
+  "london": {
+    "title": "London",
+    "img": "../assets/destinations/london_medium.jpg"
+  },
+  import newYorkImg from '../../assets/pictures/destinations/newYork_medium.jpg';
+  import parisImg from '../../assets/pictures/destinations/paris_medium.jpg';
+  import krakowImg from '../../assets/pictures/destinations/krakow_medium.jpg';
+  import tokyoImg from '../../assets/pictures/destinations/tokyo_medium.jpg';
+}
