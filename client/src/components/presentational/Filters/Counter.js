@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 export const CounterContainer = styled.div`
@@ -12,16 +12,16 @@ text-align: left;
 `;
 
 export const MinusButton = styled.button`
-background-color: #FFF;
+background: transparent;
 border: 1px solid #008489;
-opacity: ${props => !props.isActive && '.5' };
 border-radius: 50%;
 color: #008489;
-width: 30px;
+cursor: pointer;
 height: 30px;
-position: relative;
-text-align: left;
+opacity: ${props => !props.isActive && '.5' };
 outline: none;
+position: relative;
+width: 30px;
 :after {
   font-size: 16px;
   content: "_";
@@ -33,6 +33,10 @@ outline: none;
 :active {
   box-shadow: 0px 0px 4px 2px #008489;
 }
+
+:disabled {
+  cursor: default;
+}
 `;
 
 export const PlusButtonContainer = MinusButtonContainer.extend`
@@ -40,7 +44,6 @@ text-align: right;
 `;
 
 export const PlusButton = MinusButton.extend`
-text-align: right;
 opacity: 1;
 :after {
   content: "+";
@@ -51,8 +54,8 @@ opacity: 1;
 
 export const CounterNumber = styled.div`
 display: table-cell;
-text-align: center;
 font-size: 20px;
+text-align: center;
 vertical-align: middle !important;
 `;
 
@@ -62,6 +65,7 @@ const Counter = props => (
       <MinusButton
         onClick={() => props.handleMinusButtonClick(props.clickedCounter)}
         isActive={props.count > 0}
+        disabled={props.count === 0}
       />
     </MinusButtonContainer>
   <CounterNumber>{props.count}{props.plusSign && "+"}</CounterNumber>

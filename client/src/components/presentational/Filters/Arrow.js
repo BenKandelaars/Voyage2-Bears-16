@@ -20,5 +20,4 @@ const Arrow = props => (
   />
   </ArrowIcon>
 );
-
 export default Arrow;
