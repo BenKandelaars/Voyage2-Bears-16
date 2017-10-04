@@ -13,54 +13,45 @@ class RoomTypeOption extends Component {
       return (
         <SectionContainer>
           <SectionOption>
-            <CheckboxStyle>
-              <Checkbox />
-              <CheckBoxFakeLabel />
-              <SelectionChoice>
-                <SelectionChoiceHeading>Entire Home</SelectionChoiceHeading>
-                <SelectionChoiceSubHeading>Have a place to yourself</SelectionChoiceSubHeading>
-              </SelectionChoice>
-            </CheckboxStyle>
+            <CheckboxComponent
+              heading="Entire Home"
+              subheading="Have a place to yourself"
+              entireDiv
+            />
             <SectionIcon>
               <FontAwesome
                 name="home"
-                size="3x"
+                size="2x"
               />
             </SectionIcon>
           </SectionOption>
           <SectionOption>
-            <CheckboxStyle>
-              <Checkbox onClick={this.clicked}/>
-              <CheckBoxFakeLabel />
-              <SelectionChoice>
-                <SelectionChoiceHeading>Private Room</SelectionChoiceHeading>
-                <SelectionChoiceSubHeading>Have your own room and share some common spaces</SelectionChoiceSubHeading>
-              </SelectionChoice>
-            </CheckboxStyle>
+            <CheckboxComponent
+              heading="Private Room"
+              subheading="Have your own room and share some common spaces"
+              entireDiv
+            />
             <SectionIcon>
               <FontAwesome
                 name="bathtub"
-                size="3x"
+                size="2x"
               />
             </SectionIcon>
           </SectionOption>
           <SectionOption>
-            <CheckboxStyle>
-              <Checkbox onClick={this.clicked}/>
-              <CheckBoxFakeLabel />
-              <SelectionChoice>
-                <SelectionChoiceHeading>Shared Room</SelectionChoiceHeading>
-                <SelectionChoiceSubHeading>Stay in a shared space, like a common room</SelectionChoiceSubHeading>
-              </SelectionChoice>
-            </CheckboxStyle>
+            <CheckboxComponent
+              heading="Shared Room"
+              subheading="Stay in a shared space, like a common room"
+              entireDiv
+            />
             <SectionIcon>
               <FontAwesome
                 name="coffee"
-                size="3x"
+                size="2x"
               />
             </SectionIcon>
-            <SectionButtons />
         </SectionOption>
+        <SectionButtons />
         </SectionContainer>
       );
     }

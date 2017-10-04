@@ -13,7 +13,6 @@ export const EachMenuContainer = styled.div`
   display: inline-block;
   position: relative;
   margin: 18px 0 0 18px;
-  cursor: pointer;
 `;
 
 export const EachFilterContainer = styled.div` 
@@ -23,6 +22,7 @@ export const FilterOption = styled.div`
   padding: 8px;
   border-radius: 3px;
   position: relative;
+  cursor: pointer;
   &:hover {
     background-color: #F2F2F2;
   }
@@ -48,7 +48,9 @@ export const SectionContainer = styled.div`
 
 export const SectionOption = styled.div`
   position: relative;
+  display: table;
   margin-bottom: 14px;
+  width: 100%;
 `;
 
 export const CheckboxStyle = styled.label`
@@ -108,10 +110,9 @@ export const SelectionChoice = styled.div`
 `;
 
 export const SectionIcon = styled.div`
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: table-cell;
+  text-align: right;
+
 `;
 
 export const SelectionChoiceHeading = styled.div`
@@ -233,21 +234,42 @@ export const MoreFiltersContainer = styled.div`
   `;
 
 export const EachOptionContainer = styled.div`
+  width: ${props => props.entireDiv ? '100%' : '50%'};
   padding-bottom: 20px;
-  border-bottom: 1px solid grey;
+`;
+
+export const SectionBreak = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #DBDBDB;
+`;
+
+export const SeeAllContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+`;
+
+export const SeeAllButton = styled.button`
 `;
 
 export const MoreFiltersHeading = styled.h2`
 `;
 
 export const MoreFiltersOptionContainer = styled.div`
-  display: flex;  
+  display: flex; 
+  flex-wrap: wrap; 
   justify-content: space-between;
-  width: 45%;
+  width: 90%;
   margin-bottom: 20px;
   p {
     margin: 0;
   }
+`;
+
+export const CheckboxContainer = styled.div`
+  width: 50%;
+  margin-bottom: 10px;
 `;
 
 export const MoreFiltersOptionStyle = styled.div`
@@ -309,7 +331,9 @@ export const CounterNumber = styled.div`
 
 // Cancel and Apply buttons
 export const SectionButtonsContainer = styled.div`
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   margin-top: 20px;
   button {
     border: none;
@@ -319,15 +343,9 @@ export const SectionButtonsContainer = styled.div`
 `;
 
 export const CancelButton = styled.button`
-  position: absolute;
-  left: 0;
   color: #767676;
-  padding: 0;
 `;
 
 export const ApplyButton = styled.button`
-  position: absolute;
-  right: 0;
   color: #008489;
-  padding: 0;
 `;

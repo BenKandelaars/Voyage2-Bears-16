@@ -5,7 +5,8 @@ import ToggleButton from './ToggleButton';
 import { MoreFiltersContainer, EachOptionContainer,
   MoreFiltersHeading, MoreFiltersOptionStyle,
   MoreFiltersOptionContainer,
-  CounterContainer, MinusButton, PlusButton, CounterNumber } from './styles';
+  CheckboxContainer, SectionBreak,
+  SeeAllContainer, SeeAllButton } from './styles';
 
 export const RoomsAndBeds = props => (
   <EachOptionContainer>
@@ -52,7 +53,7 @@ export const MoreOptions = () => (
         <MoreFiltersOptionStyle>Superhost</MoreFiltersOptionStyle>
         <p>Stay with recognised hosts.</p>
         <p>Learn more</p>
-      </div>
+      </div> 
       <div>
         <ToggleButton />
       </div>
@@ -60,68 +61,86 @@ export const MoreOptions = () => (
   </EachOptionContainer>
 );
 
-export const Amenities = () => (
-  <EachOptionContainer>
+export const Amenities = props => (
+  <EachOptionContainer entireDiv>
     <MoreFiltersHeading>Amenities</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
-      <div>
-        <CheckboxComponent value={'Family/Kid Friendly'}/>
-        <CheckboxComponent value={'TV'}/>
-      </div>
-      <div>
-        <CheckboxComponent value={'Kitchen'}/>
-        <CheckboxComponent value={'Wireless Internet'}/>          
-      </div>
+      <CheckboxComponent heading="Heating" />
+      <CheckboxComponent heading="Kitchen" />
+      <CheckboxComponent heading="TV" />
+      <CheckboxComponent heading="Wireless Internet" />
+      {props.isAmenitiesSeeAll && 
+        <SeeAllContainer isSeeAll={props.isAmenitiesSeeAll}>
+          <CheckboxComponent heading="Buzzer/wireless intercom" />
+          <CheckboxComponent heading="Doorman" />
+          <CheckboxComponent heading="Dryer" />
+          <CheckboxComponent heading="Family/Kid Friendly"/>
+          <CheckboxComponent heading="Hair dryer" />
+          <CheckboxComponent heading="Hangers" />
+          <CheckboxComponent heading="Indoor Fireplace" />
+          <CheckboxComponent heading="Iron" />
+          <CheckboxComponent heading="Laptop friendly workspace" />
+          <CheckboxComponent heading="Lock on bedroom" />
+          <CheckboxComponent heading="Self Check-in" />
+          <CheckboxComponent heading="Shampoo" />
+          <CheckboxComponent heading="Washer" />
+        </SeeAllContainer>     
+      }
     </MoreFiltersOptionContainer>
+    <SeeAllButton onClick={() => props.handleSeeAll("isAmenitiesSeeAll")}>See all amenities</SeeAllButton>
   </EachOptionContainer>
 );
 
-export const Facilities = () => (
-  <EachOptionContainer>
+export const Facilities = props => (
+  <EachOptionContainer entireDiv>
     <MoreFiltersHeading>Facilities</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
-      <div>
-        <CheckboxComponent value={'Elevator in Building'}/>
-        <CheckboxComponent value={'Hot Tub'}/>
-        <CheckboxComponent value={'Gym'}/>
-      </div>
-      <div>
-        <CheckboxComponent value={'Free parking on premise'}/>
-        <CheckboxComponent value={'Pool'}/>
-        <CheckboxComponent value={'Wheelchair accessible'}/>    
-      </div>
+        <CheckboxComponent heading="Elevator in Building" />
+        <CheckboxComponent heading="Hot Tub" />
+        <CheckboxComponent heading="Gym" />
+        <CheckboxComponent heading="Free parking on premise" />
+        <CheckboxComponent heading="Pool" />
+        <CheckboxComponent heading="Wheelchair accessible" />  
     </MoreFiltersOptionContainer>
+    <SeeAllButton onClick={() => props.handleSeeAll("isFacilitiesSeeAll")}>See all facilities</SeeAllButton>
   </EachOptionContainer>
 );
 
-export const HouseRules = () => (
-  <EachOptionContainer>
+export const HouseRules = props => (
+  <EachOptionContainer entireDiv>
     <MoreFiltersHeading>House rules</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
-      <div>
-        <CheckboxComponent value={'Pets Allowed'} />
-        <CheckboxComponent value={'Suitable for events'} />
-      </div>
-      <div>
-        <CheckboxComponent value={'Smoking Allowed'} />
-      </div>
-    </MoreFiltersOptionContainer>        
+      <CheckboxComponent heading="Pets Allowed" />
+      <CheckboxComponent heading="Suitable for events" />
+      <CheckboxComponent heading="Smoking Allowed" />
+    </MoreFiltersOptionContainer>
   </EachOptionContainer>
 );
 
-export const HostLanguage = () => (
-  <EachOptionContainer>
+export const Neighbourhoods = props => (
+  <EachOptionContainer entireDiv>
+    <MoreFiltersHeading>Facilities</MoreFiltersHeading>
+    <MoreFiltersOptionContainer>
+        <CheckboxComponent heading="Bali" />
+        <CheckboxComponent heading="Centro" />
+        <CheckboxComponent heading="French Riviera" />
+        <CheckboxComponent heading="Puxi" />
+    </MoreFiltersOptionContainer>
+    <SeeAllButton onClick={() => props.handleSeeAll("isNeighbourhoodsSeeAll")}>See all neighbourhoods</SeeAllButton>
+  </EachOptionContainer>
+);
+
+
+export const HostLanguage = props => (
+  <EachOptionContainer entireDiv>
     <MoreFiltersHeading>Host language</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
-      <div>
-        <CheckboxComponent value={'English'}/>
-        <CheckboxComponent value={'Français'}/>
-      </div>
-      <div>
-        <CheckboxComponent value={'Español'}/>
-        <CheckboxComponent value={'中文'}/>          
-      </div>
+      <CheckboxComponent heading="English" />
+      <CheckboxComponent heading="Français" />
+      <CheckboxComponent heading="Español" />
+      <CheckboxComponent heading="中文" />
     </MoreFiltersOptionContainer>
+    <SeeAllButton onClick={() => props.handleSeeAll("isHostLanguageSeeAll")}>See all host language</SeeAllButton>
   </EachOptionContainer>
 );
 
@@ -133,27 +152,30 @@ class MoreFiltersOption extends Component {
       numberOfBedrooms: 0,
       numberOfBeds: 0,
       numberOfBathrooms: 0,
+      isAmenitiesSeeAll: false,
+      isFacilitiesSeeAll: false,
+      isNeighbourhoodsSeeAll: false,
+      isHostLanguageSeeAll: false,
     }
   }
-  // handleButtonClick = (clickedCounter, isPlus) => {
-  //   this.setState(prevState => ({
-  //     [clickedCounter]: (isPlus ? (prevState[clickedCounter] + 1) : (prevState[clickedCounter] - 1)),
-  //   }));
-  // }
-
   handlePlusButtonClick = (clickedCounter, isHalfSize) => {
-    const halfsize = (isHalfSize ? 0.5 : 1);
+    const number = (isHalfSize ? 0.5 : 1);
     this.setState(prevState => ({
-      [clickedCounter]: prevState[clickedCounter] + halfsize,
+      [clickedCounter]: prevState[clickedCounter] + number,
     }));
   }
   handleMinusButtonClick = (clickedCounter, isHalfSize) => {
-    const halfsize = (isHalfSize ? 0.5 : 1);
+    const number = (isHalfSize ? 0.5 : 1);
     if (this.state[clickedCounter] > 0) {
       this.setState(prevState => ({
-        [clickedCounter]: prevState[clickedCounter] - halfsize,
+        [clickedCounter]: prevState[clickedCounter] - number,
       }));
     }
+  }
+  handleSeeAll = (clickedSection) => {
+    this.setState(prevState => ({
+      [clickedSection]: !prevState[clickedSection]
+    }));
   }
 
   render() {
@@ -167,11 +189,32 @@ class MoreFiltersOption extends Component {
           numberOfBeds={this.state.numberOfBeds}
           numberOfBathrooms={this.state.numberOfBathrooms}
           />
+        <SectionBreak />
         <MoreOptions />
-        <Amenities />
-        <Facilities />
-        <HouseRules />
-        <HostLanguage />
+        <SectionBreak />
+        <Amenities
+          isAmenitiesSeeAll={this.state.isAmenitiesSeeAll}
+          handleSeeAll={this.handleSeeAll}
+        />
+        <SectionBreak />
+        <Facilities
+          isFacilitiesSeeAll={this.state.isFacilitiesSeeAll} 
+          handleSeeAll={this.handleSeeAll}
+        />
+        <SectionBreak />
+        <HouseRules
+        />
+        <SectionBreak />
+        <Neighbourhoods
+          isNeighbourhoodsAll={this.state.isNeighbourhoodsAll} 
+          handleSeeAll={this.handleSeeAll}
+        />
+        <SectionBreak />
+        <HostLanguage
+          isHostLanguageAll={this.state.isHostLanguageAll} 
+          handleSeeAll={this.handleSeeAll}
+        />
+        <SectionBreak />
       </MoreFiltersContainer>
     );
   }
