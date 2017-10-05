@@ -4,14 +4,19 @@ import Carousel from '../presentational/Carousel/Carousel';
 import Cards from '../presentational/Cards/Cards';
 import Sitemap from '../presentational/Sitemap/Sitemap';
 import NavComponent from '../presentational/Navbar/Navbar';
+import HomeNavbar from '../presentational/HomeNavbar/HomeNavbar';
+import { Wrapper } from './LandingStyles';
 
 const Landing = () => (
   <div>
     <NavComponent />
-    <Hero />
-    <Carousel />
-    <Cards />
-    <Sitemap />
+    <Wrapper>
+      <Hero />
+      <HomeNavbar />
+      <Carousel />
+      <Cards />
+      <Sitemap />
+    </Wrapper>
   </div>
 );
 
