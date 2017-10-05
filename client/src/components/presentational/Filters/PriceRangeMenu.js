@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PriceRangeOption from './PriceRangeOption';
+import Arrow from './Arrow';
 import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
 import FontAwesome from 'react-fontawesome';
 
@@ -7,14 +8,10 @@ const PriceRange = props => (
       <EachFilterContainer onClick={() => props.changeState("isPriceRangeOpen")}>
         <FilterOption isOpen={props.isPriceRangeOpen}>
           Price range
-          <ArrowIcon isOpen={props.isPriceRangeOpen}>
-            <FontAwesome
-              name="angle-down"
-              style={{
-                color: '#008489',
-              }}
-            />
-          </ArrowIcon>
+          <Arrow
+          isOpen={props.isPriceRangeOpen}
+          color='#008489'
+          />
         </FilterOption>
       </EachFilterContainer>
     );

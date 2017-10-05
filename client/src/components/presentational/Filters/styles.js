@@ -112,6 +112,7 @@ export const SelectionChoice = styled.div`
 export const SectionIcon = styled.div`
   display: table-cell;
   text-align: right;
+  vertical-align: top;
 
 `;
 
@@ -125,7 +126,43 @@ export const SelectionChoiceSubHeading = styled.div`
 `;
 
 export const SliderContainer = styled.div `
-  width: 100%
+  width: 100%;
+  height : 50px;
+  position: relative;
+  margin: 20px 0;
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    outline: none;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #008489;
+    position: absolute;
+    overflow: hidden;
+    width: 100%; 
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    z-index: 1;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #008489;
+    border-radius: 20px;
+    background-color: #FFF;
+  }
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    position: relative;
+    z-index: 10;
+  }
+
+  input[type="range"]::-ms-thumb {
+    position: relative;
+    z-index: 10;
+  } 
 `;
 
 export const Slider = styled.input.attrs({
@@ -243,6 +280,14 @@ export const SectionBreak = styled.div`
   border-bottom: 1px solid #DBDBDB;
 `;
 
+export const SeeAllAnimation = styled.div`
+visibility: ${props => props.isSeeAll ? "visible" : "hidden"};
+opacity: ${props => props.isSeeAll ? "1" : "0"};
+transform: translateY(${props => props.isSeeAll ? "0" : "-10"}%);
+transition: .4s ease-out;
+
+`;
+
 export const SeeAllContainer = styled.div`
   width: 100%;
   display: flex;
@@ -251,6 +296,16 @@ export const SeeAllContainer = styled.div`
 `;
 
 export const SeeAllButton = styled.button`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: #008489;
+  font-size: 16px;
+  outline: none;
+  padding: 0;
+  :hover {
+    border-bottom: 1px solid #008489;
+  }
 `;
 
 export const MoreFiltersHeading = styled.h2`
@@ -336,16 +391,32 @@ export const SectionButtonsContainer = styled.div`
   width: 100%;
   margin-top: 20px;
   button {
-    border: none;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 16px;
   }
 `;
 
 export const CancelButton = styled.button`
   color: #767676;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  :hover {
+    border-bottom: 1px solid #767676;
+  }
+
 `;
 
 export const ApplyButton = styled.button`
   color: #008489;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  :hover {
+    border-bottom: 1px solid #008489;
+  }
 `;

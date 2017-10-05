@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Arrow from './Arrow';
 import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
 import FontAwesome from 'react-fontawesome';
 
@@ -6,14 +7,10 @@ const MoreFilters = props => (
       <EachFilterContainer onClick={() => props.changeState("isMoreFiltersOpen")}>
         <FilterOption isOpen={props.isMoreFiltersOpen}>
         More filters
-        <ArrowIcon isOpen={props.isMoreFiltersOpen}>
-          <FontAwesome
-            name="angle-down"
-            style={{
-              color: '#008489',
-            }}
-          />
-        </ArrowIcon>
+        <Arrow
+          isOpen={props.isMoreFiltersOpen}
+          color='#008489'
+        />
         </FilterOption>
       </EachFilterContainer>
     );

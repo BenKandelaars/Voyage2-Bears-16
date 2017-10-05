@@ -12,6 +12,7 @@ const RoomType = props => (
         Room type
         <Arrow
           isOpen={props.isRoomTypeOpen}
+          color='#008489'
         />
         </FilterOption>
       </EachFilterContainer>  

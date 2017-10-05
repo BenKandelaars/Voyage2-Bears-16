@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Arrow from './Arrow';
 import CheckboxComponent from './CheckboxComponent';
 import Counter from './Counter';
 import ToggleButton from './ToggleButton';
@@ -6,7 +7,7 @@ import { MoreFiltersContainer, EachOptionContainer,
   MoreFiltersHeading, MoreFiltersOptionStyle,
   MoreFiltersOptionContainer,
   CheckboxContainer, SectionBreak,
-  SeeAllContainer, SeeAllButton } from './styles';
+  SeeAllContainer, SeeAllButton, SeeAllAnimation } from './styles';
 
 export const RoomsAndBeds = props => (
   <EachOptionContainer>
@@ -69,25 +70,31 @@ export const Amenities = props => (
       <CheckboxComponent heading="Kitchen" />
       <CheckboxComponent heading="TV" />
       <CheckboxComponent heading="Wireless Internet" />
-      {props.isAmenitiesSeeAll && 
-        <SeeAllContainer isSeeAll={props.isAmenitiesSeeAll}>
-          <CheckboxComponent heading="Buzzer/wireless intercom" />
-          <CheckboxComponent heading="Doorman" />
-          <CheckboxComponent heading="Dryer" />
-          <CheckboxComponent heading="Family/Kid Friendly"/>
-          <CheckboxComponent heading="Hair dryer" />
-          <CheckboxComponent heading="Hangers" />
-          <CheckboxComponent heading="Indoor Fireplace" />
-          <CheckboxComponent heading="Iron" />
-          <CheckboxComponent heading="Laptop friendly workspace" />
-          <CheckboxComponent heading="Lock on bedroom" />
-          <CheckboxComponent heading="Self Check-in" />
-          <CheckboxComponent heading="Shampoo" />
-          <CheckboxComponent heading="Washer" />
-        </SeeAllContainer>     
-      }
+      <SeeAllAnimation isSeeAll={props.isAmenitiesSeeAll}>
+        {props.isAmenitiesSeeAll && 
+          <SeeAllContainer isSeeAll={props.isAmenitiesSeeAll} >
+            <CheckboxComponent heading="Buzzer/wireless intercom" />
+            <CheckboxComponent heading="Doorman" />
+            <CheckboxComponent heading="Dryer" />
+            <CheckboxComponent heading="Family/Kid Friendly"/>
+            <CheckboxComponent heading="Hair dryer" />
+            <CheckboxComponent heading="Hangers" />
+            <CheckboxComponent heading="Indoor Fireplace" />
+            <CheckboxComponent heading="Iron" />
+            <CheckboxComponent heading="Laptop friendly workspace" />
+            <CheckboxComponent heading="Lock on bedroom" />
+            <CheckboxComponent heading="Self Check-in" />
+            <CheckboxComponent heading="Shampoo" />
+            <CheckboxComponent heading="Washer" />
+          </SeeAllContainer>
+        }
+      </SeeAllAnimation>
     </MoreFiltersOptionContainer>
     <SeeAllButton onClick={() => props.handleSeeAll("isAmenitiesSeeAll")}>See all amenities</SeeAllButton>
+    <Arrow
+      isOpen={props.isAmenitiesSeeAll}
+      color='#008489'
+    />
   </EachOptionContainer>
 );
 
@@ -96,13 +103,21 @@ export const Facilities = props => (
     <MoreFiltersHeading>Facilities</MoreFiltersHeading>
     <MoreFiltersOptionContainer>
         <CheckboxComponent heading="Elevator in Building" />
-        <CheckboxComponent heading="Hot Tub" />
-        <CheckboxComponent heading="Gym" />
         <CheckboxComponent heading="Free parking on premise" />
         <CheckboxComponent heading="Pool" />
         <CheckboxComponent heading="Wheelchair accessible" />  
+      {props.isFacilitiesSeeAll && 
+        <SeeAllContainer isSeeAll={props.isFacilitiesSeeAll}>
+          <CheckboxComponent heading="Gym" />
+          <CheckboxComponent heading="Hot Tub" />
+        </SeeAllContainer>     
+      }
     </MoreFiltersOptionContainer>
     <SeeAllButton onClick={() => props.handleSeeAll("isFacilitiesSeeAll")}>See all facilities</SeeAllButton>
+    <Arrow
+      isOpen={props.isFacilitiesSeeAll}
+      color='#008489'
+    />
   </EachOptionContainer>
 );
 
@@ -125,8 +140,18 @@ export const Neighbourhoods = props => (
         <CheckboxComponent heading="Centro" />
         <CheckboxComponent heading="French Riviera" />
         <CheckboxComponent heading="Puxi" />
+      {props.isNeighbourhoodsSeeAll && 
+        <SeeAllContainer isSeeAll={props.isNeighbourhoodsSeeAll}>
+          <CheckboxComponent heading="1st Arrondissement" />
+          <CheckboxComponent heading="3rd Arrondissement" />
+        </SeeAllContainer>     
+      }
     </MoreFiltersOptionContainer>
     <SeeAllButton onClick={() => props.handleSeeAll("isNeighbourhoodsSeeAll")}>See all neighbourhoods</SeeAllButton>
+    <Arrow
+      isOpen={props.isNeighbourhoodsSeeAll}
+      color='#008489'
+    />
   </EachOptionContainer>
 );
 
@@ -139,8 +164,18 @@ export const HostLanguage = props => (
       <CheckboxComponent heading="Français" />
       <CheckboxComponent heading="Español" />
       <CheckboxComponent heading="中文" />
+      {props.isHostLanguageSeeAll && 
+        <SeeAllContainer isSeeAll={props.isHostLanguageSeeAll}>
+          <CheckboxComponent heading="Bahasa Indonesia" />
+          <CheckboxComponent heading="Bahasa Malaysia" />
+        </SeeAllContainer>     
+      }
     </MoreFiltersOptionContainer>
     <SeeAllButton onClick={() => props.handleSeeAll("isHostLanguageSeeAll")}>See all host language</SeeAllButton>
+    <Arrow
+      isOpen={props.isHostLanguageSeeAll}
+      color='#008489'
+    />
   </EachOptionContainer>
 );
 
@@ -206,12 +241,12 @@ class MoreFiltersOption extends Component {
         />
         <SectionBreak />
         <Neighbourhoods
-          isNeighbourhoodsAll={this.state.isNeighbourhoodsAll} 
+          isNeighbourhoodsSeeAll={this.state.isNeighbourhoodsSeeAll} 
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
         <HostLanguage
-          isHostLanguageAll={this.state.isHostLanguageAll} 
+          isHostLanguageSeeAll={this.state.isHostLanguageSeeAll} 
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
