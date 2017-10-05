@@ -5,7 +5,7 @@ import Cards from '../presentational/Cards/Cards';
 import Sitemap from '../presentational/Sitemap/Sitemap';
 import NavComponent from '../presentational/Navbar/Navbar';
 
-const Home = () => (
+const Landing = () => (
   <div>
     <NavComponent />
     <Hero />
@@ -15,4 +15,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default Landing;
