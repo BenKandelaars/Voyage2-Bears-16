@@ -281,11 +281,11 @@ export const SectionBreak = styled.div`
 `;
 
 export const SeeAllAnimation = styled.div`
-visibility: ${props => props.isSeeAll ? "visible" : "hidden"};
-opacity: ${props => props.isSeeAll ? "1" : "0"};
-transform: translateY(${props => props.isSeeAll ? "0" : "-10"}%);
-transition: .4s ease-out;
-
+  width: 100%;
+  visibility: ${props => props.isSeeAll ? "visible" : "hidden"};
+  opacity: ${props => props.isSeeAll ? "1" : "0"};
+  transform: translateY(${props => props.isSeeAll ? "0" : "-10"}%);
+  transition: .4s ease-out;
 `;
 
 export const SeeAllContainer = styled.div`
