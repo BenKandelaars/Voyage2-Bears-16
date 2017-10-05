@@ -189,7 +189,7 @@ export const ExperienceWrapper = styled.div`
 `;
 
 export const Star = styled.span`
-    color: #466728;
+    color: ${theme.GREEN};
     margin: 2px 2px 2px 0px;
 `;
 

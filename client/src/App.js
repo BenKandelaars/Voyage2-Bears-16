@@ -1,8 +1,7 @@
 import React from 'react';
-import { 
-  BrowserRouter, 
-  Route, 
-  Link 
+import {
+  BrowserRouter,
+  Route,
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Landing from './components/layout/Landing';
