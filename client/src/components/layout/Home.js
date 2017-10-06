@@ -1,18 +1,26 @@
 import React from 'react';
-import Hero from '../presentational/Hero/Hero';
-import Carousel from '../presentational/Carousel/Carousel';
-import Cards from '../presentational/Cards/Cards';
-import Sitemap from '../presentational/Sitemap/Sitemap';
 import NavComponent from '../presentational/Navbar/Navbar';
+import SubNavbar from '../presentational/SubNavbar/SubNavbar';
+import {
+  Header,
+  Main,
+} from './home_styles';
 
-const Home = () => (
-  <div>
-    <NavComponent />
-    <Hero />
-    <Carousel />
-    <Cards />
-    <Sitemap />
-  </div>
-);
+class Home extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header>
+          <NavComponent />
+          <SubNavbar selected={this.props.section}/>
+        </Header>
+        <Main>
+          
+        </Main>
+      </div>
+    );
+  }
+}
 
 export default Home;
+
