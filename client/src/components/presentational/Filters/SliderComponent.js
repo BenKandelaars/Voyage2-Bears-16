@@ -1,11 +1,12 @@
 import React from 'react';
 import Slider, { Range } from 'rc-slider';
+import { SliderContainer } from './styles';
 
 const SliderComponent = () => (
-  <div>
+  <SliderContainer>
     <Slider />
     <Range />
-  </div>
+  </SliderContainer>
 );
 
 export default SliderComponent;
