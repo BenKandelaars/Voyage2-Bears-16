@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../presentational/Navbar/Navbar';
+import NavComponent from '../presentational/Navbar/Navbar';
 import SubNavbar from '../presentational/SubNavbar/SubNavbar';
 import {
   Header,
@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div>
         <Header>
-          <Nav />
+          <NavComponent />
           <SubNavbar selected={this.props.section}/>
         </Header>
         <Main>
