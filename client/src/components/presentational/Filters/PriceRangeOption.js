@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import SectionButtons from './SectionButtons';
+import SliderComponent from './SliderComponent';
 import { SectionContainer, SelectionChoiceHeading, SelectionChoiceSubHeading,
   SliderContainer } from './styles';
 
-const Slider = props => (
+const SliderHTML = props => (
   <SliderContainer>
     <input
       type="range"
@@ -45,9 +46,6 @@ class PriceRangeOption extends Component {
         max_value: value,
       });
     }
-    // let obj = {};
-    // obj[e.target.name] = value;
-    // this.setState(obj);
   }
     
   render() {
@@ -60,13 +58,14 @@ class PriceRangeOption extends Component {
           The average nightly price is $77.      
         </SelectionChoiceSubHeading>
         <SliderContainer>
-          <Slider 
+          <SliderHTML 
             min_value={this.state.min_value}
             max_value={this.state.max_value}
             handleChange={this.handleChange}
           />
         </SliderContainer>
         <SectionButtons />
+        <SliderComponent />
       </SectionContainer>
     );
   }
