@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from '../../../stylesConfig';
 
 export const Wrapper = styled.div`
-  margin-top: 250px;
+  margin-top: 50px;
   width: 100%;
 
   a {
