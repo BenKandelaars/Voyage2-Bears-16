@@ -37,7 +37,7 @@ class CarouselView extends Component {
             visible={this.state.visible}
           >
             <this.props.Card
-              innerRef={ (el) => { this.width = el; }}
+              getRef={ (el) => { this.width = el; }}
               {...this.props}
             />
             <this.props.Card {...this.props} />

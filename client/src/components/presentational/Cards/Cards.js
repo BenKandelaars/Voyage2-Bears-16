@@ -61,10 +61,8 @@ DestinationCard.propTypes = {
 
 export class ExperienceCard extends React.Component {
   render() {
-    const getRef = (this.props) ? this.props.innerRef : null;
-
     return (
-      <div ref={getRef}>
+      <div ref={this.props.getRef}>
       <ExperienceWrapper>
         <img src={this.props.img} alt={this.props.title} />
         <div>
@@ -93,7 +91,7 @@ ExperienceCard.propTypes = {
 };
 
 export const HomesCard = props => (
-  <div ref={props.innerRef}>
+  <div ref={props.getRef}>
   <HomesWrapper>
     <img src={props.img} alt={props.title} />
     <div>
