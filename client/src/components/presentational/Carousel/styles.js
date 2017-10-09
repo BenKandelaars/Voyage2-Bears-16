@@ -51,7 +51,6 @@ export const CarouselListWrapper = styled.div`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  margin-left: -10px;
 `;
 
 export const CarouselList = styled.div`
