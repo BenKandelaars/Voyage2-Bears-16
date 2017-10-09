@@ -59,23 +59,31 @@ DestinationCard.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export const ExperienceCard = props => (
-  <ExperienceWrapper>
-    <img src={props.img} alt={props.title} />
-    <div>
-      <p><b>£{props.price}</b>
-        &nbsp;&nbsp;
-        {props.description}
-      </p>
-      <FullStar />
-      <FullStar />
-      <FullStar />
-      <HalfStar />
-      <EmptyStar />
-      <Reviews>70 Reviews</Reviews>
-    </div>
-  </ExperienceWrapper>
-);
+export class ExperienceCard extends React.Component {
+  render() {
+    const getRef = (this.props) ? this.props.innerRef : null;
+
+    return (
+      <div ref={getRef}>
+      <ExperienceWrapper>
+        <img src={this.props.img} alt={this.props.title} />
+        <div>
+          <p><b>£{this.props.price}</b>
+            &nbsp;&nbsp;
+            {this.props.description}
+          </p>
+          <FullStar />
+          <FullStar />
+          <FullStar />
+          <HalfStar />
+          <EmptyStar />
+          <Reviews>70 Reviews</Reviews>
+        </div>
+      </ExperienceWrapper>
+      </div>
+    );
+  }
+}
 
 ExperienceCard.propTypes = {
   img: PropTypes.string.isRequired,

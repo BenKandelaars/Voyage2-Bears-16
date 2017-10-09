@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import theme from '../../../stylesConfig';
 
-/*
 export const Container = styled.div`
   max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 20px;
-`;
-*/
+  margin-top: 150px;
+  border-bottom: 1px solid green;
+  `;
 
-/* Moved with component to Component's folder - CarouselTop styles
+/*
 export const CarouselTopStyle = styled.div`
   position: relative;
   width: 100%;
@@ -24,9 +22,7 @@ export const CarouselTitle = styled.h1`
   transform: translateY(-60%);
   left: 0;
 `;
-*/
 
-/* Moved to component file with accompanying component.
 export const SeeAllStyle = styled.span`
   position: absolute;
   margin: 0;
@@ -38,7 +34,7 @@ export const SeeAllStyle = styled.span`
   padding-right: 20px;
   
 `;
-*/
+
 // Caroucel
 
 export const CarouselWrapper = styled.div`
@@ -55,9 +51,6 @@ export const CarouselListWrapper = styled.div`
 `;
 
 export const CarouselList = styled.div`
-  white-space: nowrap;
-  display: flex;
-  
   @media (min-width: 460px) {
     width: 100%;
     transform: translateX(${props => props.visible ? props.visible : 0}px);
@@ -89,7 +82,6 @@ export const CarouselText = styled.div`
   height: 50px;
 `;
 
-/* Moved to Components folder with their respective components.
 export const LeftArrowStyle = styled.div`
     position: absolute;
     top: 50%;
@@ -110,14 +102,11 @@ export const RightArrowStyle = styled.div`
   display: none;
   `;
 
-  */
-  /*
-// Card styling 
+// Card styling
 export const SectionStyles = styled.div`
   width: 100%;
   padding: 20px;
 `;
-
 
 export const ExploreContainer = styled.div`
   display: flex;
@@ -250,6 +239,9 @@ export const ExperiencesContainer = styled.div`
   margin: 20px 0px;
 `;
 
+export const ExperienceCardWrapper = styled.div`
+`;
+
 export const ExperienceCardContainer = styled.div`
   margin: 0 10px;
 `;
@@ -364,6 +356,7 @@ div {
    width: 335px;     
   }
 `;
+
 
 
 */

@@ -6,13 +6,13 @@ const SeeAll = () => {
   return (
     <SeeAllStyle>
     See all
-    <FontAwesome
-      name="angle-right"
-      style={{
-        color : "#666666",
-        paddingLeft: ".4rem",
-      }}
-    />
+      <FontAwesome
+        name="angle-right"
+        style={{
+          color : "#666666",
+          paddingLeft: ".4rem",
+        }}
+      />
     </SeeAllStyle>
   );
 };

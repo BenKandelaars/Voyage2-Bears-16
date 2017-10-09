@@ -132,9 +132,9 @@ export const DestinationItem = styled.div`
 `;
 
 export const ExperiencesContainer = styled.div`
-  width: 100%;  
-  display: flex;
+  // width: 100%;  
   margin: 20px 0px;
+  display: flex;
   
   div {
     margin-right: 15px;
@@ -150,7 +150,8 @@ export const ExperienceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  
+  margin-right: 15px;
+
   img {
     height: 68vw;
     width: 42vw;    
@@ -160,9 +161,12 @@ export const ExperienceWrapper = styled.div`
 
   div {    
       p {
-    margin: 5px 0px;
-    display: block;
-    color: ${theme.GREY_MEDIUM};    
+        white-space: normal;
+        height: 2.4rem;
+        overflow: hidden;
+        margin: 5px 0px;
+        display: block;
+        color: ${theme.GREY_MEDIUM};    
     
       b {
         color: ${theme.BLACK};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RightArrow from './RightArrow';
-import LeftArrow from './LeftArrow';
+import RightArrow from './Components/RightArrow';
+import LeftArrow from './Components/LeftArrow';
 import { CarouselWrapper, CarouselList, CarouselListWrapper } from './styles';
 import Experiences from './Experiences';
 
@@ -27,8 +27,8 @@ class ExperiencesCarousel extends Component {
     this.setState(prevState => ({ visible: prevState.visible - prevState.width }));
     this.setState(prevState => ({ activeIndex: prevState.activeIndex + 1 }));
   }
-  render () {
-    console.log(this.state.width);
+  render() {
+    // console.log(this.state.width);
     return (
       <CarouselWrapper>
         <LeftArrow
@@ -39,10 +39,10 @@ class ExperiencesCarousel extends Component {
           <CarouselList
             visible={this.state.visible}
           >
-            <Experiences 
+            <Experiences
               handleWidthSet={this.handleWidthSet}
               width={this.state.width}
-              innerRef={width => { this.width = width; }}
+              innerRef={width => this.width = width }
             />
           </CarouselList>
         </CarouselListWrapper>

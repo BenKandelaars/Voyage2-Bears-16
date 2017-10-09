@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from '../presentational/Hero/Hero';
-import Carousel from '../presentational/Carousel/Carousel';
+import LandingContent from '../presentational/LandingContent/LandingContent';
 import Cards from '../presentational/Cards/Cards';
 import Sitemap from '../presentational/Sitemap/Sitemap';
 import NavComponent from '../presentational/Navbar/Navbar';
@@ -13,7 +13,7 @@ const Landing = () => (
     <Wrapper>
       <Hero />
       <SubNavbar />
-      <Carousel />
+      <LandingContent />
       <Cards />
       <Sitemap />
     </Wrapper>

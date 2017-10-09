@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import {
   ExperiencesContainer,
-  ExperienceWrapper,
   Star,
   Reviews,
-  ExperienceCardWrapper,
+  div,
   ExperienceCardContainer,
 } from './styles';
 import resturantImg from '../../assets/pictures/explore/resturant_medium.jpg';
@@ -43,7 +42,7 @@ ExperienceCard.propTypes = {
 
 const Experiences = (props) => (
     <ExperiencesContainer>
-      <ExperienceCardWrapper innerRef={props.innerRef}>
+      <div innerRef={props.innerRef}>
         <ExperienceCardContainer>
           <ExperienceCard
             img={experienceImg}
@@ -52,8 +51,8 @@ const Experiences = (props) => (
             description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
+      </div>
+      <div>
         <ExperienceCardContainer>
           <ExperienceCard
             img={resturantImg}
@@ -62,8 +61,8 @@ const Experiences = (props) => (
             description={'A delicious meal to 2 with friends'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
+      </div>
+      <div>
         <ExperienceCardContainer>
           <ExperienceCard
             img={experienceImg}
@@ -72,8 +71,8 @@ const Experiences = (props) => (
             description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
+      </div>
+      <div>
         <ExperienceCardContainer>
           <ExperienceCard
             img={resturantImg}
@@ -82,8 +81,8 @@ const Experiences = (props) => (
             description={'A delicious meal to 2 with friends'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
+      </div>
+      <div>
         <ExperienceCardContainer>
           <ExperienceCard
             img={experienceImg}
@@ -92,8 +91,8 @@ const Experiences = (props) => (
             description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
-      <ExperienceCardWrapper>
+      </div>
+      <div>
         <ExperienceCardContainer>
           <ExperienceCard
             img={resturantImg}
@@ -102,7 +101,7 @@ const Experiences = (props) => (
             description={'A delicious meal to 2 with friends'}
           />
         </ExperienceCardContainer>
-      </ExperienceCardWrapper>
+      </div>
     </ExperiencesContainer>
 );
 

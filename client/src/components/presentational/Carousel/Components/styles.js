@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../../stylesConfig';
+import theme from '../../../../stylesConfig';
 
 /*
 export const Container = styled.div`
@@ -7,9 +7,8 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
 `;
-*/
 
-/* Moved with component to Component's folder - CarouselTop styles
+*/
 export const CarouselTopStyle = styled.div`
   position: relative;
   width: 100%;
@@ -24,9 +23,7 @@ export const CarouselTitle = styled.h1`
   transform: translateY(-60%);
   left: 0;
 `;
-*/
 
-/* Moved to component file with accompanying component.
 export const SeeAllStyle = styled.span`
   position: absolute;
   margin: 0;
@@ -36,10 +33,10 @@ export const SeeAllStyle = styled.span`
   display: inline-block;
   font-size: .9rem;
   padding-right: 20px;
-  
 `;
-*/
-// Caroucel
+
+/*
+// Carousel
 
 export const CarouselWrapper = styled.div`
   max-width: 1080px;
@@ -55,9 +52,6 @@ export const CarouselListWrapper = styled.div`
 `;
 
 export const CarouselList = styled.div`
-  white-space: nowrap;
-  display: flex;
-  
   @media (min-width: 460px) {
     width: 100%;
     transform: translateX(${props => props.visible ? props.visible : 0}px);
@@ -89,7 +83,7 @@ export const CarouselText = styled.div`
   height: 50px;
 `;
 
-/* Moved to Components folder with their respective components.
+*/
 export const LeftArrowStyle = styled.div`
     position: absolute;
     top: 50%;
@@ -110,8 +104,7 @@ export const RightArrowStyle = styled.div`
   display: none;
   `;
 
-  */
-  /*
+/*
 // Card styling 
 export const SectionStyles = styled.div`
   width: 100%;
@@ -248,6 +241,9 @@ export const ExperiencesContainer = styled.div`
   width: 100%;  
   display: flex;
   margin: 20px 0px;
+`;
+
+export const ExperienceCardWrapper = styled.div`
 `;
 
 export const ExperienceCardContainer = styled.div`
