@@ -71,16 +71,16 @@ export const ExploreCardWrapper = styled.div`
 `;
 
 export const DestinationsContainer = styled.div`
-  width: 100%;
-  margin: 20px 0px;
-  
-  div {
-    margin-right: 15px;
-  }
+width: 100%;
+margin: 20px 0px;
 
-  div:last-child {
-    margin-right: 0px;
-  }
+div {
+  margin-right: 15px;
+}
+
+div:last-child {
+  margin-right: 0px;
+}
 `;
 
 export const DestinationWrapper = styled.div` 
@@ -128,20 +128,6 @@ export const DestinationItem = styled.div`
      img {
        height: 235px;
        width: 160px;       
-  }
-`;
-
-export const ExperiencesContainer = styled.div`
-  // width: 100%;  
-  margin: 20px 0px;
-  display: flex;
-  
-  div {
-    margin-right: 15px;
-  }
-
-  div:last-child {
-    margin-right: 0px;
   }
 `;
 
@@ -201,20 +187,6 @@ export const Reviews = styled.span`
     padding-left: 5px;
     font-size: 0.8rem;
     color: ${theme.BLACK};
-`;
-
-export const HomesContainer = styled.div`
-width: 100%;  
-display: flex;
-margin: 20px 0px;
-
-div {
-  margin-right: 15px;
-}
-
-div:last-child {
-  margin-right: 0px;
-}
 `;
 
 export const HomesWrapper = styled.div`

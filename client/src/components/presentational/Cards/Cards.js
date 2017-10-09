@@ -132,52 +132,6 @@ const Cards = () => (
       <DestinationCard img={tokyoImg} title={'Tokyo'} />
       <DestinationCard img={parisImg} title={'Paris'} />
     </DestinationsContainer>
-    <ExperiencesContainer>
-      <ExperienceCard
-        img={experienceImg}
-        title={'Experiences'}
-        price={52}
-        description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
-      />
-      <ExperienceCard
-        img={resturantImg}
-        title={'Experiences'}
-        price={25}
-        description={'A delicious meal to 2 with friends'}
-      />
-      <ExperienceCard
-        img={experienceImg}
-        title={'Experiences'}
-        price={52}
-        description={'A fantastic day out on Stanage Edge in the beautiful Peak district'}
-      />
-    </ExperiencesContainer>
-    <HomesContainer>
-      <HomesCard
-        img={homeImg}
-        title={'Villa'}
-        price={52}
-        description={'Light and spacious, weekend away'}
-        spaceType={'Entire Villa'}
-        beds={'5 bed'}
-      />
-      <HomesCard
-        img={homeImg}
-        title={'Villa'}
-        price={52}
-        description={'Light and spacious, weekend away'}
-        spaceType={'Entire Villa'}
-        beds={'5 bed'}
-      />
-      <HomesCard
-        img={homeImg}
-        title={'Villa'}
-        price={52}
-        description={'Light and spacious, weekend away'}
-        spaceType={'Entire Villa'}
-        beds={'5 bed'}
-      />
-    </HomesContainer>
   </SectionStyles>
 );
 
