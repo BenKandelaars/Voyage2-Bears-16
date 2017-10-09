@@ -48,18 +48,6 @@ class CarouselView extends Component {
             <this.props.Card {...this.props[0]} />
             <this.props.Card {...this.props[0]} />
             <this.props.Card {...this.props[0]} />
-
-            {/* <CarouselItem
-              handleWidthSet={this.handleWidthSet}
-              width={this.state.width}
-              innerRef={ el => { this.width = el; }}
-            />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem /> */}
           </CarouselList>
         </CarouselListWrapper>
         <RightArrow

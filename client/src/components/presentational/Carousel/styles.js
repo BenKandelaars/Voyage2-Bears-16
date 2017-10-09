@@ -68,6 +68,7 @@ export const CarouselList = styled.div`
   } 
 `;
 
+/* Styles for Carousel item. These were placeholders and no longer requied.
 export const CarouselItemOuter = styled.div`
   display: inline-block;
 `;
@@ -87,6 +88,8 @@ export const CarouselText = styled.div`
   width: 250px;
   height: 50px;
 `;
+
+*/
 
 /* Moved to Components folder with their respective components.
 export const LeftArrowStyle = styled.div`
