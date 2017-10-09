@@ -222,6 +222,8 @@ width: 59vw;
 display: flex;
 flex-direction: column;
 cursor: pointer;
+margin-right: 15px;
+
 
 img {
   height: 38vw;

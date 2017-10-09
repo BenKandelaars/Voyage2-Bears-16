@@ -93,6 +93,7 @@ ExperienceCard.propTypes = {
 };
 
 export const HomesCard = props => (
+  <div ref={props.innerRef}>
   <HomesWrapper>
     <img src={props.img} alt={props.title} />
     <div>
@@ -105,6 +106,7 @@ export const HomesCard = props => (
       </p>
     </div>
   </HomesWrapper>
+  </div>
 );
 
 HomesCard.propTypes = {

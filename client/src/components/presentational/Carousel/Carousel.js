@@ -6,14 +6,14 @@ import { ExperienceCard, HomesCard } from '../Cards/Cards';
 
 class Carousel extends React.Component { 
   render() {
-   // const Card = this.props.groupTitle === 'Homes' ? HomesCard : ExperienceCard;
-    
+    const Card = this.props.groupTitle === 'Homes' ? HomesCard : ExperienceCard;
+
     return (
       <div>
         <CarouselTop title={this.props.groupTitle} />
         <CarouselView
           {...this.props}
-          Card={ExperienceCard} 
+          Card={Card} 
         />
       </div>
     );
