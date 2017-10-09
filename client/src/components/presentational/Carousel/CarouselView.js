@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CarouselItem from './CarouselItem';
 import RightArrow from './Components/RightArrow';
 import LeftArrow from './Components/LeftArrow';
 import { CarouselWrapper, CarouselList, CarouselListWrapper } from './styles';
@@ -39,15 +38,15 @@ class CarouselView extends Component {
           >
             <this.props.Card
               innerRef={ (el) => { this.width = el; }}
-              {...this.props[0]}
+              {...this.props}
             />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
-            <this.props.Card {...this.props[0]} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
+            <this.props.Card {...this.props} />
           </CarouselList>
         </CarouselListWrapper>
         <RightArrow
