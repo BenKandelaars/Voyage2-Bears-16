@@ -65,19 +65,6 @@ export const ExploreCardWrapper = styled.div`
   }
 `;
 
-export const DestinationsContainer = styled.div`
-width: 100%;
-margin: 20px 0px;
-
-div {
-  margin-right: 15px;
-}
-
-div:last-child {
-  margin-right: 0px;
-}
-`;
-
 export const DestinationWrapper = styled.div` 
     display: inline-block; 
     cursor: pointer;
