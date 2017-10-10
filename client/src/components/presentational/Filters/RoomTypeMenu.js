@@ -28,7 +28,7 @@ class RoomTypeMenu extends Component {
           changeState={this.props.changeState}
           isRoomTypeOpen={this.props.isRoomTypeOpen}
         />
-        {(this.props.isRoomTypeOpen && <RoomTypeOption />)}
+        {(this.props.isRoomTypeOpen && <RoomTypeOption handleRoomtypeSelect={this.props.handleRoomtypeSelect}/>)}
       </EachMenuContainer>
       );
   }

@@ -13,9 +13,14 @@ class Menu extends Component {
     this.state = {
       currentlyOpen: null,
       isRoomTypeOpen: false,
-      isPriceRangeOpen: false,
+      isPriceRangeOpen: true,
       isInstantBookOpen: false,
-      isMoreFiltersOpen: true,
+      isMoreFiltersOpen: false,
+      numberOfSelectedRoomType: 0,
+      numberOfSelectedInstantBook: 0,
+      numberOfSelectedMoreFilters: 0,
+      selectedPriceMin: null,
+      currentPriceRange: [9, 1000],
     };
   }
 
@@ -31,16 +36,30 @@ class Menu extends Component {
     });
   }
 
+  handleRoomtypeSelect = (e) => {
+    console.log(e);
+  }
+
+  handlePriceRangeChange = (price) => {
+    this.setState({
+      currentPriceRange: price,
+    });
+  }
   render(){
     return (
       <MenuContainer>
         <RoomTypeMenu
           changeState={this.changeState}
           isRoomTypeOpen={this.state.isRoomTypeOpen}
+          numberOfSelectedRoomType={this.state.numberOfSelectedRoomType}
+          handleRoomtypeSelect={this.handleRoomtypeSelect}
+          roomTypeChecked={this.state.roomTypeChecked}
         />
         <PriceRangeMenu
           changeState={this.changeState}
           isPriceRangeOpen={this.state.isPriceRangeOpen}
+          handlePriceRangeChange={this.handlePriceRangeChange}
+          currentPriceRange={this.state.currentPriceRange}
         />
         <InstantBookMenu 
           changeState={this.changeState}

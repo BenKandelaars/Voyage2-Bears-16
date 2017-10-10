@@ -12,6 +12,7 @@ const SliderComponent = props => (
       min={9}
       max={1000}
       onChange={(value) => props.onValueChange(value)}
+      onAfterChange={(value) => props.onMouseDownEvent(value)}
       />
   </SliderContainer>
 );
@@ -30,6 +31,11 @@ class PriceRangeOption extends Component {
     this.setState(({
       value
     }));
+    
+  }
+
+  onMouseDownEvent = (value) => {
+    this.props.handlePriceRangeChange(value);
   }
     
   render() {
@@ -41,7 +47,7 @@ class PriceRangeOption extends Component {
         <SelectionChoiceSubHeading>
           The average nightly price is $77.      
         </SelectionChoiceSubHeading>
-        <SliderComponent onValueChange={this.onValueChange}/>
+        <SliderComponent onValueChange={this.onValueChange} onMouseDownEvent={this.onMouseDownEvent} />
         <SectionButtons />
       </SectionContainer>
     );
