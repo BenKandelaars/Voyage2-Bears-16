@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import {
-  SectionStyles,
   ExploreContainer,
   ExploreCardWrapper,
-  DestinationsContainer,
   DestinationWrapper,
   DestinationItem,
-  ExperiencesContainer,
   ExperienceWrapper,
   Star,
   Reviews,
-  HomesContainer,
   HomesWrapper,
 } from './styles';
 import homeImg from '../../assets/pictures/explore/home_medium.jpg';

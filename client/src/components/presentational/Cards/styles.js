@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../../stylesConfig';
 
-export const SectionStyles = styled.div`
-  width: 100%;
-  padding: 20px;
-`;
-
 export const ExploreContainer = styled.div`
   display: flex;
   margin: 20px 0px;
