@@ -86,6 +86,7 @@ div:last-child {
 export const DestinationWrapper = styled.div` 
     display: inline-block; 
     cursor: pointer;
+    margin-right: 15px;    
 `;
 
 

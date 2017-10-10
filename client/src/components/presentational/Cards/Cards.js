@@ -18,12 +18,6 @@ import {
 import homeImg from '../../assets/pictures/explore/home_medium.jpg';
 import resturantImg from '../../assets/pictures/explore/resturant_medium.jpg';
 import experienceImg from '../../assets/pictures/explore/abseiling_medium.jpg';
-import londonImg from '../../assets/pictures/destinations/london_medium.jpg';
-import newYorkImg from '../../assets/pictures/destinations/newYork_medium.jpg';
-import parisImg from '../../assets/pictures/destinations/paris_medium.jpg';
-import krakowImg from '../../assets/pictures/destinations/krakow_medium.jpg';
-import tokyoImg from '../../assets/pictures/destinations/tokyo_medium.jpg';
-
 
 export const FullStar = () => <Star><FontAwesome name="star" /></Star>;
 export const HalfStar = () => <Star><FontAwesome name="star-half-o" /></Star>;
@@ -44,17 +38,20 @@ ExploreCard.propTypes = {
 };
 
 export const DestinationCard = props => (
-  <DestinationWrapper>
-    <DestinationItem>
-      <img src={props.img} alt={props.title} />
-      <div>
-        <h4>{props.title}</h4>
-      </div>
-    </DestinationItem>
-  </DestinationWrapper>
+  <div ref={props.getRef}>
+    <DestinationWrapper>
+      <DestinationItem>
+        <img src={props.img} alt={props.title} />
+        <div>
+          <h4>{props.title}</h4>
+        </div>
+      </DestinationItem>
+    </DestinationWrapper>
+  </div>
 );
 
 DestinationCard.propTypes = {
+  getRef: PropTypes.func.isRequired,
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
@@ -63,27 +60,28 @@ export class ExperienceCard extends React.Component {
   render() {
     return (
       <div ref={this.props.getRef}>
-      <ExperienceWrapper>
-        <img src={this.props.img} alt={this.props.title} />
-        <div>
-          <p><b>£{this.props.price}</b>
-            &nbsp;&nbsp;
-            {this.props.description}
-          </p>
-          <FullStar />
-          <FullStar />
-          <FullStar />
-          <HalfStar />
-          <EmptyStar />
-          <Reviews>70 Reviews</Reviews>
-        </div>
-      </ExperienceWrapper>
+        <ExperienceWrapper>
+          <img src={this.props.img} alt={this.props.title} />
+          <div>
+            <p><b>£{this.props.price}</b>
+              &nbsp;&nbsp;
+              {this.props.description}
+            </p>
+            <FullStar />
+            <FullStar />
+            <FullStar />
+            <HalfStar />
+            <EmptyStar />
+            <Reviews>70 Reviews</Reviews>
+          </div>
+        </ExperienceWrapper>
       </div>
     );
   }
 }
 
 ExperienceCard.propTypes = {
+  getRef: PropTypes.func.isRequired,
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
@@ -108,6 +106,7 @@ export const HomesCard = props => (
 );
 
 HomesCard.propTypes = {
+  getRef: PropTypes.func.isRequired,
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
@@ -116,22 +115,25 @@ HomesCard.propTypes = {
   beds: PropTypes.string.isRequired,
 };
 
-const Cards = () => (
-  <SectionStyles>
-    <ExploreContainer>
-      <ExploreCard img={homeImg} title={'Home'} />
-      <ExploreCard img={resturantImg} title={'Resturants'} />
-      <ExploreCard img={experienceImg} title={'Experiences'} />
-    </ExploreContainer>
-    <DestinationsContainer>
-      <DestinationCard img={londonImg} title={'London'} />
-      <DestinationCard img={newYorkImg} title={'New York'} />
-      <DestinationCard img={krakowImg} title={'Krakow'} />
-      <DestinationCard img={tokyoImg} title={'Tokyo'} />
-      <DestinationCard img={parisImg} title={'Paris'} />
-    </DestinationsContainer>
-  </SectionStyles>
+export const ExploreCards = () => ( 
+  <ExploreContainer>
+    <ExploreCard img={homeImg} title={'Home'} />
+    <ExploreCard img={resturantImg} title={'Resturants'} />
+    <ExploreCard img={experienceImg} title={'Experiences'} />
+  </ExploreContainer>
 );
 
-export default Cards;
+// const Cards = () => (
+//   <SectionStyles>
+//     <DestinationsContainer>
+//       <DestinationCard img={londonImg} title={'London'} />
+//       <DestinationCard img={newYorkImg} title={'New York'} />
+//       <DestinationCard img={krakowImg} title={'Krakow'} />
+//       <DestinationCard img={tokyoImg} title={'Tokyo'} />
+//       <DestinationCard img={parisImg} title={'Paris'} />
+//     </DestinationsContainer>
+//   </SectionStyles>
+// );
+
+// export default Cards;
 
