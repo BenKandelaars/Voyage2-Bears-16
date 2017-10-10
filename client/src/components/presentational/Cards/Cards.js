@@ -111,25 +111,11 @@ HomesCard.propTypes = {
   beds: PropTypes.string.isRequired,
 };
 
-export const ExploreCards = () => ( 
+export const ExploreCards = () => (
   <ExploreContainer>
     <ExploreCard img={homeImg} title={'Home'} />
     <ExploreCard img={resturantImg} title={'Resturants'} />
     <ExploreCard img={experienceImg} title={'Experiences'} />
   </ExploreContainer>
 );
-
-// const Cards = () => (
-//   <SectionStyles>
-//     <DestinationsContainer>
-//       <DestinationCard img={londonImg} title={'London'} />
-//       <DestinationCard img={newYorkImg} title={'New York'} />
-//       <DestinationCard img={krakowImg} title={'Krakow'} />
-//       <DestinationCard img={tokyoImg} title={'Tokyo'} />
-//       <DestinationCard img={parisImg} title={'Paris'} />
-//     </DestinationsContainer>
-//   </SectionStyles>
-// );
-
-// export default Cards;
 
