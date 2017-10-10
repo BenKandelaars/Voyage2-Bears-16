@@ -126,43 +126,31 @@ export const SelectionChoiceSubHeading = styled.div`
 `;
 
 export const SliderContainer = styled.div `
-  width: 100%;
-  height : 50px;
-  position: relative;
-  margin: 20px 0;
-
-  input[type="range"] {
-    -webkit-appearance: none;
-    outline: none;
-    height: 25px;
-    border-radius: 25px;
+  width: 96%;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  .rc-slider {
+    padding: 7px 0;
+  }
+  .rc-slider-track {
     background-color: #008489;
-    position: absolute;
-    overflow: hidden;
-    width: 100%; 
   }
-
-  input[type="range"]::-webkit-slider-thumb {
-    position: relative;
-    z-index: 1;
-    -webkit-appearance: none;
-    width: 25px;
-    height: 25px;
+  .rc-slider-handle {
+    top: 0;
+    height: 30px;
+    width: 30px;
     border: 1px solid #008489;
-    border-radius: 20px;
-    background-color: #FFF;
-  }
-  }
+    box-shadow: 0px 2px 2px 0px rgba(224,224,224,1);
+    
+    &:hover {
+      border-color: #008489;
+    }
 
-  input[type="range"]::-moz-range-thumb {
-    position: relative;
-    z-index: 10;
+    &:active {
+      border-color: #008489;
+      box-shadow: 0px 2px 2px 0px rgba(224,224,224,1);;
+    }
   }
-
-  input[type="range"]::-ms-thumb {
-    position: relative;
-    z-index: 10;
-  } 
 `;
 
 export const Slider = styled.input.attrs({
@@ -282,10 +270,10 @@ export const SectionBreak = styled.div`
 
 export const SeeAllAnimation = styled.div`
   width: 100%;
-  visibility: ${props => props.isSeeAll ? "visible" : "hidden"};
-  opacity: ${props => props.isSeeAll ? "1" : "0"};
-  transform: translateY(${props => props.isSeeAll ? "0" : "-10"}%);
-  transition: .4s ease-out;
+  visibility: ${props => props.shouldAnimate ? "visible" : "hidden"};
+  opacity: ${props => props.shouldAnimate ? "1" : "0"};
+  transform: translateY(${props => props.shouldAnimate ? "0" : "-10"}%);
+  transition: .6s ease-out;
 `;
 
 export const SeeAllContainer = styled.div`

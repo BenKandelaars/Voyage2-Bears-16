@@ -70,7 +70,7 @@ export const Amenities = props => (
       <CheckboxComponent heading="Kitchen" />
       <CheckboxComponent heading="TV" />
       <CheckboxComponent heading="Wireless Internet" />
-      <SeeAllAnimation isSeeAll={props.isAmenitiesSeeAll}>
+      <SeeAllAnimation shouldAnimate={props.shouldAnimate}>
         {props.isAmenitiesSeeAll && 
           <SeeAllContainer>
             <CheckboxComponent heading="Buzzer/wireless intercom" />
@@ -108,7 +108,7 @@ export const Facilities = props => (
       <CheckboxComponent heading="Free parking on premise" />
       <CheckboxComponent heading="Pool" />
       <CheckboxComponent heading="Wheelchair accessible" /> 
-      <SeeAllAnimation isSeeAll={props.isFacilitiesSeeAll}>   
+      <SeeAllAnimation shouldAnimate={props.shouldAnimate}>   
         {props.isFacilitiesSeeAll &&
         <SeeAllContainer>
           <CheckboxComponent heading="Gym" />
@@ -144,7 +144,7 @@ export const Neighbourhoods = props => (
       <CheckboxComponent heading="Centro" />
       <CheckboxComponent heading="French Riviera" />
       <CheckboxComponent heading="Puxi" />
-      <SeeAllAnimation isSeeAll={props.isNeighbourhoodsSeeAll}>   
+      <SeeAllAnimation shouldAnimate={props.shouldAnimate}>   
         {props.isNeighbourhoodsSeeAll && 
           <SeeAllContainer isSeeAll={props.isNeighbourhoodsSeeAll}>
             <CheckboxComponent heading="1st Arrondissement" />
@@ -170,7 +170,7 @@ export const HostLanguage = props => (
       <CheckboxComponent heading="Français" />
       <CheckboxComponent heading="Español" />
       <CheckboxComponent heading="中文" />
-      <SeeAllAnimation isSeeAll={props.isHostLanguageSeeAll}>
+      <SeeAllAnimation shouldAnimate={props.shouldAnimate}>
         {props.isHostLanguageSeeAll && 
           <SeeAllContainer isSeeAll={props.isHostLanguageSeeAll}>
             <CheckboxComponent heading="Bahasa Indonesia" />
@@ -199,6 +199,7 @@ class MoreFiltersOption extends Component {
       isFacilitiesSeeAll: false,
       isNeighbourhoodsSeeAll: false,
       isHostLanguageSeeAll: false,
+      shouldAnimate: false,
     }
   }
   handlePlusButtonClick = (clickedCounter, isHalfSize) => {
@@ -215,10 +216,18 @@ class MoreFiltersOption extends Component {
       }));
     }
   }
-  handleSeeAll = (clickedSection) => {
+  handleAnimation = () => {
     this.setState(prevState => ({
-      [clickedSection]: !prevState[clickedSection]
-    }));    
+      shouldAnimate: !prevState.shouldAnimate,
+    }));
+  }
+  handleSeeAll = (clickedSection) => {
+    this.handleAnimation();
+    setTimeout(() => {
+      this.setState(prevState => ({
+        [clickedSection]: !prevState[clickedSection],
+      }));
+    }, 200);
   }
   render() {
     return (
@@ -236,11 +245,13 @@ class MoreFiltersOption extends Component {
         <SectionBreak />
         <Amenities
           isAmenitiesSeeAll={this.state.isAmenitiesSeeAll}
+          shouldAnimate={this.state.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
         <Facilities
-          isFacilitiesSeeAll={this.state.isFacilitiesSeeAll} 
+          isFacilitiesSeeAll={this.state.isFacilitiesSeeAll}
+          shouldAnimate={this.state.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
@@ -248,12 +259,14 @@ class MoreFiltersOption extends Component {
         />
         <SectionBreak />
         <Neighbourhoods
-          isNeighbourhoodsSeeAll={this.state.isNeighbourhoodsSeeAll} 
+          isNeighbourhoodsSeeAll={this.state.isNeighbourhoodsSeeAll}
+          shouldAnimate={this.state.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
         <HostLanguage
-          isHostLanguageSeeAll={this.state.isHostLanguageSeeAll} 
+          isHostLanguageSeeAll={this.state.isHostLanguageSeeAll}
+          shouldAnimate={this.state.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />

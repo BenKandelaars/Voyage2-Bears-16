@@ -13,9 +13,9 @@ class Menu extends Component {
     this.state = {
       currentlyOpen: null,
       isRoomTypeOpen: false,
-      isPriceRangeOpen: true,
+      isPriceRangeOpen: false,
       isInstantBookOpen: false,
-      isMoreFiltersOpen: false,
+      isMoreFiltersOpen: true,
     };
   }
 
