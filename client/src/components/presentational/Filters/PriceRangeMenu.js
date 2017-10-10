@@ -41,6 +41,7 @@ class PriceRangeMenu extends Component {
         {(this.props.isPriceRangeOpen &&
           <PriceRangeOption
             handlePriceRangeChange={this.props.handlePriceRangeChange}
+            currentPriceRange={this.props.currentPriceRange}
           />)}
       </EachMenuContainer>
     );

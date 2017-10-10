@@ -8,7 +8,7 @@ const SliderComponent = props => (
   <SliderContainer>
     <Range
       allowCross={false}
-      defaultValue={[0, 1000]}
+      defaultValue={[props.currentPriceRange[0], props.currentPriceRange[1]]}
       min={9}
       max={1000}
       onChange={(value) => props.onValueChange(value)}
@@ -23,7 +23,7 @@ class PriceRangeOption extends Component {
     super(props);
 
     this.state = {
-      value: [9, 1000],
+      value: [this.props.currentPriceRange[0], this.props.currentPriceRange[1]],
     };
   }
 
@@ -31,7 +31,6 @@ class PriceRangeOption extends Component {
     this.setState(({
       value
     }));
-    
   }
 
   onMouseDownEvent = (value) => {
@@ -42,12 +41,16 @@ class PriceRangeOption extends Component {
     return (
       <SectionContainer>
         <SelectionChoiceHeading>
-        €{this.state.value[0]} - {this.state.value[1]}
+        €{this.state.value[0]} - €{this.state.value[1]}
         </SelectionChoiceHeading>
         <SelectionChoiceSubHeading>
           The average nightly price is $77.      
         </SelectionChoiceSubHeading>
-        <SliderComponent onValueChange={this.onValueChange} onMouseDownEvent={this.onMouseDownEvent} />
+        <SliderComponent
+          onValueChange={this.onValueChange}
+          onMouseDownEvent={this.onMouseDownEvent}
+          currentPriceRange={this.props.currentPriceRange}
+          />
         <SectionButtons />
       </SectionContainer>
     );
