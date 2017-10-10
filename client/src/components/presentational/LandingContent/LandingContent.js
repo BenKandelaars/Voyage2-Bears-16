@@ -1,9 +1,8 @@
 import React from 'react';
 import 'font-awesome/css/font-awesome.css';
 import Carousel from '../Carousel/Carousel';
-// import ExperiencesCarousel from '../Carousel/ExperiencesCarousel';
-// import HomesCarousel from '../Carousel/HomesCarousel';
 import { Container } from './styles';
+import { ExperienceCard, HomesCard } from '../Cards/Cards';
 import experienceImg from '../../assets/pictures/explore/abseiling_medium.jpg';
 import resturantImg from '../../assets/pictures/explore/resturant_medium.jpg';
 import homeImg from '../../assets/pictures/explore/home_medium.jpg';
@@ -35,13 +34,21 @@ class LandingContent extends React.Component {
   render() {
     return (
       <Container>
-        <Carousel groupTitle="Experiences" {...experiencesData[0]} />
-        <Carousel groupTitle="Resturants" {...experiencesData[1]} />
-        <Carousel groupTitle="Experiences" {...experiencesData[0]} />
-        <Carousel groupTitle="Resturants" {...experiencesData[1]} />
-        <Carousel groupTitle="Experiences" {...experiencesData[0]} />
-        <Carousel groupTitle="Resturants" {...experiencesData[1]} />
-        <Carousel groupTitle="Homes" {...homes[0]} />
+        <Carousel
+          groupTitle="Experiences"
+          card={ExperienceCard}
+          {...experiencesData[0]} 
+        />
+        <Carousel
+          groupTitle="Resturants"
+          card={ExperienceCard}
+          {...experiencesData[1]} 
+        />
+        <Carousel
+          groupTitle="Homes"
+          card={HomesCard}
+          {...homes[0]} 
+        />
       </Container>
     );
   }

@@ -12,20 +12,23 @@ class CarouselView extends Component {
       activeIndex: 0,
     };
   }
+
   componentDidMount() {
     this.setState({
       width: this.width.getBoundingClientRect().width,
     });
   }
+
   handleOnClickLeft = () => {
     this.setState(prevState => ({ visible: prevState.visible + prevState.width }));
     this.setState(prevState => ({ activeIndex: prevState.activeIndex - 1 }));
   }
+
   handleOnClickRight = () => {
     this.setState(prevState => ({ visible: prevState.visible - prevState.width }));
     this.setState(prevState => ({ activeIndex: prevState.activeIndex + 1 }));
   }
-  render () {
+  render() {
     return (
       <CarouselWrapper>
         <LeftArrow
@@ -37,7 +40,7 @@ class CarouselView extends Component {
             visible={this.state.visible}
           >
             <this.props.Card
-              getRef={ (el) => { this.width = el; }}
+              getRef={(el) => { this.width = el; }}
               {...this.props}
             />
             <this.props.Card {...this.props} />

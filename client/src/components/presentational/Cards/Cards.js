@@ -92,18 +92,18 @@ ExperienceCard.propTypes = {
 
 export const HomesCard = props => (
   <div ref={props.getRef}>
-  <HomesWrapper>
-    <img src={props.img} alt={props.title} />
-    <div>
-      <p><b>£{props.price}
-        &nbsp;&nbsp;
-        {props.description}</b>
-      </p>
-      <p>{props.spaceType} &nbsp;&middot;&nbsp;
-        {props.beds}
-      </p>
-    </div>
-  </HomesWrapper>
+    <HomesWrapper>
+      <img src={props.img} alt={props.title} />
+      <div>
+        <p><b>£{props.price}
+          &nbsp;&nbsp;
+          {props.description}</b>
+        </p>
+        <p>{props.spaceType} &nbsp;&middot;&nbsp;
+          {props.beds}
+        </p>
+      </div>
+    </HomesWrapper>
   </div>
 );
 
