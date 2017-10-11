@@ -13,16 +13,20 @@ class Slider extends React.Component {
       slideCount: 1,
     };
   }
-  nextSlide = () => {
-    this.setState({
-      slideCount: this.state.slideCount + 1,
-    });
+  nextSlide = () => { 
+    if (this.state.slideCount < 3) {
+      this.setState({
+        slideCount: this.state.slideCount + 1, 
+      });
+    } else {}
   }
 
   previousSlide = () => {
-    this.setState({
-      slideCount: this.state.slideCount - 1,
-    });
+    if (this.state.slideCount > 1) {
+      this.setState({
+        slideCount: this.state.slideCount - 1,
+      });
+    } else {}
   }
 
   render() {
