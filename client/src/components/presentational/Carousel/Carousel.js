@@ -1,17 +1,25 @@
 import React from 'react';
-import CarouselTop from './CarouselTop';
+import PropTypes from 'prop-types';
+import CarouselTop from './Components/CarouselTop';
 import CarouselView from './CarouselView';
-import 'font-awesome/css/font-awesome.css';
-import { Container } from './style';
 
+class Carousel extends React.Component {
+  render() {
+    return (
+      <div>
+        <CarouselTop title={this.props.groupTitle} />
+        <CarouselView
+          {...this.props}
+          Card={this.props.card}
+        />
+      </div>
+    );
+  }
+}
 
-const Carousel = () => {
-  return (
-    <Container>
-      <CarouselTop />
-      <CarouselView />
-    </Container>
-  );
+Carousel.propTypes = {
+  groupTitle: PropTypes.string.isRequired,
+  card: PropTypes.func.isRequired,
 };
 
 export default Carousel;
