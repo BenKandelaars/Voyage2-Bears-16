@@ -19,7 +19,7 @@ class SubNavbar extends React.Component {
 
     return (
       <Wrapper>
-        {StyledLink('', 'FOR YOU')}
+        {StyledLink('you', 'FOR YOU')}
         {StyledLink('homes', 'HOMES')}
         {StyledLink('experiences', 'EXPERIENCES')}
       </Wrapper>

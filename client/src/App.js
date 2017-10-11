@@ -22,9 +22,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={Landing} />
-      <Route path="/home/:section">
-        {HomeSection}
-      </Route>
+      <Route path="/home/:section" component={HomeSection} />
     </div>
   </BrowserRouter>
 );
