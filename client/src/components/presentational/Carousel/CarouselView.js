@@ -29,6 +29,14 @@ class CarouselView extends Component {
     this.setState(prevState => ({ activeIndex: prevState.activeIndex + 1 }));
   }
   render() {
+    const slides = () => {
+      const arr = [];
+      for (let i = 1; i < this.props.cardCount; i += 1) {
+        arr.push(<this.props.Card itemNo={i} {...this.props} />);
+      }
+      return arr;
+    };
+
     return (
       <CarouselWrapper>
         <LeftArrow
@@ -41,15 +49,10 @@ class CarouselView extends Component {
           >
             <this.props.Card
               getRef={(el) => { this.width = el; }}
+              itemNo={'0'}
               {...this.props}
             />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
-            <this.props.Card {...this.props} />
+            {slides()}
           </CarouselList>
         </CarouselListWrapper>
         <RightArrow

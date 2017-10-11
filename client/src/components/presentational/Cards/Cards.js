@@ -19,6 +19,16 @@ export const FullStar = () => <Star><FontAwesome name="star" /></Star>;
 export const HalfStar = () => <Star><FontAwesome name="star-half-o" /></Star>;
 export const EmptyStar = () => <Star><FontAwesome name="star-o" /></Star>;
 
+// export function getDataKey(data, itemNo) {
+//   let key;
+//   if (Object.prototype.hasOwnProperty.call(data, itemNo)) {
+//     key = itemNo;
+//   } else {
+//     key = 0;
+//   }
+//   return key;
+// }
+
 export const ExploreCard = props => (
   <ExploreCardWrapper>
     <img src={props.img} alt={props.title} />
@@ -54,14 +64,16 @@ DestinationCard.propTypes = {
 
 export class ExperienceCard extends React.Component {
   render() {
+    const { img, title, price, description } = this.props.data[this.props.itemNo];
+
     return (
       <div ref={this.props.getRef}>
         <ExperienceWrapper>
-          <img src={this.props.img} alt={this.props.title} />
+          <img src={img} alt={title} />
           <div>
-            <p><b>£{this.props.price}</b>
+            <p><b>£{price}</b>
               &nbsp;&nbsp;
-              {this.props.description}
+              {description}
             </p>
             <FullStar />
             <FullStar />
@@ -77,38 +89,48 @@ export class ExperienceCard extends React.Component {
 }
 
 ExperienceCard.propTypes = {
-  getRef: PropTypes.func.isRequired,
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  getRef: PropTypes.func,
+  itemNo: PropTypes.number.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
 };
 
-export const HomesCard = props => (
-  <div ref={props.getRef}>
-    <HomesWrapper>
-      <img src={props.img} alt={props.title} />
-      <div>
-        <p><b>£{props.price}
-          &nbsp;&nbsp;
-          {props.description}</b>
-        </p>
-        <p>{props.spaceType} &nbsp;&middot;&nbsp;
-          {props.beds}
-        </p>
-      </div>
-    </HomesWrapper>
-  </div>
-);
+export const HomesCard = (props) => {
+  const { img, title, price, description, spaceType, beds } = props.data[props.itemNo];
+
+  return (
+    <div ref={props.getRef}>
+      <HomesWrapper>
+        <img src={img} alt={title} />
+        <div>
+          <p><b>£{price}
+            &nbsp;&nbsp;
+            {description}</b>
+          </p>
+          <p>{spaceType} &nbsp;&middot;&nbsp;
+            {beds}
+          </p>
+        </div>
+      </HomesWrapper>
+    </div>
+  );
+};
 
 HomesCard.propTypes = {
-  getRef: PropTypes.func.isRequired,
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-  spaceType: PropTypes.string.isRequired,
-  beds: PropTypes.string.isRequired,
+  getRef: PropTypes.func,
+  itemNo: PropTypes.number.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    spaceType: PropTypes.string.isRequired,
+    beds: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
 };
 
 export const ExploreCards = () => (

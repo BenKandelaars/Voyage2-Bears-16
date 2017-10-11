@@ -24,6 +24,42 @@ const experiencesData = [{
   price: 25,
   description: 'A delicious meal to 2 with friends',
 },
+{
+  img: experienceImg,
+  title: 'Experiences',
+  price: 52,
+  description: 'A fantastic day out on Stanage Edge in the beautiful Peak district',
+},
+{
+  img: resturantImg,
+  title: 'Experiences',
+  price: 25,
+  description: 'A delicious meal to 2 with friends',
+},
+{
+  img: experienceImg,
+  title: 'Experiences',
+  price: 52,
+  description: 'A fantastic day out on Stanage Edge in the beautiful Peak district',
+},
+{
+  img: resturantImg,
+  title: 'Experiences',
+  price: 25,
+  description: 'A delicious meal to 2 with friends',
+},
+{
+  img: experienceImg,
+  title: 'Experiences',
+  price: 52,
+  description: 'A fantastic day out on Stanage Edge in the beautiful Peak district',
+},
+{
+  img: resturantImg,
+  title: 'Experiences',
+  price: 25,
+  description: 'A delicious meal to 2 with friends',
+},
 ];
 
 const homes = [{
@@ -33,7 +69,48 @@ const homes = [{
   description: 'Light and spacious, weekend away',
   spaceType: 'Entire Villa',
   beds: '5 bed',
-}];
+},
+{
+  img: homeImg,
+  title: 'Villa',
+  price: 52,
+  description: 'Light and spacious, weekend away',
+  spaceType: 'Entire Villa',
+  beds: '5 bed',
+},
+{
+  img: homeImg,
+  title: 'Villa',
+  price: 52,
+  description: 'Light and spacious, weekend away',
+  spaceType: 'Entire Villa',
+  beds: '5 bed',
+},
+{
+  img: homeImg,
+  title: 'Villa',
+  price: 52,
+  description: 'Light and spacious, weekend away',
+  spaceType: 'Entire Villa',
+  beds: '5 bed',
+},
+{
+  img: homeImg,
+  title: 'Villa',
+  price: 52,
+  description: 'Light and spacious, weekend away',
+  spaceType: 'Entire Villa',
+  beds: '5 bed',
+},
+{
+  img: homeImg,
+  title: 'Villa',
+  price: 52,
+  description: 'Light and spacious, weekend away',
+  spaceType: 'Entire Villa',
+  beds: '5 bed',
+},
+];
 
 const destinations = [
   {
@@ -66,22 +143,31 @@ class LandingContent extends React.Component {
         <Carousel
           groupTitle="Experiences"
           card={ExperienceCard}
-          {...experiencesData[0]}
+          cardCount={experiencesData.length}
+          data={experiencesData}
         />
         <Carousel
           groupTitle="Resturants"
           card={ExperienceCard}
-          {...experiencesData[1]}
+          cardCount={experiencesData.length}
+          data={experiencesData}
         />
         <Carousel
           groupTitle="Homes"
           card={HomesCard}
-          {...homes[0]}
+          cardCount={homes.length}
+          data={homes}
         />
-        <Carousel
+        {/* <Carousel
           groupTitle="Featured Destinations"
           card={DestinationCard}
-          {...destinations[0]}
+          {...destinations}
+        /> */}
+        <Carousel
+          groupTitle="Experiences"
+          card={ExperienceCard}
+          cardCount={experiencesData.length}
+          data={experiencesData}
         />
       </Container>
     );
