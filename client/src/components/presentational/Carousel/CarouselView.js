@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import CarouselItem from './CarouselItem';
-import RightArrow from './RightArrow';
-import LeftArrow from './LeftArrow';
-import { CarouselWrapper, CarouselList, CarouselListWrapper } from './style';
-
+import RightArrow from './Components/RightArrow';
+import LeftArrow from './Components/LeftArrow';
+import { CarouselWrapper, CarouselList, CarouselListWrapper } from './styles';
 
 class CarouselView extends Component {
   constructor(props) {
@@ -14,20 +12,31 @@ class CarouselView extends Component {
       activeIndex: 0,
     };
   }
+
   componentDidMount() {
     this.setState({
       width: this.width.getBoundingClientRect().width,
     });
   }
+
   handleOnClickLeft = () => {
     this.setState(prevState => ({ visible: prevState.visible + prevState.width }));
     this.setState(prevState => ({ activeIndex: prevState.activeIndex - 1 }));
   }
+
   handleOnClickRight = () => {
     this.setState(prevState => ({ visible: prevState.visible - prevState.width }));
     this.setState(prevState => ({ activeIndex: prevState.activeIndex + 1 }));
   }
-  render () {
+  render() {
+    const slides = () => {
+      const arr = [];
+      for (let i = 1; i < this.props.cardCount; i += 1) {
+        arr.push(<this.props.Card itemNo={i} {...this.props} />);
+      }
+      return arr;
+    };
+
     return (
       <CarouselWrapper>
         <LeftArrow
@@ -38,16 +47,12 @@ class CarouselView extends Component {
           <CarouselList
             visible={this.state.visible}
           >
-            <CarouselItem handleWidthSet={this.handleWidthSet}
-              width={this.state.width}
-              innerRef={width => { this.width = width; }}
+            <this.props.Card
+              getRef={(el) => { this.width = el; }}
+              itemNo={'0'}
+              {...this.props}
             />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
-            <CarouselItem />
+            {slides()}
           </CarouselList>
         </CarouselListWrapper>
         <RightArrow

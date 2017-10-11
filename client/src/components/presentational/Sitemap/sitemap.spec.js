@@ -5,7 +5,6 @@ import toJSON from 'enzyme-to-json';
 import Sitemap from './Sitemap';
 
 describe('Sitemap component tests', () => {
-
   it('Smoke test', () => {
     const div = document.createElement('div');
     ReactDom.render(<Sitemap />, div);

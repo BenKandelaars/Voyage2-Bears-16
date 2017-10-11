@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Home",
+    "img": "../assets/explore/home_medium.jpg"
+  }
+}
+
+import resturantImg from '../../assets/pictures/explore/resturant_medium.jpg';
+import experienceImg from '../../assets/pictures/explore/abseiling_medium.jpg';

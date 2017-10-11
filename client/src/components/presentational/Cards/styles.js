@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../../stylesConfig';
 
-export const SectionStyles = styled.div`
-  width: 100%;
-  padding: 20px;
-`;
-
 export const ExploreContainer = styled.div`
   display: flex;
   margin: 20px 0px;
@@ -70,22 +65,10 @@ export const ExploreCardWrapper = styled.div`
   }
 `;
 
-export const DestinationsContainer = styled.div`
-  width: 100%;
-  margin: 20px 0px;
-  
-  div {
-    margin-right: 15px;
-  }
-
-  div:last-child {
-    margin-right: 0px;
-  }
-`;
-
 export const DestinationWrapper = styled.div` 
     display: inline-block; 
     cursor: pointer;
+    margin-right: 15px;    
 `;
 
 
@@ -131,26 +114,13 @@ export const DestinationItem = styled.div`
   }
 `;
 
-export const ExperiencesContainer = styled.div`
-  width: 100%;  
-  display: flex;
-  margin: 20px 0px;
-  
-  div {
-    margin-right: 15px;
-  }
-
-  div:last-child {
-    margin-right: 0px;
-  }
-`;
-
 export const ExperienceWrapper = styled.div`
   width: 42vw;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  
+  margin-right: 15px;
+
   img {
     height: 68vw;
     width: 42vw;    
@@ -160,9 +130,12 @@ export const ExperienceWrapper = styled.div`
 
   div {    
       p {
-    margin: 5px 0px;
-    display: block;
-    color: ${theme.GREY_MEDIUM};    
+        white-space: normal;
+        height: 2.4rem;
+        overflow: hidden;
+        margin: 5px 0px;
+        display: block;
+        color: ${theme.GREY_MEDIUM};    
     
       b {
         color: ${theme.BLACK};
@@ -189,7 +162,7 @@ export const ExperienceWrapper = styled.div`
 `;
 
 export const Star = styled.span`
-    color: #466728;
+    color: ${theme.GREEN};
     margin: 2px 2px 2px 0px;
 `;
 
@@ -199,25 +172,13 @@ export const Reviews = styled.span`
     color: ${theme.BLACK};
 `;
 
-export const HomesContainer = styled.div`
-width: 100%;  
-display: flex;
-margin: 20px 0px;
-
-div {
-  margin-right: 15px;
-}
-
-div:last-child {
-  margin-right: 0px;
-}
-`;
-
 export const HomesWrapper = styled.div`
 width: 59vw;
 display: flex;
 flex-direction: column;
 cursor: pointer;
+margin-right: 15px;
+
 
 img {
   height: 38vw;

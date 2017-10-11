@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { LeftArrowStyle } from './style';
+import { LeftArrowStyle } from './styles';
 
 class LeftArrow extends Component {
   render() {
