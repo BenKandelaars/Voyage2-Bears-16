@@ -15,7 +15,11 @@ class InstantBookOption extends Component {
           Listings you can book without waiting for host approval
           </SelectionChoiceSubHeading>
         </div>
-        <ToggleButton handleUpdate={this.props.handleUpdate} buttonType="instant_book" />
+        <ToggleButton
+          handleUpdate={this.props.handleUpdate}
+          buttonType="instant_book"
+          selectedOptions={this.props.selectedOptions.instant_book}
+        />
         <SectionButtons />
       </InstantBookMenuContainer>
     );

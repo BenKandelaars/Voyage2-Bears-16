@@ -19,6 +19,7 @@ class RoomTypeOption extends Component {
               handleUpdate={this.props.handleUpdate}
               sectionName="room_type"
               checkboxName="entire_home"
+              handleStateCheck={this.props.handleStateCheck}
             />
             <SectionIcon>
               <FontAwesome
@@ -35,6 +36,7 @@ class RoomTypeOption extends Component {
               handleUpdate={this.props.handleUpdate}
               sectionName="room_type"
               checkboxName="private_room"
+              handleStateCheck={this.props.handleStateCheck}
             />
             <SectionIcon>
               <FontAwesome
@@ -51,6 +53,7 @@ class RoomTypeOption extends Component {
               handleUpdate={this.props.handleUpdate}
               sectionName="room_type"
               checkboxName="shared_room"
+              handleStateCheck={this.props.handleStateCheck}
             />
             <SectionIcon>
               <FontAwesome

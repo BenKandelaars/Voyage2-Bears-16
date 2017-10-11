@@ -3,7 +3,7 @@ import { ToggleButtonLabel, ToggleButtonInput, ToggleButtonSlider } from './styl
 
 const ToggleButton = props => (
       <ToggleButtonLabel >
-        <ToggleButtonInput onClick={() => props.handleUpdate(props.buttonType)}/>
+        <ToggleButtonInput defaultChecked={props.selectedOptions} onClick={() => props.handleUpdate(props.buttonType)}/>
         <ToggleButtonSlider />
       </ToggleButtonLabel>
     );

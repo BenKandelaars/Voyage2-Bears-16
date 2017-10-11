@@ -12,11 +12,16 @@ class Menu extends Component {
 
     this.state = {
       currentlyOpen: null,
-      isRoomTypeOpen: true,
+      isRoomTypeOpen: false,
       isPriceRangeOpen: false,
       isInstantBookOpen: false,
-      isMoreFiltersOpen: false,
+      isMoreFiltersOpen: true,
       currentPriceRange: [9, 1000],
+      isAmenitiesSeeAll: false,
+      isFacilitiesSeeAll: false,
+      isNeighbourhoodsSeeAll: false,
+      isHostLanguageSeeAll: false,
+      shouldAnimate: false,
       selectedOptions: {
         room_type: [],
         price_range: [],
@@ -57,9 +62,16 @@ class Menu extends Component {
       currentPriceRange: price,
     });
   }
+
+  handleStateCheck = () => {
+    return false;
+    // if (this.state.selectedOptions.parent.indexOf(option) > 0) {
+    //   return true;
+    // } return false;
+  }
+
   handleUpdate = (option, parent) => {
     const { room_type } = this.state.selectedOptions;
-    const roomType = [...this.state.selectedOptions.room_type, option];
     if (parent === "room_type") {
       if (room_type.indexOf(option) < 0) {
         this.setState(prevState => ({
@@ -87,8 +99,42 @@ class Menu extends Component {
       }));
     }
   }
+  handlePlusButtonClick = (clickedCounter, isHalfSize) => {
+    const number = (isHalfSize ? 0.5 : 1);
+    this.setState(prevState => ({
+      selectedOptions: {
+        ...prevState.selectedOptions,
+        more_filters: {
+          rooms_and_beds: {
+            ...prevState.selectedOptions.more_filters.rooms_and_beds,
+            [clickedCounter]: prevState.selectedOptions.more_filters.rooms_and_beds[clickedCounter] + number,            
+          }
+        },
+      },
+    }));
+  }
+  handleMinusButtonClick = (clickedCounter, isHalfSize) => {
+    const number = (isHalfSize ? 0.5 : 1);
+    if (this.state[clickedCounter] > 0) {
+      this.setState(prevState => ({
+        [clickedCounter]: prevState[clickedCounter] - number,
+      }));
+    }
+  }
+  handleAnimation = () => {
+    this.setState(prevState => ({
+      shouldAnimate: !prevState.shouldAnimate,
+    }));
+  }
+  handleSeeAll = (clickedSection) => {
+    this.handleAnimation();
+    setTimeout(() => {
+      this.setState(prevState => ({
+        [clickedSection]: !prevState[clickedSection],
+      }));
+    }, 200);
+  }
   render() {
-    console.log(this.state.selectedOptions);
     return (
       <MenuContainer>
         <RoomTypeMenu
@@ -98,6 +144,8 @@ class Menu extends Component {
           handleRoomtypeSelect={this.handleRoomtypeSelect}
           roomTypeChecked={this.state.roomTypeChecked}
           handleUpdate={this.handleUpdate}
+          selectedOptions={this.state.selectedOptions}
+          handleStateCheck={this.handleStateCheck}
         />
         <PriceRangeMenu
           changeState={this.changeState}
@@ -114,8 +162,23 @@ class Menu extends Component {
         <MoreFiltersMenu
           changeState={this.changeState}
           isMoreFiltersOpen={this.state.isMoreFiltersOpen}
+          
         />
-        {(this.state.isMoreFiltersOpen && <MoreFiltersOption />)}
+        {(this.state.isMoreFiltersOpen &&
+          <MoreFiltersOption
+            selectedOptions={this.state.selectedOptions}
+            handleUpdate={this.handleUpdate}
+            handlePlusButtonClick={this.handlePlusButtonClick}
+            handleMinusButtonClick={this.handleMinusButtonClick}
+            handleAnimation={this.handleAnimation}
+            handleSeeAll={this.handleSeeAll}
+            isAmenitiesSeeAll={this.state.isAmenitiesSeeAll}
+            isFacilitiesSeeAll={this.state.isFacilitiesSeeAll}
+            isNeighbourhoodsSeeAll={this.state.isNeighbourhoodsSeeAll}
+            isHostLanguageSeeAll={this.state.isHostLanguageSeeAll}
+            shouldAnimate={this.state.shouldAnimate}
+          />
+        )}
       </MenuContainer>
     );
   }

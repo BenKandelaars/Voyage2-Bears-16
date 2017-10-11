@@ -19,7 +19,10 @@ export const RoomsAndBeds = props => (
         handleMinusButtonClick={props.handleMinusButtonClick}
         count={props.numberOfBedrooms}
         plusSign={true}
-        clickedCounter="numberOfBedrooms"
+        clickedCounter="bedrooms"
+        handleUpdate={props.handleUpdate}
+        sectionName="more_filters"
+        checkboxName="bedrooms"
       />
     </MoreFiltersOptionContainer>
     <MoreFiltersOptionContainer>
@@ -29,7 +32,7 @@ export const RoomsAndBeds = props => (
         handleMinusButtonClick={props.handleMinusButtonClick}
         count={props.numberOfBeds}
         plusSign={true}
-        clickedCounter="numberOfBeds"
+        clickedCounter="beds"
       />
     </MoreFiltersOptionContainer>
     <MoreFiltersOptionContainer>
@@ -40,7 +43,7 @@ export const RoomsAndBeds = props => (
         count={props.numberOfBathrooms}
         plusSign={true}
         isHalfSize={true}
-        clickedCounter="numberOfBathrooms"
+        clickedCounter="bathrooms"
       />
     </MoreFiltersOptionContainer>
   </EachOptionContainer>
@@ -189,69 +192,69 @@ export const HostLanguage = props => (
 
 
 class MoreFiltersOption extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      numberOfBedrooms: 0,
-      numberOfBeds: 0,
-      numberOfBathrooms: 0,
-      isAmenitiesSeeAll: false,
-      isFacilitiesSeeAll: false,
-      isNeighbourhoodsSeeAll: false,
-      isHostLanguageSeeAll: false,
-      shouldAnimate: false,
-    }
-  }
-  handlePlusButtonClick = (clickedCounter, isHalfSize) => {
-    const number = (isHalfSize ? 0.5 : 1);
-    this.setState(prevState => ({
-      [clickedCounter]: prevState[clickedCounter] + number,
-    }));
-  }
-  handleMinusButtonClick = (clickedCounter, isHalfSize) => {
-    const number = (isHalfSize ? 0.5 : 1);
-    if (this.state[clickedCounter] > 0) {
-      this.setState(prevState => ({
-        [clickedCounter]: prevState[clickedCounter] - number,
-      }));
-    }
-  }
-  handleAnimation = () => {
-    this.setState(prevState => ({
-      shouldAnimate: !prevState.shouldAnimate,
-    }));
-  }
-  handleSeeAll = (clickedSection) => {
-    this.handleAnimation();
-    setTimeout(() => {
-      this.setState(prevState => ({
-        [clickedSection]: !prevState[clickedSection],
-      }));
-    }, 200);
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     numberOfBedrooms: 0,
+  //     numberOfBeds: 0,
+  //     numberOfBathrooms: 0,
+  //     isAmenitiesSeeAll: false,
+  //     isFacilitiesSeeAll: false,
+  //     isNeighbourhoodsSeeAll: false,
+  //     isHostLanguageSeeAll: false,
+  //     shouldAnimate: false,
+  //   }
+  // }
+  // handlePlusButtonClick = (clickedCounter, isHalfSize) => {
+  //   const number = (isHalfSize ? 0.5 : 1);
+  //   this.setState(prevState => ({
+  //     [clickedCounter]: prevState[clickedCounter] + number,
+  //   }));
+  // }
+  // handleMinusButtonClick = (clickedCounter, isHalfSize) => {
+  //   const number = (isHalfSize ? 0.5 : 1);
+  //   if (this.state[clickedCounter] > 0) {
+  //     this.setState(prevState => ({
+  //       [clickedCounter]: prevState[clickedCounter] - number,
+  //     }));
+  //   }
+  // }
+  // handleAnimation = () => {
+  //   this.setState(prevState => ({
+  //     shouldAnimate: !prevState.shouldAnimate,
+  //   }));
+  // }
+  // handleSeeAll = (clickedSection) => {
+  //   this.handleAnimation();
+  //   setTimeout(() => {
+  //     this.setState(prevState => ({
+  //       [clickedSection]: !prevState[clickedSection],
+  //     }));
+  //   }, 200);
+  // }
   render() {
     return (
       <MoreFiltersContainer>
         <RoomsAndBeds
-          handlePlusButtonClick={this.handlePlusButtonClick}
-          handleMinusButtonClick={this.handleMinusButtonClick}
-          handleButtonClick={this.handleButtonClick}
-          numberOfBedrooms={this.state.numberOfBedrooms}
-          numberOfBeds={this.state.numberOfBeds}
-          numberOfBathrooms={this.state.numberOfBathrooms}
+          handlePlusButtonClick={this.props.handlePlusButtonClick}
+          handleMinusButtonClick={this.props.handleMinusButtonClick}
+          handleButtonClick={this.props.handleButtonClick}
+          numberOfBedrooms={this.props.selectedOptions.more_filters.rooms_and_beds.bedrooms}
+          numberOfBeds={this.props.selectedOptions.more_filters.rooms_and_beds.beds}
+          numberOfBathrooms={this.props.selectedOptions.more_filters.rooms_and_beds.bathrooms}
           />
         <SectionBreak />
         <MoreOptions />
         <SectionBreak />
         <Amenities
-          isAmenitiesSeeAll={this.state.isAmenitiesSeeAll}
-          shouldAnimate={this.state.shouldAnimate}
+          isAmenitiesSeeAll={this.props.isAmenitiesSeeAll}
+          shouldAnimate={this.props.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
         <Facilities
-          isFacilitiesSeeAll={this.state.isFacilitiesSeeAll}
-          shouldAnimate={this.state.shouldAnimate}
+          isFacilitiesSeeAll={this.props.isFacilitiesSeeAll}
+          shouldAnimate={this.props.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
@@ -259,14 +262,14 @@ class MoreFiltersOption extends Component {
         />
         <SectionBreak />
         <Neighbourhoods
-          isNeighbourhoodsSeeAll={this.state.isNeighbourhoodsSeeAll}
-          shouldAnimate={this.state.shouldAnimate}
+          isNeighbourhoodsSeeAll={this.props.isNeighbourhoodsSeeAll}
+          shouldAnimate={this.props.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />
         <HostLanguage
-          isHostLanguageSeeAll={this.state.isHostLanguageSeeAll}
-          shouldAnimate={this.state.shouldAnimate}
+          isHostLanguageSeeAll={this.props.isHostLanguageSeeAll}
+          shouldAnimate={this.props.shouldAnimate}
           handleSeeAll={this.handleSeeAll}
         />
         <SectionBreak />

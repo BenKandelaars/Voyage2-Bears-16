@@ -69,19 +69,22 @@ export const SelectionChoiceSubHeading = styled.div`
   padding-top: 5px;
 `;
 
-const CheckboxComponent = (props) => (
-  <CheckboxContainer entireDiv={props.entireDiv} >
-    <CheckboxStyle>
-      <Checkbox
-        onClick={() => props.handleUpdate(props.checkboxName, props.sectionName)}
-      />
-      <CheckBoxFakeLabel />
-      <SelectionChoice>
-        <SelectionChoiceHeading>{props.heading}</SelectionChoiceHeading>
-        {(props.subheading && <SelectionChoiceSubHeading>{props.subheading}</SelectionChoiceSubHeading>)}
-      </SelectionChoice>
-    </CheckboxStyle>
-  </CheckboxContainer>
-);
+const CheckboxComponent = (props) => {
+  return (
+    <CheckboxContainer entireDiv={props.entireDiv} >
+      <CheckboxStyle>
+        <Checkbox
+          onClick={() => props.handleUpdate(props.checkboxName, props.sectionName)}
+          defaultChecked={false}
+        />
+        <CheckBoxFakeLabel />
+        <SelectionChoice>
+          <SelectionChoiceHeading>{props.heading}</SelectionChoiceHeading>
+          {(props.subheading && <SelectionChoiceSubHeading>{props.subheading}</SelectionChoiceSubHeading>)}
+        </SelectionChoice>
+      </CheckboxStyle>
+    </CheckboxContainer>
+  );
+}
 
 export default CheckboxComponent;

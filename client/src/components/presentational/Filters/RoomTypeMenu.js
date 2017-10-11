@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RoomTypeOption from './RoomTypeOption';
 import Arrow from './Arrow';
-import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
+import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon, ActiveOption } from './styles';
 
 
 const RoomType = props => (
@@ -9,7 +9,7 @@ const RoomType = props => (
         onClick={() => props.changeState('isRoomTypeOpen')}
       >
         <FilterOption isOpen={props.isRoomTypeOpen}>
-        Room type
+        Room type {(props.selectedOptions.room_type.length > 0 && <ActiveOption><span>{props.selectedOptions.room_type.length}</span></ActiveOption> )}
         <Arrow
           isOpen={props.isRoomTypeOpen}
           color='#008489'
@@ -27,11 +27,13 @@ class RoomTypeMenu extends Component {
         <RoomType
           changeState={this.props.changeState}
           isRoomTypeOpen={this.props.isRoomTypeOpen}
+          selectedOptions={this.props.selectedOptions}
         />
         {(this.props.isRoomTypeOpen &&
           <RoomTypeOption
             handleRoomtypeSelect={this.props.handleRoomtypeSelect}
             handleUpdate={this.props.handleUpdate}
+            handleStateCheck={this.props.handleStateCheck}
           />)}
       </EachMenuContainer>
       );

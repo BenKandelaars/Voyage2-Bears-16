@@ -39,10 +39,15 @@ export const ArrowIcon = styled.div`
 export const ActiveOption = styled.div`
   border-radius: 50%;
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   background-color: #008489;
   color: white;
+  padding: 2px;
+
+  span {
+    padding-left: 4px;
+  }
 `;
 
 export const SectionContainer = styled.div`

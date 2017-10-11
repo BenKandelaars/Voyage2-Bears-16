@@ -26,7 +26,11 @@ class InstantBookMenu extends Component {
           isInstantBookOpen={this.props.isInstantBookOpen}
           selectedOptions={this.props.selectedOptions}
         />
-        {(this.props.isInstantBookOpen && <InstantBookOption handleUpdate={this.props.handleUpdate} />)}
+        {(this.props.isInstantBookOpen &&
+          <InstantBookOption
+            handleUpdate={this.props.handleUpdate}
+            selectedOptions={this.props.selectedOptions}
+          />)}
       </EachMenuContainer>
     );
   }
