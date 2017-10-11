@@ -58,11 +58,25 @@ class Menu extends Component {
     });
   }
   handleUpdate = (option, parent) => {
-    console.log(option, parent);
+    const { room_type } = this.state.selectedOptions;
+    const roomType = [...this.state.selectedOptions.room_type, option];
     if (parent === "room_type") {
-      this.setState(prevState => ({
-        ...prevState.selectedOptions,
-      }));
+      if (room_type.indexOf(option) < 0) {
+        this.setState(prevState => ({
+          selectedOptions: {
+            ...prevState.selectedOptions,
+            room_type: [...prevState.selectedOptions.room_type, option],
+          },
+        }));
+      } else {
+        const index = room_type.indexOf(option);
+        this.setState(prevState => ({
+          selectedOptions: {
+            ...prevState.selectedOptions,
+            room_type: prevState.selectedOptions.room_type.filter((_, i) => i !== index) 
+          },
+        }));
+      }
     }
     if (option === "instant_book") {
       this.setState(prevState => ({
@@ -74,6 +88,7 @@ class Menu extends Component {
     }
   }
   render() {
+    console.log(this.state.selectedOptions);
     return (
       <MenuContainer>
         <RoomTypeMenu

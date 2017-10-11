@@ -32,6 +32,9 @@ class RoomTypeOption extends Component {
               heading="Private Room"
               subheading="Have your own room and share some common spaces"
               entireDiv
+              handleUpdate={this.props.handleUpdate}
+              sectionName="room_type"
+              checkboxName="private_room"
             />
             <SectionIcon>
               <FontAwesome
@@ -45,6 +48,9 @@ class RoomTypeOption extends Component {
               heading="Shared Room"
               subheading="Stay in a shared space, like a common room"
               entireDiv
+              handleUpdate={this.props.handleUpdate}
+              sectionName="room_type"
+              checkboxName="shared_room"
             />
             <SectionIcon>
               <FontAwesome
