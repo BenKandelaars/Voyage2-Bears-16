@@ -49,21 +49,28 @@ export const RoomsAndBeds = props => (
   </EachOptionContainer>
 );
 
-export const MoreOptions = () => (
-  <EachOptionContainer>
-    <MoreFiltersHeading>More options</MoreFiltersHeading>
-    <MoreFiltersOptionContainer>
-      <div>
-        <MoreFiltersOptionStyle>Superhost</MoreFiltersOptionStyle>
-        <p>Stay with recognised hosts.</p>
-        <p>Learn more</p>
-      </div> 
-      <div>
-        <ToggleButton />
-      </div>
-    </MoreFiltersOptionContainer>
-  </EachOptionContainer>
-);
+export const MoreOptions = props => {
+  console.log(props.selectedOptions.more_filters.more_options.superhost);
+  return (
+    <EachOptionContainer>
+      <MoreFiltersHeading>More options</MoreFiltersHeading>
+      <MoreFiltersOptionContainer>
+        <div>
+          <MoreFiltersOptionStyle>Superhost</MoreFiltersOptionStyle>
+          <p>Stay with recognised hosts.</p>
+          <p>Learn more</p>
+        </div> 
+        <div>
+          <ToggleButton
+            handleUpdate={props.handleUpdate}
+            buttonType="superhost"
+            selectedOptions={props.selectedOptions.more_filters.more_options.superhost}
+          />
+        </div>
+      </MoreFiltersOptionContainer>
+    </EachOptionContainer>
+  );
+};
 
 export const Amenities = props => (
   <EachOptionContainer entireDiv>
@@ -244,7 +251,10 @@ class MoreFiltersOption extends Component {
           numberOfBathrooms={this.props.selectedOptions.more_filters.rooms_and_beds.bathrooms}
           />
         <SectionBreak />
-        <MoreOptions />
+        <MoreOptions
+          handleUpdate={this.props.handleUpdate}
+          selectedOptions={this.props.selectedOptions}
+        />
         <SectionBreak />
         <Amenities
           isAmenitiesSeeAll={this.props.isAmenitiesSeeAll}

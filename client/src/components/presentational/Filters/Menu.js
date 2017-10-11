@@ -98,6 +98,20 @@ class Menu extends Component {
         },
       }));
     }
+    if (option === "superhost") {
+      this.setState(prevState => ({
+        selectedOptions: {
+          ...prevState.selectedOptions,
+          more_filters: {
+            ...prevState.selectedOptions.more_filters,
+            more_options: {
+              ...prevState.selectedOptions.more_filters.more_options,
+              superhost: !prevState.selectedOptions.more_filters.more_options.superhost,
+            },
+          },
+        },
+      }));
+    }
   }
   handlePlusButtonClick = (clickedCounter, isHalfSize) => {
     const number = (isHalfSize ? 0.5 : 1);
@@ -105,21 +119,28 @@ class Menu extends Component {
       selectedOptions: {
         ...prevState.selectedOptions,
         more_filters: {
+          ...prevState.selectedOptions.more_filters,
           rooms_and_beds: {
             ...prevState.selectedOptions.more_filters.rooms_and_beds,
             [clickedCounter]: prevState.selectedOptions.more_filters.rooms_and_beds[clickedCounter] + number,            
-          }
+          },
         },
       },
     }));
   }
   handleMinusButtonClick = (clickedCounter, isHalfSize) => {
     const number = (isHalfSize ? 0.5 : 1);
-    if (this.state[clickedCounter] > 0) {
-      this.setState(prevState => ({
-        [clickedCounter]: prevState[clickedCounter] - number,
-      }));
-    }
+    this.setState(prevState => ({
+      selectedOptions: {
+        ...prevState.selectedOptions,
+        more_filters: {
+          rooms_and_beds: {
+            ...prevState.selectedOptions.more_filters.rooms_and_beds,
+            [clickedCounter]: prevState.selectedOptions.more_filters.rooms_and_beds[clickedCounter] - number,            
+          },
+        },
+      },
+    }));
   }
   handleAnimation = () => {
     this.setState(prevState => ({
