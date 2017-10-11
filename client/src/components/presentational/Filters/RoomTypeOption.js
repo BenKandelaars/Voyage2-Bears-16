@@ -7,19 +7,18 @@ import { SectionContainer, Checkbox, CheckboxStyle, CheckBoxFakeLabel,
   } from './styles';
 
 class RoomTypeOption extends Component {
-  handleClick = (e) => {
-    console.log(e);
-  }
+
   render() {
       return (
         <SectionContainer>
           <SectionOption> 
             <CheckboxComponent
-              stateName="entire-home"
-              handleClick={this.handleClick}
               heading="Entire Home"
               subheading="Have a place to yourself"
               entireDiv
+              handleUpdate={this.props.handleUpdate}
+              sectionName="room_type"
+              checkboxName="entire_home"
             />
             <SectionIcon>
               <FontAwesome

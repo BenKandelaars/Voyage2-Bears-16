@@ -36,6 +36,15 @@ export const ArrowIcon = styled.div`
   transition: transform .3s;
 `;
 
+export const ActiveOption = styled.div`
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #008489;
+  color: white;
+`;
+
 export const SectionContainer = styled.div`
   position: absolute;
   top: 58px;

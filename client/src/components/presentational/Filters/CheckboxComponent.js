@@ -71,8 +71,10 @@ export const SelectionChoiceSubHeading = styled.div`
 
 const CheckboxComponent = (props) => (
   <CheckboxContainer entireDiv={props.entireDiv} >
-    <CheckboxStyle onChange={(e) => props.handleClick(e.target)}>
-      <Checkbox data-name={props.stateName} />
+    <CheckboxStyle>
+      <Checkbox
+        onClick={() => props.handleUpdate(props.checkboxName, props.sectionName)}
+      />
       <CheckBoxFakeLabel />
       <SelectionChoice>
         <SelectionChoiceHeading>{props.heading}</SelectionChoiceHeading>

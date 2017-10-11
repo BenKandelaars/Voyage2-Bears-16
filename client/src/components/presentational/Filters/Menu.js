@@ -12,15 +12,31 @@ class Menu extends Component {
 
     this.state = {
       currentlyOpen: null,
-      isRoomTypeOpen: false,
-      isPriceRangeOpen: true,
+      isRoomTypeOpen: true,
+      isPriceRangeOpen: false,
       isInstantBookOpen: false,
       isMoreFiltersOpen: false,
-      numberOfSelectedRoomType: 0,
-      numberOfSelectedInstantBook: 0,
-      numberOfSelectedMoreFilters: 0,
-      selectedPriceMin: null,
       currentPriceRange: [9, 1000],
+      selectedOptions: {
+        room_type: [],
+        price_range: [],
+        instant_book: false,
+        more_filters: {
+          rooms_and_beds: {
+            bedrooms: 0,
+            beds: 0,
+            bathrooms: 0,
+          },
+          more_options: {
+            superhost: false,
+          },
+          amenities: [],
+          facilities: [],
+          house_rules: [],
+          neighbourhoods: [],
+          host_language: [],
+        },
+      },
     };
   }
 
@@ -36,16 +52,28 @@ class Menu extends Component {
     });
   }
 
-  handleRoomtypeSelect = (e) => {
-    console.log(e);
-  }
-
   handlePriceRangeChange = (price) => {
     this.setState({
       currentPriceRange: price,
     });
   }
-  render(){
+  handleUpdate = (option, parent) => {
+    console.log(option, parent);
+    if (parent === "room_type") {
+      this.setState(prevState => ({
+        ...prevState.selectedOptions,
+      }));
+    }
+    if (option === "instant_book") {
+      this.setState(prevState => ({
+        selectedOptions: {
+          ...prevState.selectedOptions,
+          instant_book: !prevState.selectedOptions.instant_book,
+        },
+      }));
+    }
+  }
+  render() {
     return (
       <MenuContainer>
         <RoomTypeMenu
@@ -54,6 +82,7 @@ class Menu extends Component {
           numberOfSelectedRoomType={this.state.numberOfSelectedRoomType}
           handleRoomtypeSelect={this.handleRoomtypeSelect}
           roomTypeChecked={this.state.roomTypeChecked}
+          handleUpdate={this.handleUpdate}
         />
         <PriceRangeMenu
           changeState={this.changeState}
@@ -64,6 +93,8 @@ class Menu extends Component {
         <InstantBookMenu 
           changeState={this.changeState}
           isInstantBookOpen={this.state.isInstantBookOpen}
+          handleUpdate={this.handleUpdate}
+          selectedOptions={this.state.selectedOptions}
         />
         <MoreFiltersMenu
           changeState={this.changeState}

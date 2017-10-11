@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import InstantBookOption from './InstantBookOption'
 import Arrow from './Arrow';
-import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon } from './styles';
+import { EachMenuContainer, EachFilterContainer, FilterOption, ArrowIcon, ActiveOption } from './styles';
 import FontAwesome from 'react-fontawesome';
 
 const InstantBook = props => (
       <EachFilterContainer onClick={() => props.changeState("isInstantBookOpen")}>
         <FilterOption isOpen={props.isInstantBookOpen}>
-        Instant Book
+        Instant Book {(props.selectedOptions.instant_book && <ActiveOption><span>1</span></ActiveOption> )}
         <Arrow
           isOpen={props.isInstantBookOpen}
           color='#008489'
         />
+        
         </FilterOption>
       </EachFilterContainer>
     );
@@ -23,8 +24,9 @@ class InstantBookMenu extends Component {
         <InstantBook
           changeState={this.props.changeState}
           isInstantBookOpen={this.props.isInstantBookOpen}
+          selectedOptions={this.props.selectedOptions}
         />
-        {(this.props.isInstantBookOpen && <InstantBookOption />)}
+        {(this.props.isInstantBookOpen && <InstantBookOption handleUpdate={this.props.handleUpdate} />)}
       </EachMenuContainer>
     );
   }
