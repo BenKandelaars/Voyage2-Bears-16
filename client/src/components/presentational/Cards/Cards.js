@@ -43,23 +43,29 @@ ExploreCard.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export const DestinationCard = props => (
-  <div ref={props.getRef}>
-    <DestinationWrapper>
-      <DestinationItem>
-        <img src={props.img} alt={props.title} />
-        <div>
-          <h4>{props.title}</h4>
-        </div>
-      </DestinationItem>
-    </DestinationWrapper>
-  </div>
-);
+export const DestinationCard = (props) => {
+  const { img, title } = props.data[props.itemNo];
+  return (
+    <div ref={props.getRef}>
+      <DestinationWrapper>
+        <DestinationItem>
+          <img src={img} alt={title} />
+          <div>
+            <h4>{title}</h4>
+          </div>
+        </DestinationItem>
+      </DestinationWrapper>
+    </div>
+  );
+};
 
 DestinationCard.propTypes = {
-  getRef: PropTypes.func.isRequired,
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  getRef: PropTypes.func,
+  itemNo: PropTypes.number.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
 };
 
 export class ExperienceCard extends React.Component {

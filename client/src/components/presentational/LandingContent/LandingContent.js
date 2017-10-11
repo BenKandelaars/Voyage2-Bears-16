@@ -158,11 +158,12 @@ class LandingContent extends React.Component {
           cardCount={homes.length}
           data={homes}
         />
-        {/* <Carousel
+        <Carousel
           groupTitle="Featured Destinations"
           card={DestinationCard}
-          {...destinations}
-        /> */}
+          cardCount={destinations.length}
+          data={destinations}
+        />
         <Carousel
           groupTitle="Experiences"
           card={ExperienceCard}
