@@ -134,7 +134,6 @@ const destinations = [
     title: 'Paris',
   },
 ];
-
 class LandingContent extends React.Component {
   render() {
     return (

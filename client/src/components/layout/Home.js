@@ -3,12 +3,12 @@ import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NavComponent from '../presentational/Navbar/Navbar';
 import SubNavbar from '../presentational/SubNavbar/SubNavbar';
-import Slider from '../presentational/Slider/Slider';
 import ForYou from './ForYou';
+import Homes from './Homes';
+import Experiences from './Experiences';
 import {
-  Header,
-  Main,
-} from './home_styles';
+  HomeHeader,
+} from './styles';
 
 class Home extends React.Component {
   render() {
@@ -19,14 +19,13 @@ class Home extends React.Component {
 
     return (
       <div>
-        <Header>
+        <HomeHeader>
           <NavComponent />
           <SubNavbar selected={section} />
-        </Header>
+        </HomeHeader>
         <Route path={`${baseUrl}you`} component={ForYou} />
-        <Main>
-          <Slider />
-        </Main>
+        <Route path={`${baseUrl}homes`} component={Homes} />
+        <Route path={`${baseUrl}experiences`} component={Experiences} />
       </div>
     );
   }
