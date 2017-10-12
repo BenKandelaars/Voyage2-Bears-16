@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import NavComponent from '../presentational/Navbar/Navbar';
 import SubNavbar from '../presentational/SubNavbar/SubNavbar';
 import Slider from '../presentational/Slider/Slider';
@@ -20,16 +21,25 @@ class Home extends React.Component {
       <div>
         <Header>
           <NavComponent />
-          <SubNavbar selected={this.props.section}/>
+          <SubNavbar selected={section} />
         </Header>
-         <Route path={`${baseUrl}you`} component={ForYou} />
+        <Route path={`${baseUrl}you`} component={ForYou} />
         <Main>
-            <Slider />  
+          <Slider />
         </Main>
       </div>
     );
   }
 }
+
+Home.propTypes = {
+  match: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    params: PropTypes.shape({
+      section: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Home;
 
